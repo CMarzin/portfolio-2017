@@ -1,6 +1,83 @@
 {
-  "test": {
-    "title": "lorem",
-    "yolo": "Ipsum"
+    "projects": [{
+        "project": {
+            "date": "2016 August",
+            "name": "BE THE DROP",
+            "agency": "JEAN-PAUL GAULTIER",
+            "role": "Developper front-end",
+            "desc": "This is the second project I made in my internship at Cher Am (Lyon during 3 months). I made the fallback version of the site when the webgl version was not available. The site is entirely responsive.",
+            "title_tech": "Tech use : ",
+            "techs": [
+              {"tech": "- JQUERY"},
+              {"tech": "- CSS3"},
+              {"tech": "- HTML5"}
+            ]
+        }
+    }, {
+        "project": {
+          "date": "2016 September",
+          "name": "HEAVEN",
+          "agency": "Agency",
+          "role": "Developper front-end",
+          "desc": "This is the third project I made in my internship at Cher Am (Lyon during 3 months). I made the menu animation and participate to the integration of the site.",
+          "title_tech": "Tech use : ",
+          "techs": [
+            {"tech": "- GULP"},
+            {"tech": "- SASS & ES5"},
+            {"tech": "- HTML5"}
+          ]
+        }
+    }, {
+      "project": {
+        "date": "2016 July - August",
+        "name": "CHER AMI",
+        "agency": "Agency",
+        "role": "Developper front-end",
+        "desc": "This is the first project i made in my internship at Cher Ami (Lyon during 3 months). I am in charge to make some change on the pages and made some animation like the loader and the open animation of the video.",
+        "title_tech": "Tech use : ",
+        "techs": [
+          {"tech": "- GULP"},
+          {"tech": "- SASS & ES5"},
+          {"tech": "- HTML5"}
+        ]
+      }
+    },{
+      "project": {
+        "date": "2016 October - January",
+        "name": "FIDGET CUBE",
+        "agency": "School project",
+        "role": "Developper front-end & 3D",
+        "desc": "The fidget cube was still a kickstarter campaign. On this project I made the cube on Cinema 4D, made the slider and some integration on the website. For the best experience open the website on an android phone with chrome or firefox because the vibration unfortunaly doesn’t work on IOS.",
+        "title_tech": "Tech use : ",
+        "techs": [
+          {"tech": "- Cinema 4D"},
+          {"tech": "- Three.js"},
+          {"tech": "- Gulp & Webpack"},
+          {"tech": "- ES6 & SASS"},
+          {"tech": "- SVG & FLEXBOX"}
+        ]
+      }
+  }, {
+    "project": {
+      "date": "2016 December 12 - December 16",
+      "name": "STAR WARS",
+      "agency": "School project",
+      "role": "Developper front-end",
+      "desc": "This is the first project i made in my internship at Cher Ami (Lyon during 3 months). I am in charge to make some change on the pages and made some animation like the loader and the open animation of the video.",
+      "title_tech": "Tech use : ",
+      "techs": [
+        {"tech": "- GULP"},
+        {"tech": "- AnalyserNode & Chrome audio API"},
+        {"tech": "- SASS & ES6"},
+        {"tech": "- HTML5"}
+      ]
+    }
+  }],
+  "about": {
+    "title": "Creative Developper",
+    "location": "based at Paris, France",
+    "desc": "I am 21 student at HETIC, I developpe things since 4 years and I am freelance since 1 year. I am currently working for BNP Paribas.",
+    "internship": "Actualy i am looking for an internship (3 months) between July and October.",
+    "thanks": "I designed with the help of Thaddé Meneur and Raphael Limoge this portefolio."
   }
 }

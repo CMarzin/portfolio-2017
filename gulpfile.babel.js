@@ -12,7 +12,6 @@ import concat from 'gulp-concat';
 import declare from 'gulp-declare';
 import wrap from 'gulp-wrap';
 
-
 gulp.task("html", () => {
     return gulp.src("./app/*.html")
         .pipe(gulp.dest("./build"))
@@ -38,11 +37,8 @@ gulp.task('templates', function () {
     .pipe(gulp.dest('build/js/'));
 });
 
-
-
-
 gulp.task("styles", () => {
-    return gulp.src("./app/sass/*.scss")
+    return gulp.src("./app/sass/**/*.scss")
         .pipe(sass.sync().on('error', sass.logError))
         .pipe(autoprefixer())
         .pipe(gulp.dest("./build/css"))
@@ -72,7 +68,7 @@ gulp.task('watch', () => {
     gulp.watch('./app/*.html', ['html']);
     gulp.watch(['./app/js/*.js'], ['scripts']);
     gulp.watch(['./app/sass/**/*.scss'], ['styles']);
-    gulp.watch('app/templates/*.hbs', ['templates']);
+    gulp.watch('app/templates/*.hbs', ['templates', 'scripts']);
 });
 
 gulp.task("build", ["html", "handlebars", "templates", "scripts", "styles"]);

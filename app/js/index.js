@@ -1,11 +1,19 @@
 import data from "../data/data.json";
 
-const t = data.test;
+const d = data;
+const about = data.about;
 
-let source = document.querySelector('#test');
+console.log(d);
+console.log(about);
 
-var content_test = MyApp.templates.test(t);
+let source = document.querySelector('#bethedrop');
+let page_about = document.querySelector('#about');
 
-console.log(content_test);
+let content = MyApp.templates.bethedrop(d);
+let content_about = MyApp.templates.about(about);
 
-source.innerHTML = content_test;
+// console.log(content_about);
+// console.log(content);
+
+// source.innerHTML = content;
+page_about.innerHTML = content_about;

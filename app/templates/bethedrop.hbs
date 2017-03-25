@@ -1,0 +1,12 @@
+{{#projects}}
+    <ul>
+        <li>{{project.date}}</li>
+        <li>{{project.name}}</li>
+        <li>{{project.agency}}</li>
+        <li>{{project.desc}}</li>
+        <li>{{project.title_tech}}</li>
+        {{#project.techs}}
+            <li>{{tech}}</li>
+        {{/project.techs}}
+    </ul>
+{{/projects}}
