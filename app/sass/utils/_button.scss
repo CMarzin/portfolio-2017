@@ -1,0 +1,33 @@
+.container {
+    &__button {
+        position: absolute;
+        height: 10%;
+        width: 100%;
+        font-family: "Futura";
+        font-weight: bold;
+        font-size: 21px;
+        color: $darkblue;
+    }
+
+    &__box {
+      bottom:5%;
+
+      &--prev {
+        position: absolute;
+        padding-left:5px;
+        padding-right:5px;
+        left:5%;
+        border: 1px solid $darkblue;
+        cursor: pointer;
+      }
+
+      &--next {
+        position: absolute;
+        padding-left:5px;
+        padding-right:5px;
+        right:5%;
+        border: 1px solid $darkblue;
+        cursor: pointer;      
+      }
+    }
+}

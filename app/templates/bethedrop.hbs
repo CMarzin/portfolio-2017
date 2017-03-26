@@ -1,12 +1,21 @@
-{{#projects}}
-    <ul>
-        <li>{{project.date}}</li>
-        <li>{{project.name}}</li>
-        <li>{{project.agency}}</li>
-        <li>{{project.desc}}</li>
-        <li>{{project.title_tech}}</li>
-        {{#project.techs}}
-            <li>{{tech}}</li>
-        {{/project.techs}}
-    </ul>
-{{/projects}}
+<div class="projects">
+    <div class="projects__project--left">
+      {{#projects}}
+        <div class="projects__project projects__project--{{project.id}}">
+            <p>{{project.date}}</p>
+            <h2>{{project.name}}</h2>
+            <h3>{{project.agency}}</h3>
+            <h3>{{project.role}}</h3>
+            <p>{{project.desc}}</p>
+            <h3>{{project.title_tech}}</h3>
+            {{#project.techs}}
+                <p>{{tech}}</p>
+            {{/project.techs}}
+        </div>
+        {{/projects}}
+    </div>
+    <div class="projects__project--right">
+      <a href="https://www.jeanpaulgaultier.com/fr-fr/bethedrop/?fallback=true" target="_blank"><img src="img/imgjpg.jpg" alt="JEAN-PAUL GAULTIER parfum"></a>
+      <p>Link to the webgl version : <a href="https://www.jeanpaulgaultier.com/fr-fr/bethedrop" target="_blank">jeanpaulgaultier.com/bethedrops</a></p>
+    </div>
+</div>

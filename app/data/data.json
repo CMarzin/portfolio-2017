@@ -1,11 +1,12 @@
 {
     "projects": [{
         "project": {
+            "id": "bethedrop",
             "date": "2016 August",
             "name": "BE THE DROP",
             "agency": "JEAN-PAUL GAULTIER",
             "role": "Developper front-end",
-            "desc": "This is the second project I made in my internship at Cher Am (Lyon during 3 months). I made the fallback version of the site when the webgl version was not available. The site is entirely responsive.",
+            "desc": "This is the second project I made in my internship at Cher Ami (Lyon during 3 months). I made the fallback version of the site when the webgl version was not available. The site is entirely responsive.",
             "title_tech": "Tech use : ",
             "techs": [
               {"tech": "- JQUERY"},
@@ -15,11 +16,12 @@
         }
     }, {
         "project": {
+          "id": "heaven",
           "date": "2016 September",
           "name": "HEAVEN",
           "agency": "Agency",
           "role": "Developper front-end",
-          "desc": "This is the third project I made in my internship at Cher Am (Lyon during 3 months). I made the menu animation and participate to the integration of the site.",
+          "desc": "This is the third project I made in my internship at Cher Ami (Lyon during 3 months). I made the menu animation and participate to the integration of the site.",
           "title_tech": "Tech use : ",
           "techs": [
             {"tech": "- GULP"},
@@ -29,6 +31,7 @@
         }
     }, {
       "project": {
+        "id": "cherami",
         "date": "2016 July - August",
         "name": "CHER AMI",
         "agency": "Agency",
@@ -43,6 +46,7 @@
       }
     },{
       "project": {
+        "id": "fidgetcube",
         "date": "2016 October - January",
         "name": "FIDGET CUBE",
         "agency": "School project",
@@ -59,6 +63,7 @@
       }
   }, {
     "project": {
+      "id": "starwars",
       "date": "2016 December 12 - December 16",
       "name": "STAR WARS",
       "agency": "School project",

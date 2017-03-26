@@ -10,7 +10,7 @@
         display: flex;
         font-family: "Futura Book";
         font-size:1.09vw;
-        color: #132448;
+        color: $lightblue;
 
         &--socialMedia {
             padding: 30px;
@@ -26,7 +26,7 @@
         text-align: center;
         font-family: "Futura Book";
         font-size:1.09vw;
-        color: #152E4C;
+        color: $darkblue;
 
 
         h1 {
@@ -34,7 +34,7 @@
             font-family: "Bauer Bodoni";
             font-weight: bold;
             font-size: 31px;
-            color: #B8CFE1;
+            color: $lightblue;
         }
 
         h3:nth-child(2) {
