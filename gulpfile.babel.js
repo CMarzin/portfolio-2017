@@ -18,6 +18,16 @@ gulp.task("html", () => {
         .pipe(browserSync.stream());
 });
 
+gulp.task("img", () => {
+    return gulp.src("./app/img/**.*")
+        .pipe(gulp.dest("./build/img/"))
+});
+
+gulp.task("font", () => {
+    return gulp.src("./app/fonts/**.*")
+        .pipe(gulp.dest("./build/fonts/"))
+});
+
 gulp.task("handlebars", () => {
     return gulp.src("bower_components/handlebars/handlebars.min.js")
         .pipe(gulp.dest("./build/vendor"))
@@ -71,5 +81,5 @@ gulp.task('watch', () => {
     gulp.watch('app/templates/*.hbs', ['templates', 'scripts']);
 });
 
-gulp.task("build", ["html", "handlebars", "templates", "scripts", "styles"]);
+gulp.task("build", ["html", "handlebars", "templates", "scripts", "styles", "img", "font"]);
 gulp.task("dev", ["startServer", "watch"]);

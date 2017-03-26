@@ -1,0 +1,44 @@
+.about {
+    padding-top: 10vh;
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+
+    &__socialMedias {
+        display: flex;
+        font-family: "Futura Book";
+        font-size:1.09vw;
+        color: #132448;
+
+        &--socialMedia {
+            padding: 30px;
+        }
+    }
+
+    &__text {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 50%;
+        text-align: center;
+        font-family: "Futura Book";
+        font-size:1.09vw;
+        color: #152E4C;
+
+
+        h1 {
+            margin-bottom: 0;
+            font-family: "Bauer Bodoni";
+            font-weight: bold;
+            font-size: 31px;
+            color: #B8CFE1;
+        }
+
+        h3:nth-child(2) {
+            margin-top: 0;
+        }
+    }
+}
