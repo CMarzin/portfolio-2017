@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="rectangle">
+        <div class="clip-rectangle"></div>
+    </div>
+    <svg>
+    <defs>
+      <clipPath id="svgPath">
+        <rect class="rect1" stroke="#000000" stroke-miterlimit="10"/>
+        <rect class="rect2" stroke="#000000" stroke-miterlimit="10"/>
+        <rect class="rect3" stroke="#000000" stroke-miterlimit="10"/>
+      </clipPath>
+     </defs>
+   </svg>
+</div>
+{{#projects}}
+    <div class="container__title">
+        <div class="container__title__project container__title__project--{{project.id}}">
+            <div class="container__title--flex">
+              <h2>{{project.name}}</h2>
+              <h3>{{project.agency}}</h3>
+              <div class="container__button--open container__button--{{project.id}}">
+                <p>See the project</p>
+              </div>
+            </div>
+        </div>
+    </div>
+{{/projects}}
