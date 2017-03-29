@@ -20,6 +20,32 @@ project_choose.innerHTML = content_choose;
 // project_desc.innerHTML = content_desc;
 // page_about.innerHTML = content_about;
 
+/*
+* Anim mask svg
+*
+*/
+
+const move_mask = (e) => {
+  let axhard = -(window.innerWidth / 2 - e.pageX) / 45;
+  let ayhard = (window.innerHeight / 2 - e.pageY) / 45;
+
+  let axlight = -(window.innerWidth / 2 - e.pageX) / 35;
+  let aylight = (window.innerHeight / 2 - e.pageY) / 35;
+
+  rect1.setAttribute("style", "transform: translateX(" + axhard + "px) translateY(" + aylight + "px);-webkit-transform: translateY(" + aylight + "px) translateX(" + axhard + "px);-moz-transform: translateY(" + aylight + "px) translateX(" + axhard + "px)");
+  rect2.setAttribute("style", "transform: translateX(" + axhard + "px) translateY(" + aylight + "px);-webkit-transform: translateY(" + aylight + "px) translateX(" + axhard + "px);-moz-transform: translateY(" + aylight + "px) translateX(" + axhard + "px)");
+  rect3.setAttribute("style", "transform: translateX(" + axhard + "px) translateY(" + aylight + "px);-webkit-transform: translateY(" + aylight + "px) translateX(" + axhard + "px);-moz-transform: translateY(" + aylight + "px) translateX(" + axhard + "px)");
+}
+
+document.body.onmousemove = move_mask;
+
+
+// reactive scroll anim
+// document.querySelector('.menu__logo').addEventListener('click', function() {
+//   document.body.onmousemove = move_mask;
+// });
+
+
 let rect1 = document.querySelector('.rect1');
 let rect2 = document.querySelector('.rect2');
 let rect3 = document.querySelector('.rect3');
@@ -28,14 +54,14 @@ let rect4 = document.querySelector('.rect4');
 let container = document.querySelector('#project__choose');
 let container_svg = document.querySelector('.container');
 
-console.log(container, rect1);
-
 let see_project = document.querySelector('.container__button--open');
 let container_title = document.querySelector('.container__title--flex');
 let arrows = document.querySelectorAll('.container__arrow');
 
 
 see_project.addEventListener('click', function() {
+    // disable e scroll
+    document.body.onmousemove = null
     rect1.classList.add('transition');
     rect2.classList.add('transition');
     rect3.classList.add('transition');
@@ -58,17 +84,3 @@ see_project.addEventListener('click', function() {
         }, 300);
     }, 200);
 });
-
-
-document.body.onmousemove = function(e) {
-
-    let axhard = -(window.innerWidth / 2 - e.pageX) / 45;
-    let ayhard = (window.innerHeight / 2 - e.pageY) / 45;
-
-    let axlight = -(window.innerWidth / 2 - e.pageX) / 35;
-    let aylight = (window.innerHeight / 2 - e.pageY) / 35;
-
-    rect1.setAttribute("style", "transform: translateX(" + axhard + "px) translateY(" + aylight + "px);-webkit-transform: translateY(" + aylight + "px) translateX(" + axhard + "px);-moz-transform: translateY(" + aylight + "px) translateX(" + axhard + "px)");
-    rect2.setAttribute("style", "transform: translateX(" + axhard + "px) translateY(" + aylight + "px);-webkit-transform: translateY(" + aylight + "px) translateX(" + axhard + "px);-moz-transform: translateY(" + aylight + "px) translateX(" + axhard + "px)");
-    rect3.setAttribute("style", "transform: translateX(" + axhard + "px) translateY(" + aylight + "px);-webkit-transform: translateY(" + aylight + "px) translateX(" + axhard + "px);-moz-transform: translateY(" + aylight + "px) translateX(" + axhard + "px)");
-}
