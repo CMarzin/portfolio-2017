@@ -25,8 +25,8 @@ let rect4 = document.querySelector('.rect4');
 let container = document.querySelector('#project__choose');
 let container_svg = document.querySelector('.container');
 
-let see_project = document.querySelector('.container__button--open');
-let container_title = document.querySelector('.container__title--flex');
+let see_project = document.querySelectorAll('.container__button--open');
+let container_title = document.querySelectorAll('.container__title--flex');
 let container__arrows = document.querySelector('.container__arrows');
 let container__button = document.querySelector('.container__button');
 let arrows = document.querySelectorAll('.container__arrow');
@@ -34,71 +34,198 @@ let arrows = document.querySelectorAll('.container__arrow');
 let bgwhite_left = document.querySelector('.projects__project--left-bg--white');
 let bgwhite_right = document.querySelector('.projects__project--right-bg--white');
 
+let choose_img = document.querySelectorAll('.clip-rectangle');
+let desc_project = document.querySelectorAll('.projects__project');
+
+let count = 0;
+
 /*
-* Anim mask svg
-*
-*/
+ * Anim mask svg
+ *
+ */
 
 const move_mask = (e) => {
-  let axhard = -(window.innerWidth / 2 - e.pageX) / 45;
-  let ayhard = (window.innerHeight / 2 - e.pageY) / 45;
+    let axhard = -(window.innerWidth / 2 - e.pageX) / 45;
+    let ayhard = (window.innerHeight / 2 - e.pageY) / 45;
 
-  let axlight = -(window.innerWidth / 2 - e.pageX) / 35;
-  let aylight = (window.innerHeight / 2 - e.pageY) / 35;
+    let axlight = -(window.innerWidth / 2 - e.pageX) / 35;
+    let aylight = (window.innerHeight / 2 - e.pageY) / 35;
 
-  rect1.setAttribute("style", "transform: translateX(" + axhard + "px) translateY(" + aylight + "px);-webkit-transform: translateY(" + aylight + "px) translateX(" + axhard + "px);-moz-transform: translateY(" + aylight + "px) translateX(" + axhard + "px)");
-  rect2.setAttribute("style", "transform: translateX(" + axhard + "px) translateY(" + aylight + "px);-webkit-transform: translateY(" + aylight + "px) translateX(" + axhard + "px);-moz-transform: translateY(" + aylight + "px) translateX(" + axhard + "px)");
-  rect3.setAttribute("style", "transform: translateX(" + axhard + "px) translateY(" + aylight + "px);-webkit-transform: translateY(" + aylight + "px) translateX(" + axhard + "px);-moz-transform: translateY(" + aylight + "px) translateX(" + axhard + "px)");
+    rect1.setAttribute("style", "transform: translateX(" + axhard + "px) translateY(" + aylight + "px);-webkit-transform: translateY(" + aylight + "px) translateX(" + axhard + "px);-moz-transform: translateY(" + aylight + "px) translateX(" + axhard + "px)");
+    rect2.setAttribute("style", "transform: translateX(" + axhard + "px) translateY(" + aylight + "px);-webkit-transform: translateY(" + aylight + "px) translateX(" + axhard + "px);-moz-transform: translateY(" + aylight + "px) translateX(" + axhard + "px)");
+    rect3.setAttribute("style", "transform: translateX(" + axhard + "px) translateY(" + aylight + "px);-webkit-transform: translateY(" + aylight + "px) translateX(" + axhard + "px);-moz-transform: translateY(" + aylight + "px) translateX(" + axhard + "px)");
 }
 
 document.body.onmousemove = move_mask;
 
 
 //reactive scroll anim
-document.querySelector('.menu__logo').addEventListener('click', function() {
-  document.body.onmousemove = move_mask;
+document.querySelector('.menu__logo').addEventListener('click', () => {
+    document.body.onmousemove = move_mask;
 });
 
-// Launch anim
-see_project.addEventListener('click', function() {
-    // disable event on scroll
-    document.body.onmousemove = null
+for (const project of see_project) {
 
-    rect1.classList.add('transition');
-    rect2.classList.add('transition');
-    rect3.classList.add('transition');
+    // Launch anim
+    project.addEventListener('click', () => {
+        switch (count) {
+            case 0:
+                desc_project[4].classList.add('hide_project--desc');
+                desc_project[0].classList.remove('hide_project--desc');
+                desc_project[2].classList.add('hide_project--desc');
+                break;
+            case 1:
+                desc_project[0].classList.add('hide_project--desc');
+                desc_project[1].classList.remove('hide_project--desc');
+                desc_project[2].classList.add('hide_project--desc');
+                break;
+            case 2:
+                desc_project[1].classList.add('hide_project--desc');
+                desc_project[2].classList.remove('hide_project--desc');
+                desc_project[3].classList.add('hide_project--desc');
+                break;
+            case 3:
+                desc_project[2].classList.add('hide_project--desc');
+                desc_project[3].classList.remove('hide_project--desc');
+                desc_project[4].classList.add('hide_project--desc');
+                break;
+            case 4:
+                desc_project[3].classList.add('hide_project--desc');
+                desc_project[4].classList.remove('hide_project--desc');
+                desc_project[0].classList.add('hide_project--desc');
+                break;
+        }
+        // disable event on scroll
+        document.body.onmousemove = null
 
-    setTimeout(() => {
-        rect1.setAttribute("style", "transform: translateX(0px) translateY(-210px);-webkit-transform: translateY(-210px) translateX(0px);-moz-transform: translateY(-210px) translateX(0px)");
+        rect1.classList.add('transition');
+        rect2.classList.add('transition');
+        rect3.classList.add('transition');
+
+
         setTimeout(() => {
-            rect2.setAttribute("style", "transform: translateX(0px) translateY(-200px);-webkit-transform: translateY(0px) translateX(-200px);-moz-transform: translateY(0px) translateX(-200px)");
+            rect1.setAttribute("style", "transform: translateX(0px) translateY(-210px);-webkit-transform: translateY(-210px) translateX(0px);-moz-transform: translateY(-210px) translateX(0px)");
             setTimeout(() => {
-                container_title.classList.add('container__title--flex-hide');
-                rect3.setAttribute("style", "transform: translateX(300px) translateY(0px);-webkit-transform: translateY(0px) translateX(300px);-moz-transform: translateY(0px) translateX(300px)");
-                arrows[0].classList.add('container__arrow--hide-prev');
-                arrows[0].classList.remove('container__arrow--prev');
-                arrows[1].classList.add('container__arrow--hide-next');
-                arrows[1].classList.remove('container__arrow--next');
+                rect2.setAttribute("style", "transform: translateX(0px) translateY(-200px);-webkit-transform: translateY(0px) translateX(-200px);-moz-transform: translateY(0px) translateX(-200px)");
                 setTimeout(() => {
-                    container_svg.classList.add('container--hide');
-                    project_choose.classList.add('display--hide');
-                    container__arrows.classList.add('display--hide');
-                    animation_desc();
-                }, 1000);
-            }, 400);
-        }, 300);
-    }, 200);
+                    for (const title of container_title) {
+                        title.classList.add('container__title--flex-hide');
+                    }
+                    rect3.setAttribute("style", "transform: translateX(300px) translateY(0px);-webkit-transform: translateY(0px) translateX(300px);-moz-transform: translateY(0px) translateX(300px)");
+                    arrows[0].classList.add('container__arrow--hide-prev');
+                    arrows[0].classList.remove('container__arrow--prev');
+                    arrows[1].classList.add('container__arrow--hide-next');
+                    arrows[1].classList.remove('container__arrow--next');
+                    setTimeout(() => {
+                        container_svg.classList.add('container--hide');
+                        project_choose.classList.add('display--hide');
+                        container__arrows.classList.add('display--hide');
+                        project_desc.classList.remove('display--hide');
+                        container__button.classList.remove('display--hide');
+                        setTimeout(() => {
+                            bgwhite_left.classList.add('projects__project--left-bg--white--hide');
+                            bgwhite_right.classList.add('projects__project--right-bg--white--hide');
+                        }, 500);
+                    }, 1000);
+                }, 400);
+            }, 300);
+        }, 200);
+    });
+}
+
+
+arrows[0].addEventListener('click', () => {
+
+    count--;
+
+    if (count < 0) {
+        count = 4;
+    }
+
+    switch (count) {
+        case 0:
+            // Image project
+            choose_img[0].classList.remove('clip-rectangle--hide-left');
+            choose_img[1].classList.add('clip-rectangle--hide-right');
+            // Title project
+            container_title[0].classList.remove('hide_title');
+            container_title[1].classList.add('hide_title');
+            container_title[1].classList.remove('show_title');
+            // Desc project
+            desc_project[4].classList.add('hide_project--desc');
+            desc_project[0].classList.remove('hide_project--desc');
+            desc_project[1].classList.add('hide_project--desc');
+            break;
+        case 1:
+            // Image project
+            choose_img[0].classList.add('clip-rectangle--hide-left');
+            choose_img[1].classList.remove('clip-rectangle--hide-right');
+            // Title project
+            container_title[0].classList.add('hide_title');
+            container_title[0].classList.remove('show_title');
+            container_title[1].classList.add('show_title');
+            container_title[1].classList.remove('hide_title');
+            // Desc project
+            desc_project[0].classList.add('hide_project--desc');
+            desc_project[1].classList.remove('hide_project--desc');
+            desc_project[2].classList.add('hide_project--desc');
+            console.log(count);
+            break;
+        case 2:
+            console.log(count);
+            break;
+        case 3:
+            console.log(count);
+            break;
+        case 4:
+            console.log(count);
+            break;
+    }
+
 });
 
+arrows[1].addEventListener('click', () => {
 
-function animation_desc() {
-  project_desc.classList.remove('display--hide');
-  container__button.classList.remove('display--hide');
-  setTimeout( () => {
-    bgwhite_left.classList.add('projects__project--left-bg--white--hide');
-    bgwhite_right.classList.add('projects__project--right-bg--white--hide');
-    setTimeout( () => {
+    count++;
 
-    },1000);
-  },500);
-}
+    if (count > 4) {
+        count = -1;
+    }
+
+    switch (count) {
+        case 0:
+            choose_img[0].classList.remove('clip-rectangle--hide-left');
+            choose_img[1].classList.add('clip-rectangle--hide-right');
+            container_title[0].classList.remove('hide_title');
+            container_title[1].classList.add('hide_title');
+            container_title[1].classList.remove('show_title');
+            // Desc project
+            desc_project[0].classList.add('hide_project--desc');
+            desc_project[1].classList.remove('hide_project--desc');
+            desc_project[2].classList.add('hide_project--desc');
+            break;
+        case 1:
+            choose_img[0].classList.add('clip-rectangle--hide-left');
+            choose_img[1].classList.remove('clip-rectangle--hide-right');
+            container_title[0].classList.add('hide_title');
+            container_title[0].classList.remove('show_title');
+            container_title[1].classList.add('show_title');
+            container_title[1].classList.remove('hide_title');
+            // Desc project
+            desc_project[0].classList.add('hide_project--desc');
+            desc_project[1].classList.remove('hide_project--desc');
+            desc_project[2].classList.add('hide_project--desc');
+            console.log(count);
+            break;
+        case 2:
+            console.log(count);
+            break;
+        case 3:
+            console.log(count);
+            break;
+        case 4:
+            console.log(count);
+            break;
+    }
+
+});

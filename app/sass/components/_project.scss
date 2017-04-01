@@ -63,7 +63,9 @@
               }
             }
 
-
+            .hide_project--desc {
+              display: none;
+            }
         }
 
         &--right {
@@ -84,17 +86,16 @@
               background: #ffffff;
               left:0;
               transition: 1s ease;
-              transform-origin: 100% 0%;
+              transform-origin: 0% 100%;
 
               &--hide {
                 z-index: 4;
                 position: absolute;
                 width: 100%;
                 height: 100%;
-
                 left:0;
                 transition: 1s ease;
-                transform-origin: 100% 0%;
+                transform-origin: 0% 100%;
                 transform: scale(0,1);
               }
             }
@@ -117,10 +118,6 @@
                 font-style: italic;
                 margin-top: 0;
             }
-        }
-
-        &--heaven {
-            display: none;
         }
 
         &--cherami {
