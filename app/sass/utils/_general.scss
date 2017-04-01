@@ -25,3 +25,9 @@ h3 {
   font-size:21px;
   -webkit-font-smoothing: antialiased;
 }
+
+.display {
+  &--hide {
+    display:none;
+  }
+}
