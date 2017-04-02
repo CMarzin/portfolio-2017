@@ -18,7 +18,13 @@
     </div>
     <div class="projects__project--right">
       <div class="projects__project--right-bg--white"></div>
-      <a href="https://www.jeanpaulgaultier.com/fr-fr/bethedrop/?fallback=true" target="_blank"><img src="img/imgjpg.jpg" alt="JEAN-PAUL GAULTIER parfum"></a>
-      <p>Link to the webgl version : <a href="https://www.jeanpaulgaultier.com/fr-fr/bethedrop" target="_blank">jeanpaulgaultier.com/bethedrops</a></p>
+      {{#projects}}
+      <div class="projects__project--img projects__project--{{project.id}}">
+        <a href="{{project.link}}" target="_blank"><img src="img/{{project.img}}" alt="{{project.alt}}"></a>
+        {{#if project.webgl}}
+          <p>Link to the webgl version : <a href="https://www.jeanpaulgaultier.com/fr-fr/bethedrop" target="_blank">jeanpaulgaultier.com/bethedrops</a></p>
+        {{/if}}
+      </div>
+      {{/projects}}
     </div>
 </div>

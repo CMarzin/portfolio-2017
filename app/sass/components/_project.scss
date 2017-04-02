@@ -68,6 +68,15 @@
             }
         }
 
+        &--img {
+          display: flex;
+          flex-flow: column;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+        }
+
         &--right {
             position: relative;
             display: flex;
@@ -120,16 +129,5 @@
             }
         }
 
-        &--cherami {
-            display: none;
-        }
-
-        &--fidgetcube {
-            display: none;
-        }
-
-        &--starwars {
-            display: none;
-        }
     }
 }

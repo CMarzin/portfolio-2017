@@ -12,7 +12,11 @@
               {"tech": "- JQUERY"},
               {"tech": "- CSS3"},
               {"tech": "- HTML5"}
-            ]
+            ],
+            "link": "https://www.jeanpaulgaultier.com/fr-fr/bethedrop/?fallback=true",
+            "alt": "JEAN-PAUL GAULTIER parfum",
+            "webgl":"blbl",
+            "img": "jpg_img.jpg"
         }
     }, {
         "project": {
@@ -27,7 +31,10 @@
             {"tech": "- GULP"},
             {"tech": "- SASS & ES5"},
             {"tech": "- HTML5"}
-          ]
+          ],
+          "link": "https://heaven.fr/",
+          "alt": "Heaven logo",
+          "img": "heaven_img.jpg"
         }
     }, {
       "project": {
@@ -42,7 +49,10 @@
           {"tech": "- GULP"},
           {"tech": "- SASS & ES5"},
           {"tech": "- HTML5"}
-        ]
+        ],
+        "link": "http://cher-ami.tv",
+        "alt": "Cher Ami logo",
+        "img": "cherami_img.jpg"
       }
     },{
       "project": {
@@ -59,7 +69,10 @@
           {"tech": "- Gulp & Webpack"},
           {"tech": "- ES6 & SASS"},
           {"tech": "- SVG & FLEXBOX"}
-        ]
+        ],
+        "link": "https://frostone.github.io/hetic-p2019-11/",
+        "alt": "Fidget Cube",
+        "img": "fidgetcube_img.jpg"
       }
   }, {
     "project": {
@@ -75,7 +88,10 @@
         {"tech": "- AnalyserNode & Chrome audio API"},
         {"tech": "- SASS & ES6"},
         {"tech": "- HTML5"}
-      ]
+      ],
+      "link": "http://corentinmarzin.fr/lab/star-wars/",
+      "alt": "Star Wars the audio experience",
+      "img": "starwars_img.jpg"
     }
   }],
   "about": {

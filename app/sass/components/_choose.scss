@@ -15,7 +15,7 @@
 
     .clip-rectangle {
         &--hide-left {
-            background-position-x: -400px;
+            background-position-x: -800px;
             background-color: transparent;
         }
 
@@ -43,13 +43,31 @@ svg {
     transition: 1s ease;
 
     &--bethedrop {
+        z-index: 4;
         background-color: #D8D8D8;
-        z-index: 1;
     }
 
     &--heaven {
+        z-index: 3;
         background-size: contain;
         background-position: -10px -90px;
+    }
+
+    &--cherami {
+        z-index: 2;
+        background-size: cover;
+        background-position: center -100px;
+    }
+
+    &--fidgetcube {
+        z-index: 1;
+        background-size: contain;
+        background-position: center -100px;
+    }
+
+    &--starwars {
+        background-size: cover;
+        padding-bottom:15%;
     }
 }
 
