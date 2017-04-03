@@ -7,7 +7,7 @@
             "agency": "JEAN-PAUL GAULTIER",
             "role": "Developper front-end",
             "desc": "This is the second project I made in my internship at Cher Ami (Lyon during 3 months). I made the fallback version of the site when the webgl version was not available. The site is entirely responsive.",
-            "title_tech": "Tech use : ",
+            "title_tech": "Tech used : ",
             "techs": [
               {"tech": "- JQUERY"},
               {"tech": "- CSS3"},
@@ -26,7 +26,7 @@
           "agency": "Agency",
           "role": "Developper front-end",
           "desc": "This is the third project I made in my internship at Cher Ami (Lyon during 3 months). I made the menu animation and participate to the integration of the site.",
-          "title_tech": "Tech use : ",
+          "title_tech": "Tech used : ",
           "techs": [
             {"tech": "- GULP"},
             {"tech": "- SASS & ES5"},
@@ -44,7 +44,7 @@
         "agency": "Agency",
         "role": "Developper front-end",
         "desc": "This is the first project i made in my internship at Cher Ami (Lyon during 3 months). I am in charge to make some change on the pages and made some animation like the loader and the open animation of the video.",
-        "title_tech": "Tech use : ",
+        "title_tech": "Tech used : ",
         "techs": [
           {"tech": "- GULP"},
           {"tech": "- SASS & ES5"},
@@ -62,7 +62,7 @@
         "agency": "School project",
         "role": "Developper front-end & 3D",
         "desc": "The fidget cube was still a kickstarter campaign. On this project I made the cube on Cinema 4D, made the slider and some integration on the website. For the best experience open the website on an android phone with chrome or firefox because the vibration unfortunaly doesn’t work on IOS.",
-        "title_tech": "Tech use : ",
+        "title_tech": "Tech used : ",
         "techs": [
           {"tech": "- Cinema 4D"},
           {"tech": "- Three.js"},
@@ -82,7 +82,7 @@
       "agency": "School project",
       "role": "Developper front-end",
       "desc": "This is the first project i made in my internship at Cher Ami (Lyon during 3 months). I am in charge to make some change on the pages and made some animation like the loader and the open animation of the video.",
-      "title_tech": "Tech use : ",
+      "title_tech": "Tech used : ",
       "techs": [
         {"tech": "- GULP"},
         {"tech": "- AnalyserNode & Chrome audio API"},

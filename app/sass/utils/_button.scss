@@ -23,6 +23,10 @@
     &__box {
         bottom: 5%;
 
+        &--none {
+          display:none;
+        }
+
         &--prev {
             position: absolute;
             padding-left: 5px;
@@ -44,6 +48,11 @@
 
     &__arrow {
         transition: 0.7s ease;
+        opacity:1;
+
+        &--none {
+          display:none;
+        }
 
         &--hide-prev {
           position: absolute;

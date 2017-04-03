@@ -39,7 +39,7 @@ svg {
     padding-bottom: 25%;
     background-repeat: no-repeat;
     background-position: top center;
-    transition: 1s ease;
+    transition: 0.7s ease;
 
     &--bethedrop {
         z-index: 4;
@@ -71,7 +71,7 @@ svg {
 }
 
 .transition {
-    transition: 0.7s ease;
+    transition: 0.5s ease;
 }
 
 .rect1 {
@@ -125,7 +125,7 @@ svg {
 
         &--flex {
             position: relative;
-            transition: 0.7s ease;
+            transition: 0.5s ease;
             width: calc((400px - 50%) + 50%);
             height: 100%;
 
