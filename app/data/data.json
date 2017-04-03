@@ -15,7 +15,7 @@
             ],
             "link": "https://www.jeanpaulgaultier.com/fr-fr/bethedrop/?fallback=true",
             "alt": "JEAN-PAUL GAULTIER parfum",
-            "webgl":"blbl",
+            "webgl":"vide",
             "img": "jpg_img.jpg"
         }
     }, {
@@ -91,7 +91,8 @@
       ],
       "link": "http://corentinmarzin.fr/lab/star-wars/",
       "alt": "Star Wars the audio experience",
-      "img": "starwars_img.jpg"
+      "img": "starwars_img.svg",
+      "img_text": "audioxp_img.svg"
     }
   }],
   "about": {

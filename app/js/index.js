@@ -30,12 +30,15 @@ let container_title = document.querySelectorAll('.container__title--flex');
 let container__arrows = document.querySelector('.container__arrows');
 let container__button = document.querySelector('.container__button');
 let arrows = document.querySelectorAll('.container__arrow');
+let button_prev = document.querySelector('.container__box--prev');
+let button_next = document.querySelector('.container__box--next');
 
 let bgwhite_left = document.querySelector('.projects__project--left-bg--white');
 let bgwhite_right = document.querySelector('.projects__project--right-bg--white');
 
 let choose_img = document.querySelectorAll('.clip-rectangle');
 let desc_project = document.querySelectorAll('.projects__project');
+let desc_img = document.querySelectorAll('.projects__project--img');
 
 let count = 0;
 
@@ -71,30 +74,60 @@ for (const project of see_project) {
         switch (count) {
             case 0:
                 container_title[0].classList.remove('show_title');
+                desc_img[0].classList.remove('hide_project--img');
+                desc_img[1].classList.add('hide_project--img');
+                desc_img[2].classList.add('hide_project--img');
+                desc_img[3].classList.add('hide_project--img');
+                desc_img[4].classList.add('hide_project--img');
+                // Hide description project
                 desc_project[4].classList.add('hide_project--desc');
                 desc_project[0].classList.remove('hide_project--desc');
                 desc_project[2].classList.add('hide_project--desc');
                 break;
             case 1:
                 container_title[1].classList.remove('show_title');
+                desc_img[0].classList.add('hide_project--img');
+                desc_img[1].classList.remove('hide_project--img');
+                desc_img[2].classList.add('hide_project--img');
+                desc_img[3].classList.add('hide_project--img');
+                desc_img[4].classList.add('hide_project--img');
+                // Hide description project
                 desc_project[0].classList.add('hide_project--desc');
                 desc_project[1].classList.remove('hide_project--desc');
                 desc_project[2].classList.add('hide_project--desc');
                 break;
             case 2:
                 container_title[2].classList.remove('show_title');
+                desc_img[0].classList.add('hide_project--img');
+                desc_img[1].classList.add('hide_project--img');
+                desc_img[2].classList.remove('hide_project--img');
+                desc_img[3].classList.add('hide_project--img');
+                desc_img[4].classList.add('hide_project--img');
+                // Hide description project
                 desc_project[1].classList.add('hide_project--desc');
                 desc_project[2].classList.remove('hide_project--desc');
                 desc_project[3].classList.add('hide_project--desc');
                 break;
             case 3:
                 container_title[3].classList.remove('show_title');
+                desc_img[0].classList.add('hide_project--img');
+                desc_img[1].classList.add('hide_project--img');
+                desc_img[2].classList.add('hide_project--img');
+                desc_img[3].classList.remove('hide_project--img');
+                desc_img[4].classList.add('hide_project--img');
+                // Hide description project
                 desc_project[2].classList.add('hide_project--desc');
                 desc_project[3].classList.remove('hide_project--desc');
                 desc_project[4].classList.add('hide_project--desc');
                 break;
             case 4:
                 container_title[4].classList.remove('show_title');
+                desc_img[0].classList.add('hide_project--img');
+                desc_img[1].classList.add('hide_project--img');
+                desc_img[2].classList.add('hide_project--img');
+                desc_img[3].classList.add('hide_project--img');
+                desc_img[4].classList.remove('hide_project--img');
+                // Hide description project
                 desc_project[3].classList.add('hide_project--desc');
                 desc_project[4].classList.remove('hide_project--desc');
                 desc_project[0].classList.add('hide_project--desc');
@@ -141,10 +174,166 @@ for (const project of see_project) {
     });
 }
 
-// choose_img[4].classList.add('clip-rectangle--hide-left');
-// choose_img[2].classList.add('clip-rectangle--hide-right');
-// choose_img[3].classList.add('clip-rectangle--hide-right');
-choose_img[4].classList.add('clip-rectangle--hide-right');
+button_next.addEventListener('click', () => {
+
+    bgwhite_left.classList.remove('projects__project--left-bg--white--hide');
+    bgwhite_right.classList.remove('projects__project--right-bg--white--hide');
+
+    count++;
+
+    if (count > 4) {
+        count = 0;
+    }
+
+    console.log(count);
+
+    setTimeout(() => {
+        bgwhite_left.classList.add('projects__project--left-bg--white--hide');
+        bgwhite_right.classList.add('projects__project--right-bg--white--hide');
+        switch (count) {
+            case 0:
+                // Image project
+                desc_img[0].classList.remove('hide_project--img');
+                desc_img[1].classList.add('hide_project--img');
+                desc_img[2].classList.add('hide_project--img');
+                desc_img[3].classList.add('hide_project--img');
+                desc_img[4].classList.add('hide_project--img');
+                // Desc project
+                desc_project[0].classList.add('hide_project--desc');
+                desc_project[1].classList.remove('hide_project--desc');
+                desc_project[2].classList.add('hide_project--desc');
+                break;
+            case 1:
+                // Image project
+                desc_img[0].classList.add('hide_project--img');
+                desc_img[1].classList.remove('hide_project--img');
+                desc_img[2].classList.add('hide_project--img');
+                desc_img[3].classList.add('hide_project--img');
+                desc_img[4].classList.add('hide_project--img');
+                // Desc project
+                desc_project[0].classList.add('hide_project--desc');
+                desc_project[1].classList.remove('hide_project--desc');
+                desc_project[2].classList.add('hide_project--desc');
+                break;
+            case 2:
+                // Image project
+                desc_img[0].classList.add('hide_project--img');
+                desc_img[1].classList.add('hide_project--img');
+                desc_img[2].classList.remove('hide_project--img');
+                desc_img[3].classList.add('hide_project--img');
+                desc_img[4].classList.add('hide_project--img');
+                // Desc project
+                desc_project[1].classList.add('hide_project--desc');
+                desc_project[2].classList.remove('hide_project--desc');
+                desc_project[3].classList.add('hide_project--desc');
+                break;
+            case 3:
+                // Image project
+                desc_img[0].classList.add('hide_project--img');
+                desc_img[1].classList.add('hide_project--img');
+                desc_img[2].classList.add('hide_project--img');
+                desc_img[3].classList.remove('hide_project--img');
+                desc_img[4].classList.add('hide_project--img');
+                // Desc project
+                desc_project[2].classList.add('hide_project--desc');
+                desc_project[3].classList.remove('hide_project--desc');
+                desc_project[4].classList.add('hide_project--desc');
+                break;
+            case 4:
+                // Image project
+                desc_img[0].classList.add('hide_project--img');
+                desc_img[1].classList.add('hide_project--img');
+                desc_img[2].classList.add('hide_project--img');
+                desc_img[3].classList.add('hide_project--img');
+                desc_img[4].classList.remove('hide_project--img');
+                // Desc project
+                desc_project[3].classList.add('hide_project--desc');
+                desc_project[4].classList.remove('hide_project--desc');
+                desc_project[0].classList.add('hide_project--desc');
+                break;
+        }
+    }, 1200);
+
+});
+
+button_prev.addEventListener('click', () => {
+  bgwhite_left.classList.remove('projects__project--left-bg--white--hide');
+  bgwhite_right.classList.remove('projects__project--right-bg--white--hide');
+
+  count--;
+
+  if (count < 0) {
+      count = 4;
+  }
+
+  console.log(count);
+
+  setTimeout(() => {
+      bgwhite_left.classList.add('projects__project--left-bg--white--hide');
+      bgwhite_right.classList.add('projects__project--right-bg--white--hide');
+      switch (count) {
+          case 0:
+              // Image project
+              desc_img[0].classList.remove('hide_project--img');
+              desc_img[1].classList.add('hide_project--img');
+              desc_img[2].classList.add('hide_project--img');
+              desc_img[3].classList.add('hide_project--img');
+              desc_img[4].classList.add('hide_project--img');
+              // Desc project
+              desc_project[0].classList.remove('hide_project--desc');
+              desc_project[1].classList.add('hide_project--desc');
+              break;
+          case 1:
+              // Image project
+              desc_img[0].classList.add('hide_project--img');
+              desc_img[1].classList.remove('hide_project--img');
+              desc_img[2].classList.add('hide_project--img');
+              desc_img[3].classList.add('hide_project--img');
+              desc_img[4].classList.add('hide_project--img');
+              // Desc project
+              desc_project[0].classList.add('hide_project--desc');
+              desc_project[1].classList.remove('hide_project--desc');
+              desc_project[2].classList.add('hide_project--desc');
+              break;
+          case 2:
+              // Image project
+              desc_img[0].classList.add('hide_project--img');
+              desc_img[1].classList.add('hide_project--img');
+              desc_img[2].classList.remove('hide_project--img');
+              desc_img[3].classList.add('hide_project--img');
+              desc_img[4].classList.add('hide_project--img');
+              // Desc project
+              desc_project[1].classList.add('hide_project--desc');
+              desc_project[2].classList.remove('hide_project--desc');
+              desc_project[3].classList.add('hide_project--desc');
+              break;
+          case 3:
+              // Image project
+              desc_img[0].classList.add('hide_project--img');
+              desc_img[1].classList.add('hide_project--img');
+              desc_img[2].classList.add('hide_project--img');
+              desc_img[3].classList.remove('hide_project--img');
+              desc_img[4].classList.add('hide_project--img');
+              // Desc project
+              desc_project[2].classList.add('hide_project--desc');
+              desc_project[3].classList.remove('hide_project--desc');
+              desc_project[4].classList.add('hide_project--desc');
+              break;
+          case 4:
+              // Image project
+              desc_img[0].classList.add('hide_project--img');
+              desc_img[1].classList.add('hide_project--img');
+              desc_img[2].classList.add('hide_project--img');
+              desc_img[3].classList.add('hide_project--img');
+              desc_img[4].classList.remove('hide_project--img');
+              // Desc project
+              desc_project[3].classList.add('hide_project--desc');
+              desc_project[4].classList.remove('hide_project--desc');
+              desc_project[0].classList.add('hide_project--desc');
+              break;
+      }
+  }, 1200);
+});
 
 // Arrow Left
 arrows[0].addEventListener('click', () => {
@@ -168,7 +357,6 @@ arrows[0].addEventListener('click', () => {
             desc_project[4].classList.add('hide_project--desc');
             desc_project[0].classList.remove('hide_project--desc');
             desc_project[1].classList.add('hide_project--desc');
-            console.log(count, 'left');
             break;
         case 1:
             // Image project
@@ -184,7 +372,6 @@ arrows[0].addEventListener('click', () => {
             desc_project[0].classList.add('hide_project--desc');
             desc_project[1].classList.remove('hide_project--desc');
             desc_project[2].classList.add('hide_project--desc');
-            console.log(count, 'left');
             break;
         case 2:
             // Image project
@@ -213,7 +400,6 @@ arrows[0].addEventListener('click', () => {
             desc_project[2].classList.add('hide_project--desc');
             desc_project[3].classList.remove('hide_project--desc');
             desc_project[4].classList.add('hide_project--desc');
-            console.log(container_title[4]);
             break;
         case 4:
             // Image project
@@ -254,7 +440,6 @@ arrows[1].addEventListener('click', () => {
             desc_project[0].classList.add('hide_project--desc');
             desc_project[1].classList.remove('hide_project--desc');
             desc_project[2].classList.add('hide_project--desc');
-            console.log(count, 'right');
             break;
         case 1:
             // Image project
@@ -271,7 +456,6 @@ arrows[1].addEventListener('click', () => {
             desc_project[0].classList.add('hide_project--desc');
             desc_project[1].classList.remove('hide_project--desc');
             desc_project[2].classList.add('hide_project--desc');
-            console.log(count, 'right');
             break;
         case 2:
             // Image project
@@ -287,7 +471,6 @@ arrows[1].addEventListener('click', () => {
             desc_project[1].classList.add('hide_project--desc');
             desc_project[2].classList.remove('hide_project--desc');
             desc_project[3].classList.add('hide_project--desc');
-            console.log(count, 'right');
             break;
         case 3:
             // Image project
@@ -302,7 +485,6 @@ arrows[1].addEventListener('click', () => {
             desc_project[2].classList.add('hide_project--desc');
             desc_project[3].classList.remove('hide_project--desc');
             desc_project[4].classList.add('hide_project--desc');
-            console.log(count, 'right');
             break;
         case 4:
             // Image project
@@ -317,7 +499,6 @@ arrows[1].addEventListener('click', () => {
             desc_project[3].classList.add('hide_project--desc');
             desc_project[4].classList.remove('hide_project--desc');
             desc_project[0].classList.add('hide_project--desc');
-            console.log(count, 'right');
             break;
     }
 

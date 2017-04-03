@@ -1,16 +1,15 @@
 <div class="container">
     <div class="rectangle">
       {{#projects}}
-      <div class="clip-rectangle clip-rectangle--{{project.id}}" style="background-image: url('../img/{{project.id}}.png');"></div>
+      <div class="clip-rectangle clip-rectangle--{{project.id}}" style="background-image: url('../img/{{project.id}}.png'); clip-path: url('#svgPath');"></div>
       {{/projects}}
-      <!-- <div class="clip-rectangle clip-rectangle--heaven clip-rectangle--hide-right" style="background-image: url('../img/h-copie.png');"></div> -->
     </div>
-    <svg>
+    <svg xmlns="https://www.w3.org/2000/svg">
     <defs>
       <clipPath id="svgPath">
-        <rect class="rect1" stroke="#000000" stroke-miterlimit="10"/>
-        <rect class="rect2" stroke="#000000" stroke-miterlimit="10"/>
-        <rect class="rect3" stroke="#000000" stroke-miterlimit="10"/>
+        <rect class="rect1" style="x: 20px; y: 10px;" stroke="#000000" stroke-miterlimit="10"/>
+        <rect class="rect2" style="width: 150px; height: 120px; x: 50px; y: 230px;" stroke="#000000" stroke-miterlimit="10"/>
+        <rect class="rect3" style="width: 250px; height: 250px; x: 230px; y: 40px;"stroke="#000000" stroke-miterlimit="10"/>
       </clipPath>
      </defs>
    </svg>
