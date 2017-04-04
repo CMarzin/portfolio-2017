@@ -30,4 +30,8 @@ h3 {
   &--hide {
     display:none;
   }
+
+  &--fade {
+    opacity: 0;
+  }
 }

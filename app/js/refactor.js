@@ -52,7 +52,6 @@ let menu_about = document.querySelector('.menu__about');
 let menu_home = document.querySelector('.menu__logo');
 
 let count = 0;
-let situation = 0;
 
 /*
  * Anim mask svg
@@ -80,15 +79,11 @@ document.querySelector('.menu__logo').addEventListener('click', () => {
 });
 
 
-console.log(see_project);
 
 for (const project of see_project) {
 
     // Launch anim
     project.addEventListener('click', () => {
-
-        situation = 1;
-
         switch (count) {
             case 0:
                 container_title[0].classList.remove('show_title');
@@ -209,6 +204,8 @@ button_next.addEventListener('click', () => {
         count = 0;
     }
 
+    console.log(count);
+
     setTimeout(() => {
         bgblue_left.classList.add('projects__project--left-bg--blue--hide');
         bgwhite_right.classList.add('projects__project--right-bg--white--hide');
@@ -277,8 +274,6 @@ button_next.addEventListener('click', () => {
                 break;
         }
     }, 500);
-
-    console.log(situation, "button +");
 
 });
 
@@ -358,330 +353,390 @@ button_prev.addEventListener('click', () => {
                 break;
         }
     }, 500);
-    console.log(situation, "button -");
 });
 
-// Arrow Left
-arrows[0].addEventListener('click', () => {
+[].forEach.call(arrows, (elem, index) => {
+    // bool: true = next; false= previous
+    const next = (index === 1) ? true : false;
+    // bool: true = prev; false= next
+    const previous = (index === 0) ? true : false;
 
-    count--;
 
-    if (count < 0) {
-        count = 4;
+    const project_number = count;
+
+    // handle nav
+    if (next) {
+        count++;
+    } else {
+        count--;
     }
 
+    // debut exemple
+    elem.addEventListener('click', () => {
 
-    switch (count) {
-        case 0:
-            //show arrow left
-            arrow_left.classList.add('container__arrow--none');
-            // Image project
-            choose_img[0].classList.remove('clip-rectangle--hide-left');
-            choose_img[1].classList.add('clip-rectangle--hide-right');
-            // Title project
-            container_title[0].classList.remove('hide_title');
-            container_title[1].classList.add('hide_title');
-            container_title[1].classList.remove('show_title');
-            // Desc project
-            desc_project[4].classList.add('hide_project--desc');
-            desc_project[0].classList.remove('hide_project--desc');
-            desc_project[1].classList.add('hide_project--desc');
-            break;
-        case 1:
-            // Image project
-            choose_img[0].classList.add('clip-rectangle--hide-left');
-            choose_img[1].classList.remove('clip-rectangle--hide-left');
-            choose_img[2].classList.add('clip-rectangle--hide-right');
-            // Title project
-            container_title[1].classList.add('show_title');
-            container_title[1].classList.remove('hide_title');
-            container_title[2].classList.add('hide_title');
-            container_title[2].classList.remove('show_title');
-            // Desc project
-            desc_project[0].classList.add('hide_project--desc');
-            desc_project[1].classList.remove('hide_project--desc');
-            desc_project[2].classList.add('hide_project--desc');
-            break;
-        case 2:
-            // Image project
-            choose_img[0].classList.add('clip-rectangle--hide-left');
-            choose_img[2].classList.remove('clip-rectangle--hide-left');
-            // Title project
-            container_title[2].classList.add('show_title');
-            container_title[2].classList.remove('hide_title');
-            container_title[3].classList.add('hide_title');
-            container_title[3].classList.remove('show_title');
-            // Desc project
-            desc_project[1].classList.add('hide_project--desc');
-            desc_project[2].classList.remove('hide_project--desc');
-            desc_project[3].classList.add('hide_project--desc');
-            break;
-        case 3:
-            //hide arrow right
-            arrow_right.classList.remove('container__arrow--none');
-            // Image project
-            choose_img[1].classList.add('clip-rectangle--hide-left');
-            choose_img[3].classList.remove('clip-rectangle--hide-left');
-            // Title project
-            container_title[3].classList.add('show_title');
-            container_title[3].classList.remove('hide_title');
-            container_title[4].classList.add('hide_title');
-            container_title[4].classList.remove('show_title');
-            // Desc project
-            desc_project[2].classList.add('hide_project--desc');
-            desc_project[3].classList.remove('hide_project--desc');
-            desc_project[4].classList.add('hide_project--desc');
-            break;
-        case 4:
-            // Image project
-            choose_img[2].classList.add('clip-rectangle--hide-left');
-            choose_img[3].classList.remove('clip-rectangle--hide-left');
-            choose_img[4].classList.add('clip-rectangle--hide-right');
-            // Title project
-            container_title[4].classList.remove('show_title');
-            container_title[4].classList.add('hide_title');
-            // Desc project
-            desc_project[2].classList.add('hide_project--desc');
-            desc_project[3].classList.remove('hide_project--desc');
-            desc_project[4].classList.add('hide_project--desc');
-            break;
-    }
+      if(count === 0)
+        arrow_left.classList.add('container__arrow--none');
+      else if (count === 4)
+        arrow_right.classList.add('container__arrow--none');
 
-    console.log(situation, "arrow -");
+        if(next) {
+          choose_img[count].classList.add('clip-rectangle--hide-left');
+          container_title[count].classList.add('hide_title');
+          console.log(count);
+          container_title[count+1].classList.remove('hide_title');
+          container_title[count+1].classList.add('show_title');
+          console.log(count);
+        }
+        if(previous) {
+          choose_img[index].classList.remove('clip-rectangle--hide-left');
+          choose_img[index-1].classList.add('clip-rectangle--hide-right');
+          console.log(count);
+        }
 
+
+
+
+    });
+
+
+//
+//     elem.addEventListener('click', () => {
+//
+//         switch (count) {
+//             case 0:
+//
+//                 //show arrow left
+//                 arrow_left.classList.add('container__arrow--none');
+//                 // Image project
+//                 choose_img[0].classList.remove('clip-rectangle--hide-left');
+//                 choose_img[1].classList.add('clip-rectangle--hide-right');
+//                 // Title project
+//                 container_title[0].classList.remove('hide_title');
+//                 container_title[1].classList.add('hide_title');
+//                 container_title[1].classList.remove('show_title');
+//                 // Desc project
+//                 desc_project[4].classList.add('hide_project--desc');
+//                 desc_project[0].classList.remove('hide_project--desc');
+//                 desc_project[1].classList.add('hide_project--desc');
+//                 break;
+//             case 1:
+//                 // Image project
+//                 choose_img[0].classList.add('clip-rectangle--hide-left');
+//                 choose_img[1].classList.remove('clip-rectangle--hide-left');
+//                 choose_img[2].classList.add('clip-rectangle--hide-right');
+//                 // Title project
+//                 container_title[1].classList.add('show_title');
+//                 container_title[1].classList.remove('hide_title');
+//                 container_title[2].classList.add('hide_title');
+//                 container_title[2].classList.remove('show_title');
+//                 // Desc project
+//                 desc_project[0].classList.add('hide_project--desc');
+//                 desc_project[1].classList.remove('hide_project--desc');
+//                 desc_project[2].classList.add('hide_project--desc');
+//                 break;
+//             case 2:
+//                 // Image project
+//                 choose_img[0].classList.add('clip-rectangle--hide-left');
+//                 choose_img[2].classList.remove('clip-rectangle--hide-left');
+//                 // Title project
+//                 container_title[2].classList.add('show_title');
+//                 container_title[2].classList.remove('hide_title');
+//                 container_title[3].classList.add('hide_title');
+//                 container_title[3].classList.remove('show_title');
+//                 // Desc project
+//                 desc_project[1].classList.add('hide_project--desc');
+//                 desc_project[2].classList.remove('hide_project--desc');
+//                 desc_project[3].classList.add('hide_project--desc');
+//                 break;
+//             case 3:
+//                 //hide arrow right
+//                 arrow_right.classList.remove('container__arrow--none');
+//                 // Image project
+//                 choose_img[1].classList.add('clip-rectangle--hide-left');
+//                 choose_img[3].classList.remove('clip-rectangle--hide-left');
+//                 // Title project
+//                 container_title[3].classList.add('show_title');
+//                 container_title[3].classList.remove('hide_title');
+//                 container_title[4].classList.add('hide_title');
+//                 container_title[4].classList.remove('show_title');
+//                 // Desc project
+//                 desc_project[2].classList.add('hide_project--desc');
+//                 desc_project[3].classList.remove('hide_project--desc');
+//                 desc_project[4].classList.add('hide_project--desc');
+//                 break;
+//             case 4:
+//                 // Image project
+//                 choose_img[2].classList.add('clip-rectangle--hide-left');
+//                 choose_img[3].classList.remove('clip-rectangle--hide-left');
+//                 choose_img[4].classList.add('clip-rectangle--hide-right');
+//                 // Title project
+//                 container_title[4].classList.remove('show_title');
+//                 container_title[4].classList.add('hide_title');
+//                 // Desc project
+//                 desc_project[2].classList.add('hide_project--desc');
+//                 desc_project[3].classList.remove('hide_project--desc');
+//                 desc_project[4].classList.add('hide_project--desc');
+//                 break;
+//         }
+//
+    // });
 });
 
-// Arrow Right
-arrows[1].addEventListener('click', () => {
 
-    count++;
 
-    if (count > 4) {
-        count = 0;
-    }
 
-    switch (count) {
-        case 0:
-            // Image project
-            choose_img[0].classList.remove('clip-rectangle--hide-left');
-            choose_img[1].classList.add('clip-rectangle--hide-right');
-            // Title project
-            container_title[0].classList.remove('hide_title');
-            container_title[1].classList.add('hide_title');
-            container_title[1].classList.remove('show_title');
-            // Desc project
-            desc_project[0].classList.add('hide_project--desc');
-            desc_project[1].classList.remove('hide_project--desc');
-            desc_project[2].classList.add('hide_project--desc');
-            break;
-        case 1:
-            //show arrow left
-            arrow_left.classList.remove('container__arrow--none');
-            // Image project
-            choose_img[0].classList.add('clip-rectangle--hide-left');
-            choose_img[1].classList.remove('clip-rectangle--hide-right');
-            // Title project
-            container_title[0].classList.add('hide_title');
-            container_title[0].classList.remove('show_title');
-            container_title[1].classList.add('show_title');
-            container_title[1].classList.remove('hide_title');
-            container_title[2].classList.add('hide_title');
-            container_title[2].classList.remove('show_title');
-            // Desc project
-            desc_project[0].classList.add('hide_project--desc');
-            desc_project[1].classList.remove('hide_project--desc');
-            desc_project[2].classList.add('hide_project--desc');
-            break;
-        case 2:
-            // Image project
-            choose_img[1].classList.add('clip-rectangle--hide-left');
-            choose_img[2].classList.remove('clip-rectangle--hide-right');
-            choose_img[3].classList.add('clip-rectangle--hide-right');
-            // Title project
-            container_title[1].classList.add('hide_title');
-            container_title[1].classList.remove('show_title');
-            container_title[2].classList.add('show_title');
-            container_title[2].classList.remove('hide_title');
-            // Desc project
-            desc_project[1].classList.add('hide_project--desc');
-            desc_project[2].classList.remove('hide_project--desc');
-            desc_project[3].classList.add('hide_project--desc');
-            break;
-        case 3:
-            // Image project
-            choose_img[2].classList.add('clip-rectangle--hide-left');
-            choose_img[3].classList.remove('clip-rectangle--hide-right');
-            // Title project
-            container_title[2].classList.add('hide_title');
-            container_title[2].classList.remove('show_title');
-            container_title[3].classList.add('show_title');
-            container_title[3].classList.remove('hide_title');
-            // Desc project
-            desc_project[2].classList.add('hide_project--desc');
-            desc_project[3].classList.remove('hide_project--desc');
-            desc_project[4].classList.add('hide_project--desc');
-            break;
-        case 4:
-            //hide arrow right
-            arrow_right.classList.add('container__arrow--none');
-            // Image project
-            choose_img[3].classList.add('clip-rectangle--hide-left');
-            choose_img[4].classList.remove('clip-rectangle--hide-right');
-            // Title project
-            container_title[3].classList.add('hide_title');
-            container_title[3].classList.remove('show_title');
-            container_title[4].classList.add('show_title');
-            container_title[4].classList.remove('hide_title');
-            // Desc project
-            desc_project[3].classList.add('hide_project--desc');
-            desc_project[4].classList.remove('hide_project--desc');
-            desc_project[0].classList.add('hide_project--desc');
-            break;
-    }
 
-    console.log(situation, "arrow +");
-
-});
+// // Arrow Left
+// arrows[0].addEventListener('click', () => {
+//
+//     count--;
+//
+//     if (count < 0) {
+//         count = 4;
+//     }
+//
+//
+//
+//     switch (count) {
+//         case 0:
+//             //show arrow left
+//             arrow_left.classList.add('container__arrow--none');
+//             // Image project
+//             choose_img[0].classList.remove('clip-rectangle--hide-left');
+//             choose_img[1].classList.add('clip-rectangle--hide-right');
+//             // Title project
+//             container_title[0].classList.remove('hide_title');
+//             container_title[1].classList.add('hide_title');
+//             container_title[1].classList.remove('show_title');
+//             // Desc project
+//             desc_project[4].classList.add('hide_project--desc');
+//             desc_project[0].classList.remove('hide_project--desc');
+//             desc_project[1].classList.add('hide_project--desc');
+//             break;
+//         case 1:
+//             // Image project
+//             choose_img[0].classList.add('clip-rectangle--hide-left');
+//             choose_img[1].classList.remove('clip-rectangle--hide-left');
+//             choose_img[2].classList.add('clip-rectangle--hide-right');
+//             // Title project
+//             container_title[1].classList.add('show_title');
+//             container_title[1].classList.remove('hide_title');
+//             container_title[2].classList.add('hide_title');
+//             container_title[2].classList.remove('show_title');
+//             // Desc project
+//             desc_project[0].classList.add('hide_project--desc');
+//             desc_project[1].classList.remove('hide_project--desc');
+//             desc_project[2].classList.add('hide_project--desc');
+//             break;
+//         case 2:
+//             // Image project
+//             choose_img[0].classList.add('clip-rectangle--hide-left');
+//             choose_img[2].classList.remove('clip-rectangle--hide-left');
+//             // Title project
+//             container_title[2].classList.add('show_title');
+//             container_title[2].classList.remove('hide_title');
+//             container_title[3].classList.add('hide_title');
+//             container_title[3].classList.remove('show_title');
+//             // Desc project
+//             desc_project[1].classList.add('hide_project--desc');
+//             desc_project[2].classList.remove('hide_project--desc');
+//             desc_project[3].classList.add('hide_project--desc');
+//             break;
+//         case 3:
+//             //hide arrow right
+//             arrow_right.classList.remove('container__arrow--none');
+//             // Image project
+//             choose_img[1].classList.add('clip-rectangle--hide-left');
+//             choose_img[3].classList.remove('clip-rectangle--hide-left');
+//             // Title project
+//             container_title[3].classList.add('show_title');
+//             container_title[3].classList.remove('hide_title');
+//             container_title[4].classList.add('hide_title');
+//             container_title[4].classList.remove('show_title');
+//             // Desc project
+//             desc_project[2].classList.add('hide_project--desc');
+//             desc_project[3].classList.remove('hide_project--desc');
+//             desc_project[4].classList.add('hide_project--desc');
+//             break;
+//         case 4:
+//             // Image project
+//             choose_img[2].classList.add('clip-rectangle--hide-left');
+//             choose_img[3].classList.remove('clip-rectangle--hide-left');
+//             choose_img[4].classList.add('clip-rectangle--hide-right');
+//             // Title project
+//             container_title[4].classList.remove('show_title');
+//             container_title[4].classList.add('hide_title');
+//             // Desc project
+//             desc_project[2].classList.add('hide_project--desc');
+//             desc_project[3].classList.remove('hide_project--desc');
+//             desc_project[4].classList.add('hide_project--desc');
+//             break;
+//     }
+//
+// });
+//
+// // Arrow Right
+// arrows[1].addEventListener('click', () => {
+//
+//     count++;
+//
+//     if (count > 4) {
+//         count = 0;
+//     }
+//
+//     switch (count) {
+//         case 0:
+//             // Image project
+//             choose_img[0].classList.remove('clip-rectangle--hide-left');
+//             choose_img[1].classList.add('clip-rectangle--hide-right');
+//             // Title project
+//             container_title[0].classList.remove('hide_title');
+//             container_title[1].classList.add('hide_title');
+//             container_title[1].classList.remove('show_title');
+//             // Desc project
+//             desc_project[0].classList.add('hide_project--desc');
+//             desc_project[1].classList.remove('hide_project--desc');
+//             desc_project[2].classList.add('hide_project--desc');
+//             break;
+//         case 1:
+//             //show arrow left
+//             arrow_left.classList.remove('container__arrow--none');
+//             // Image project
+//             choose_img[0].classList.add('clip-rectangle--hide-left');
+//             choose_img[1].classList.remove('clip-rectangle--hide-right');
+//             // Title project
+//             container_title[0].classList.add('hide_title');
+//             container_title[0].classList.remove('show_title');
+//             container_title[1].classList.add('show_title');
+//             container_title[1].classList.remove('hide_title');
+//             container_title[2].classList.add('hide_title');
+//             container_title[2].classList.remove('show_title');
+//             // Desc project
+//             desc_project[0].classList.add('hide_project--desc');
+//             desc_project[1].classList.remove('hide_project--desc');
+//             desc_project[2].classList.add('hide_project--desc');
+//             break;
+//         case 2:
+//             // Image project
+//             choose_img[1].classList.add('clip-rectangle--hide-left');
+//             choose_img[2].classList.remove('clip-rectangle--hide-right');
+//             choose_img[3].classList.add('clip-rectangle--hide-right');
+//             // Title project
+//             container_title[1].classList.add('hide_title');
+//             container_title[1].classList.remove('show_title');
+//             container_title[2].classList.add('show_title');
+//             container_title[2].classList.remove('hide_title');
+//             // Desc project
+//             desc_project[1].classList.add('hide_project--desc');
+//             desc_project[2].classList.remove('hide_project--desc');
+//             desc_project[3].classList.add('hide_project--desc');
+//             break;
+//         case 3:
+//             // Image project
+//             choose_img[2].classList.add('clip-rectangle--hide-left');
+//             choose_img[3].classList.remove('clip-rectangle--hide-right');
+//             // Title project
+//             container_title[2].classList.add('hide_title');
+//             container_title[2].classList.remove('show_title');
+//             container_title[3].classList.add('show_title');
+//             container_title[3].classList.remove('hide_title');
+//             // Desc project
+//             desc_project[2].classList.add('hide_project--desc');
+//             desc_project[3].classList.remove('hide_project--desc');
+//             desc_project[4].classList.add('hide_project--desc');
+//             break;
+//         case 4:
+//             //hide arrow right
+//             arrow_right.classList.add('container__arrow--none');
+//             // Image project
+//             choose_img[3].classList.add('clip-rectangle--hide-left');
+//             choose_img[4].classList.remove('clip-rectangle--hide-right');
+//             // Title project
+//             container_title[3].classList.add('hide_title');
+//             container_title[3].classList.remove('show_title');
+//             container_title[4].classList.add('show_title');
+//             container_title[4].classList.remove('hide_title');
+//             // Desc project
+//             desc_project[3].classList.add('hide_project--desc');
+//             desc_project[4].classList.remove('hide_project--desc');
+//             desc_project[0].classList.add('hide_project--desc');
+//             break;
+//     }
+//
+// });
 
 menu_home.addEventListener('click', () => {
-    console.log(situation);
 
+    console.log(count);
 
-    if (situation === 1) {
-        bgwhite_left.classList.remove('projects__project--left-bg--white--hide');
-        bgwhite_right.classList.remove('projects__project--right-bg--white--hide');
+    bgwhite_left.classList.remove('projects__project--left-bg--white--hide');
+    bgwhite_right.classList.remove('projects__project--right-bg--white--hide');
 
+    setTimeout(() => {
+        container_svg.classList.remove('container--hide');
+        project_choose.classList.remove('display--hide');
+        container__arrows.classList.remove('display--hide');
+        project_desc.classList.add('display--hide');
+        container__button.classList.add('display--hide');
+
+        arrows[0].classList.remove('container__arrow--hide-prev');
+        arrows[0].classList.add('container__arrow--prev');
+        arrows[1].classList.remove('container__arrow--hide-next');
+        arrows[1].classList.add('container__arrow--next');
         setTimeout(() => {
-            container_svg.classList.remove('container--hide');
-            project_choose.classList.remove('display--hide');
-            container__arrows.classList.remove('display--hide');
-            project_desc.classList.add('display--hide');
-            container__button.classList.add('display--hide');
-
-            arrows[0].classList.remove('container__arrow--hide-prev');
-            arrows[0].classList.add('container__arrow--prev');
-            arrows[1].classList.remove('container__arrow--hide-next');
-            arrows[1].classList.add('container__arrow--next');
-            setTimeout(() => {
-                rect1.setAttribute("style", "transform: translateX(0px) translateY(0px);-webkit-transform: translateY(0px) translateX(0px);-moz-transform: translateY(0px) translateX(0px)");
-                rect2.setAttribute("style", "transform: translateX(0px) translateY(0px);-webkit-transform: translateY(0px) translateX(0px);-moz-transform: translateY(0px) translateX(0px)");
-                rect3.setAttribute("style", "transform: translateX(0px) translateY(0px);-webkit-transform: translateY(0px) translateX(0px);-moz-transform: translateY(0px) translateX(0px)");
-                container_title[count].classList.add('show_title');
-                container_title[count].classList.remove('hide_title');
-                setTimeout(() => {
-                    rect1.classList.remove('transition');
-                    rect2.classList.remove('transition');
-                    rect3.classList.remove('transition');
-                }, 300);
-            }, 200);
-        }, 400);
-        situation = 0;
-        console.log("desc to choose");
-    } else if (situation === 2) {
-        about_bgwhite_left.classList.remove('about__left-bg--white--hide');
-        about_bgwhite_right.classList.remove('about__right-bg--white--hide');
-        about_bgblue_left.classList.remove('about__left-bg--blue--hide');
-        setTimeout(() => {
-            // display page about
-            page_about.classList.add('display--hide');
-            project_choose.classList.remove('display--hide');
-            container__arrows.classList.remove('display--hide');
-            container_svg.classList.remove('container--hide');
-            arrows[0].classList.remove('container__arrow--hide-prev');
-            arrows[0].classList.add('container__arrow--prev');
-            arrows[1].classList.remove('container__arrow--hide-next');
-            arrows[1].classList.add('container__arrow--next');
             rect1.setAttribute("style", "transform: translateX(0px) translateY(0px);-webkit-transform: translateY(0px) translateX(0px);-moz-transform: translateY(0px) translateX(0px)");
             rect2.setAttribute("style", "transform: translateX(0px) translateY(0px);-webkit-transform: translateY(0px) translateX(0px);-moz-transform: translateY(0px) translateX(0px)");
-            rect3.setAttribute("style", "transform: translateX(300px) translateY(0px);-webkit-transform: translateY(0px) translateX(0px);-moz-transform: translateY(0px) translateX(0px)");
-            // hide container title
-            for (const title of container_title) {
-                title.classList.remove('container__title--flex-hide');
-            }
-        }, 500);
-        situation = 0;
-        console.log("about to choose");
-    } else if (situation === 3) {
-
-      about_bgwhite_left.classList.remove('about__left-bg--white--hide');
-      about_bgwhite_right.classList.remove('about__right-bg--white--hide');
-      about_bgblue_left.classList.remove('about__left-bg--blue--hide');
-
-      setTimeout(() => {
-
-          // hide page about
-          page_about.classList.remove('display--hide');
-          container__button.classList.remove('display--hide');
-          project_desc.classList.remove('display--hide');
-
-          setTimeout( () => {
-            bgwhite_left.classList.add('projects__project--left-bg--white--hide');
-            bgwhite_right.classList.add('projects__project--right-bg--white--hide');
-            bgblue_left.classList.add('projects__project--left-bg--blue--hide');
-          },200);
-      }, 500);
-
-      situation = 1;
-      console.log("about to desc");
-    }
-
-
+            rect3.setAttribute("style", "transform: translateX(0px) translateY(0px);-webkit-transform: translateY(0px) translateX(0px);-moz-transform: translateY(0px) translateX(0px)");
+            container_title[count].classList.add('show_title');
+            container_title[count].classList.remove('hide_title');
+            setTimeout(() => {
+                rect1.classList.remove('transition');
+                rect2.classList.remove('transition');
+                rect3.classList.remove('transition');
+            }, 300);
+        }, 200)
+    }, 400);
 });
 
 menu_about.addEventListener('click', () => {
-    console.log(situation);
 
-    // if click on about when on project choose
-    if (situation === 0) {
-        // disable event on scroll
-        document.body.onmousemove = null
+    // disable event on scroll
+    document.body.onmousemove = null
 
-        rect1.classList.add('transition');
-        rect2.classList.add('transition');
-        rect3.classList.add('transition');
+    rect1.classList.add('transition');
+    rect2.classList.add('transition');
+    rect3.classList.add('transition');
 
-        rect1.setAttribute("style", "transform: translateX(0px) translateY(-210px);-webkit-transform: translateY(-210px) translateX(0px);-moz-transform: translateY(-210px) translateX(0px)");
+    rect1.setAttribute("style", "transform: translateX(0px) translateY(-210px);-webkit-transform: translateY(-210px) translateX(0px);-moz-transform: translateY(-210px) translateX(0px)");
+    setTimeout(() => {
         rect2.setAttribute("style", "transform: translateX(0px) translateY(-200px);-webkit-transform: translateY(0px) translateX(-200px);-moz-transform: translateY(0px) translateX(-200px)");
-        rect3.setAttribute("style", "transform: translateX(300px) translateY(0px);-webkit-transform: translateY(0px) translateX(300px);-moz-transform: translateY(0px) translateX(300px)");
-        arrows[0].classList.add('container__arrow--hide-prev');
-        arrows[0].classList.remove('container__arrow--prev');
-        arrows[1].classList.add('container__arrow--hide-next');
-        arrows[1].classList.remove('container__arrow--next');
-        // hide container title
-        for (const title of container_title) {
-            title.classList.add('container__title--flex-hide');
-        }
         setTimeout(() => {
-            container_svg.classList.add('container--hide');
-            project_choose.classList.add('display--hide');
-            container__arrows.classList.add('display--hide');
-            // display page about
-            page_about.classList.remove('display--hide');
+            rect3.setAttribute("style", "transform: translateX(300px) translateY(0px);-webkit-transform: translateY(0px) translateX(300px);-moz-transform: translateY(0px) translateX(300px)");
+            arrows[0].classList.add('container__arrow--hide-prev');
+            arrows[0].classList.remove('container__arrow--prev');
+            arrows[1].classList.add('container__arrow--hide-next');
+            arrows[1].classList.remove('container__arrow--next');
             setTimeout(() => {
-                about_bgwhite_left.classList.add('about__left-bg--white--hide');
-                about_bgwhite_right.classList.add('about__right-bg--white--hide');
-                about_bgblue_left.classList.add('about__left-bg--blue--hide');
-                situation = 2;
-            }, 300);
-        }, 500);
-        console.log("choose to about");
-    } else if (situation === 1) {
-        bgwhite_left.classList.remove('projects__project--left-bg--white--hide');
-        bgwhite_right.classList.remove('projects__project--right-bg--white--hide');
-        setTimeout(() => {
-            container__arrows.classList.add('display--hide');
-            container__button.classList.add('display--hide');
-            project_desc.classList.add('display--hide');
-            // display page about
-            page_about.classList.remove('display--hide');
-            setTimeout(() => {
-                about_bgwhite_left.classList.add('about__left-bg--white--hide');
-                about_bgwhite_right.classList.add('about__right-bg--white--hide');
-                about_bgblue_left.classList.add('about__left-bg--blue--hide');
-                situation = 3;
-            }, 200);
-        }, 500);
-        console.log("desc to about");
-        situation = 1;
-    }
+
+                container_svg.classList.add('container--hide');
+                project_choose.classList.add('display--hide');
+                container__arrows.classList.add('display--hide');
+                page_about.classList.remove('display--hide');
+
+
+
+
+                setTimeout(() => {
+
+                    // about_bgwhite_left.classList.add('about__left-bg--white--hide');
+
+
+
+                    // about_bgwhite_left.classList.remove('about__left-bg--white--hide');
+                    // about_bgwhite_right.classList.remove('about__right-bg--white--hide');
+                    // about_bgblue_left.classList.remove('about__left-bg--blue--hide');
+                }, 300);
+            }, 500);
+        }, 200);
+    }, 300);
 });

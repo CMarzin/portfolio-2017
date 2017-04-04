@@ -1,44 +1,159 @@
+#about {
+    z-index: 4;
+    transition: 0.5s ease;
+}
+
 .about {
-    padding-top: 10vh;
     width: 100%;
+    height: 100vh;
     display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
 
-    &__socialMedias {
+    h3 {
+      font-family: "Futura Md BT";
+      font-size: 21px;
+      font-weight:500;
+    }
+
+    &__left {
+        position: relative;
+        width: 50%;
+        height: 100%;
         display: flex;
-        font-family: "Futura Book";
-        font-size:1.09vw;
-        color: $lightblue;
+        align-items: center;
+        justify-content: center;
 
-        &--socialMedia {
-            padding: 30px;
+        &__socialMedias {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;;
+            align-items: center;
+            font-family: "Futura Book";
+            font-size: 1.09vw;
+            color: $lightblue;
+            padding-left: 5%;
+
+            &--socialMedia {
+                z-index: 1;
+                padding:10px;
+                cursor:pointer;
+            }
+        }
+
+        &-bg--blue {
+            z-index: 4;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #ffffff;
+            left: 0;
+            transition: 0.5s ease;
+            transform-origin: 0 100%;
+
+            &--hide {
+                z-index: 4;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: #ffffff;
+                left: 0;
+                transition: 0.5s ease;
+                transform-origin: 0 100%;
+                transform: scale(0,1);
+            }
+        }
+
+        &-effect {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background: $lightblue;
+          left: 0;
+          transition: 0.5s ease;
+          transform-origin: 100% 0%;
+
+        }
+
+        &-bg--white {
+            z-index: 4;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #ffffff;
+            left: 0;
+            transition: 0.5s ease;
+            transform-origin: 0 100%;
+
+            &--hide {
+                z-index: 4;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: #ffffff;
+                left: 0;
+                transition: 0.5s ease;
+                transform-origin: 0 100%;
+                transform: scale(0,1);
+            }
         }
     }
 
-    &__text {
+    &__right {
+        position: relative;
         display: flex;
+        width: 50%;
+        height: 100%;
         flex-flow: column;
         justify-content: center;
         align-items: center;
-        max-width: 50%;
         text-align: center;
-        font-family: "Futura Book";
-        font-size:1.09vw;
-        color: $darkblue;
 
+        &-bg--white {
+            z-index: 4;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #ffffff;
+            left: 0;
+            transition: 0.5s ease;
+            transform-origin: 0 100%;
 
-        h1 {
-            margin-bottom: 0;
-            font-family: "Bauer Bodoni";
-            font-weight: bold;
-            font-size: 31px;
-            color: $lightblue;
+            &--hide {
+                z-index: 4;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: #ffffff;
+                left: 0;
+                transition: 0.5s ease;
+                transform-origin: 0 100%;
+                transform: scale(0,1);
+            }
         }
 
-        h3:nth-child(2) {
-            margin-top: 0;
+        &__text {
+            max-width: 80%;
+            font-family: "Futura Book";
+            font-size: 1.09vw;
+            color: $darkblue;
+
+            h1 {
+                margin-bottom: 0;
+                font-family: "Bauer Bodoni";
+                font-weight: bold;
+                font-size: 31px;
+                color: $darkblue;
+            }
+
+
+            h3 {
+              font-family: "Futura Book";
+              font-size: 21px;
+              font-weight:500;
+            }
+
+            h3:nth-child(2) {
+                margin-top: 0;
+            }
         }
     }
 }
