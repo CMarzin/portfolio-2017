@@ -141,14 +141,36 @@
             }
 
             a {
+                position: relative;
                 max-width: 70%;
                 color: $darkblue;
+                font-family: "Futura Md BT";
+                font-weight:500;
+                font-style:italic;
+
+
+
+                &:hover {
+                  &:before {
+                    content: "VIEW WEBSITE";
+                    position: absolute;
+                    top:50%;
+                    left:50%;
+                    transform: translateX(-50%) translateY(-50%);
+
+                  }
+                  img {
+                    opacity:0.15;
+                  }
+                }
+
             }
 
             img {
                 margin-left: 50%;
                 transform: translateX(-50%);
                 max-width: 100%;
+                transition: 0.5s ease;
             }
         }
 
