@@ -79,19 +79,18 @@ document.querySelector('.menu__logo').addEventListener('click', () => {
     document.body.onmousemove = move_mask;
 });
 
-
-console.log(see_project);
-
 for (const project of see_project) {
 
     // Launch anim
     project.addEventListener('click', () => {
-      event.stopImmediatePropagation();
 
         situation = 1;
 
         switch (count) {
             case 0:
+                //hide button right
+                button_prev.classList.add('container__box--none');
+                button_next.classList.remove('container__box--none');
                 container_title[0].classList.remove('show_title');
                 desc_img[0].classList.remove('hide_project--img');
                 desc_img[1].classList.add('hide_project--img');
@@ -104,8 +103,8 @@ for (const project of see_project) {
                 desc_project[2].classList.add('hide_project--desc');
                 break;
             case 1:
-                //hide button right
                 button_prev.classList.remove('container__box--none');
+                button_next.classList.remove('container__box--none');
                 container_title[1].classList.remove('show_title');
                 desc_img[0].classList.add('hide_project--img');
                 desc_img[1].classList.remove('hide_project--img');
@@ -118,8 +117,8 @@ for (const project of see_project) {
                 desc_project[2].classList.add('hide_project--desc');
                 break;
             case 2:
-                //hide button right
                 button_prev.classList.remove('container__box--none');
+                button_next.classList.remove('container__box--none');
                 container_title[2].classList.remove('show_title');
                 desc_img[0].classList.add('hide_project--img');
                 desc_img[1].classList.add('hide_project--img');
@@ -132,8 +131,8 @@ for (const project of see_project) {
                 desc_project[3].classList.add('hide_project--desc');
                 break;
             case 3:
-                //hide button right
                 button_prev.classList.remove('container__box--none');
+                button_next.classList.remove('container__box--none');
                 container_title[3].classList.remove('show_title');
                 desc_img[0].classList.add('hide_project--img');
                 desc_img[1].classList.add('hide_project--img');
@@ -163,9 +162,9 @@ for (const project of see_project) {
         }
 
         // hide container title
-        for (const title of container_title) {
-            title.classList.add('container__title--flex-hide');
-        }
+        // for (const title of container_title) {
+        //     title.classList.add('container__title--flex-hide');
+        // }
 
         // disable event on scroll
         document.body.onmousemove = null
@@ -216,6 +215,13 @@ button_next.addEventListener('click', () => {
         bgwhite_right.classList.add('projects__project--right-bg--white--hide');
         switch (count) {
             case 0:
+                // Title project
+                container_title[0].classList.remove('hide_title');
+                container_title[1].classList.add('hide_title');
+                container_title[1].classList.remove('show_title');
+                // Image choose project
+                choose_img[0].classList.remove('clip-rectangle--hide-left');
+                choose_img[1].classList.add('clip-rectangle--hide-right');
                 // Image project
                 desc_img[0].classList.remove('hide_project--img');
                 desc_img[1].classList.add('hide_project--img');
@@ -228,6 +234,18 @@ button_next.addEventListener('click', () => {
                 desc_project[2].classList.add('hide_project--desc');
                 break;
             case 1:
+                // Title project
+                container_title[0].classList.add('hide_title');
+                container_title[0].classList.remove('show_title');
+                container_title[1].classList.add('show_title');
+                container_title[1].classList.remove('hide_title');
+                container_title[2].classList.add('hide_title');
+                container_title[2].classList.remove('show_title');
+                //show arrow left
+                arrow_left.classList.remove('container__arrow--none');
+                // Image choose project
+                choose_img[0].classList.add('clip-rectangle--hide-left');
+                choose_img[1].classList.remove('clip-rectangle--hide-right');
                 //hide button right
                 button_prev.classList.remove('container__box--none');
                 // Image project
@@ -242,6 +260,9 @@ button_next.addEventListener('click', () => {
                 desc_project[2].classList.add('hide_project--desc');
                 break;
             case 2:
+                // Image choose project
+                choose_img[1].classList.add('clip-rectangle--hide-left');
+                choose_img[2].classList.remove('clip-rectangle--hide-right');
                 // Image project
                 desc_img[0].classList.add('hide_project--img');
                 desc_img[1].classList.add('hide_project--img');
@@ -254,6 +275,9 @@ button_next.addEventListener('click', () => {
                 desc_project[3].classList.add('hide_project--desc');
                 break;
             case 3:
+                // Image choose project
+                choose_img[2].classList.add('clip-rectangle--hide-left');
+                choose_img[3].classList.remove('clip-rectangle--hide-right');
                 // Image project
                 desc_img[0].classList.add('hide_project--img');
                 desc_img[1].classList.add('hide_project--img');
@@ -266,6 +290,11 @@ button_next.addEventListener('click', () => {
                 desc_project[4].classList.add('hide_project--desc');
                 break;
             case 4:
+                //hide arrow right
+                arrow_right.classList.add('container__arrow--none');
+                // Image choose project
+                choose_img[3].classList.add('clip-rectangle--hide-left');
+                choose_img[4].classList.remove('clip-rectangle--hide-right');
                 // hide button left
                 button_next.classList.add('container__box--none');
                 // Image project
@@ -303,6 +332,17 @@ button_prev.addEventListener('click', () => {
         bgwhite_right.classList.add('projects__project--right-bg--white--hide');
         switch (count) {
             case 0:
+                // Title project
+                container_title[0].classList.remove('hide_title');
+                container_title[1].classList.add('hide_title');
+                container_title[1].classList.remove('show_title');
+                //hide button right
+                button_prev.classList.add('container__box--none');
+                //show arrow left
+                arrow_left.classList.add('container__arrow--none');
+                // Image choose project
+                choose_img[0].classList.remove('clip-rectangle--hide-left');
+                choose_img[1].classList.add('clip-rectangle--hide-right');
                 // Image project
                 desc_img[0].classList.remove('hide_project--img');
                 desc_img[1].classList.add('hide_project--img');
@@ -314,6 +354,15 @@ button_prev.addEventListener('click', () => {
                 desc_project[1].classList.add('hide_project--desc');
                 break;
             case 1:
+                // Title project
+                container_title[1].classList.add('show_title');
+                container_title[1].classList.remove('hide_title');
+                container_title[2].classList.add('hide_title');
+                container_title[2].classList.remove('show_title');
+                // Image choose project
+                choose_img[0].classList.add('clip-rectangle--hide-left');
+                choose_img[1].classList.remove('clip-rectangle--hide-left');
+                choose_img[2].classList.add('clip-rectangle--hide-right');
                 // Image project
                 desc_img[0].classList.add('hide_project--img');
                 desc_img[1].classList.remove('hide_project--img');
@@ -326,6 +375,15 @@ button_prev.addEventListener('click', () => {
                 desc_project[2].classList.add('hide_project--desc');
                 break;
             case 2:
+                // Title project
+                container_title[2].classList.add('show_title');
+                container_title[2].classList.remove('hide_title');
+                container_title[3].classList.add('hide_title');
+                container_title[3].classList.remove('show_title');
+                // Image choose project
+                choose_img[0].classList.add('clip-rectangle--hide-left');
+                choose_img[2].classList.remove('clip-rectangle--hide-left');
+                choose_img[3].classList.add('clip-rectangle--hide-right');
                 // Image project
                 desc_img[0].classList.add('hide_project--img');
                 desc_img[1].classList.add('hide_project--img');
@@ -338,6 +396,17 @@ button_prev.addEventListener('click', () => {
                 desc_project[3].classList.add('hide_project--desc');
                 break;
             case 3:
+                // Title project
+                container_title[3].classList.add('show_title');
+                container_title[3].classList.remove('hide_title');
+                container_title[4].classList.add('hide_title');
+                container_title[4].classList.remove('show_title');
+                //hide arrow right
+                arrow_right.classList.remove('container__arrow--none');
+                // Image choose project
+                choose_img[1].classList.add('clip-rectangle--hide-left');
+                choose_img[3].classList.remove('clip-rectangle--hide-left');
+                choose_img[4].classList.add('clip-rectangle--hide-right');
                 // show button left
                 button_next.classList.remove('container__box--none');
                 // Image project
@@ -352,6 +421,12 @@ button_prev.addEventListener('click', () => {
                 desc_project[4].classList.add('hide_project--desc');
                 break;
             case 4:
+                // Title project
+                container_title[4].classList.remove('show_title');
+                container_title[4].classList.add('hide_title');
+                // Image choose project
+                choose_img[2].classList.add('clip-rectangle--hide-left');
+                choose_img[3].classList.remove('clip-rectangle--hide-left');
                 // Image project
                 desc_img[0].classList.add('hide_project--img');
                 desc_img[1].classList.add('hide_project--img');
@@ -554,14 +629,6 @@ arrows[1].addEventListener('click', () => {
 
 });
 
-// menu_home.addEventListener('click', () => {
-//   console.log(situation);
-// });
-//
-// menu_about.addEventListener('click', () => {
-//
-// });
-
 menu_home.addEventListener('click', () => {
     console.log(situation);
 
@@ -597,6 +664,9 @@ menu_home.addEventListener('click', () => {
         situation = 0;
         console.log("desc to choose");
     } else if (situation === 2) {
+        rect1.classList.remove('transition');
+        rect2.classList.remove('transition');
+        rect3.classList.remove('transition');
         about_bgwhite_left.classList.remove('about__left-bg--white--hide');
         about_bgwhite_right.classList.remove('about__right-bg--white--hide');
         about_bgblue_left.classList.remove('about__left-bg--blue--hide');
@@ -666,10 +736,10 @@ menu_about.addEventListener('click', () => {
         arrows[0].classList.remove('container__arrow--prev');
         arrows[1].classList.add('container__arrow--hide-next');
         arrows[1].classList.remove('container__arrow--next');
-        // hide container title
-        for (const title of container_title) {
-            title.classList.add('container__title--flex-hide');
-        }
+        // // hide container title
+        // for (const title of container_title) {
+        //     title.classList.add('container__title--flex-hide');
+        // }
         setTimeout(() => {
             container_svg.classList.add('container--hide');
             project_choose.classList.add('display--hide');
