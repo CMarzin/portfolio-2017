@@ -4,15 +4,10 @@
             "id": "bethedrop",
             "date": "2016 August",
             "name": "BE THE DROP",
-            "agency": "JEAN-PAUL GAULTIER",
+            "agency": "Jean-Paul Gaultier",
             "role": "Developper front-end",
             "desc": "This is the second project I made in my internship at Cher Ami (Lyon during 3 months). I made the fallback version of the site when the webgl version was not available. The site is entirely responsive.",
-            "title_tech": "Tech used : ",
-            "techs": [
-              {"tech": "- JQUERY"},
-              {"tech": "- CSS3"},
-              {"tech": "- HTML5"}
-            ],
+            "techs" : "JQUERY/CSS3/HTML5",
             "link": "https://www.jeanpaulgaultier.com/fr-fr/bethedrop/?fallback=true",
             "alt": "JEAN-PAUL GAULTIER parfum",
             "webgl":"vide",
@@ -27,11 +22,7 @@
           "role": "Developper front-end",
           "desc": "This is the third project I made in my internship at Cher Ami (Lyon during 3 months). I made the menu animation and participate to the integration of the site.",
           "title_tech": "Tech used : ",
-          "techs": [
-            {"tech": "- GULP"},
-            {"tech": "- SASS & ES5"},
-            {"tech": "- HTML5"}
-          ],
+          "techs" : "GULP/SASS/ES5/HTML5",
           "link": "https://heaven.fr/",
           "alt": "Heaven logo",
           "img": "heaven_img.jpg"
@@ -41,15 +32,10 @@
         "id": "cherami",
         "date": "2016 July - August",
         "name": "CHER AMI",
-        "agency": "Agency",
+        "agency": "Company",
         "role": "Developper front-end",
         "desc": "This is the first project i made in my internship at Cher Ami (Lyon during 3 months). I am in charge to make some change on the pages and made some animation like the loader and the open animation of the video.",
-        "title_tech": "Tech used : ",
-        "techs": [
-          {"tech": "- GULP"},
-          {"tech": "- SASS & ES5"},
-          {"tech": "- HTML5"}
-        ],
+        "techs" : "GULP/SASS/ES5/HTML5",
         "link": "http://cher-ami.tv",
         "alt": "Cher Ami logo",
         "img": "cherami_img.png"
@@ -62,14 +48,8 @@
         "agency": "School project",
         "role": "Developper front-end & 3D",
         "desc": "The fidget cube was still a kickstarter campaign. On this project I made the cube on Cinema 4D, made the slider and some integration on the website. For the best experience open the website on an android phone with chrome or firefox because the vibration unfortunaly doesn’t work on IOS.",
-        "title_tech": "Tech used : ",
-        "techs": [
-          {"tech": "- Cinema 4D"},
-          {"tech": "- Three.js"},
-          {"tech": "- Gulp & Webpack"},
-          {"tech": "- ES6 & SASS"},
-          {"tech": "- SVG & FLEXBOX"}
-        ],
+        "techs" : "Cinema 4D/Three.js/Gulp/Webpack",
+        "techs2": "ES6/SASS/SVG/FLEXBOX",
         "link": "https://frostone.github.io/hetic-p2019-11/",
         "alt": "Fidget Cube",
         "img": "fidgetcube_img.jpg"
@@ -82,13 +62,7 @@
       "agency": "School project",
       "role": "Developper front-end",
       "desc": "This is the first project i made in my internship at Cher Ami (Lyon during 3 months). I am in charge to make some change on the pages and made some animation like the loader and the open animation of the video.",
-      "title_tech": "Tech used : ",
-      "techs": [
-        {"tech": "- GULP"},
-        {"tech": "- AnalyserNode & Chrome audio API"},
-        {"tech": "- SASS & ES6"},
-        {"tech": "- HTML5"}
-      ],
+      "techs" : "GULP/Three.js/AnalyserNode/Chrome audio API/SASS/ES6/HTML5",
       "link": "http://corentinmarzin.fr/lab/star-wars/",
       "alt": "Star Wars the audio experience",
       "img": "starwars_img.svg",

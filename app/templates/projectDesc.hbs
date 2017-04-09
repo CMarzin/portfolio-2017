@@ -1,34 +1,34 @@
 <div class="projects">
     <div class="projects__project--left">
-      {{#projects}}
-        <div class="projects__project hide_project--desc projects__project--{{project.id}}">
-            <p>{{project.date}}</p>
-            <h2>{{project.name}}</h2>
-            <h3>{{project.agency}}</h3>
-            <h3>{{project.role}}</h3>
-            <p>{{project.desc}}</p>
-            <h3>{{project.title_tech}}</h3>
-            {{#project.techs}}
-                <p>{{tech}}</p>
-            {{/project.techs}}
-        </div>
+        {{#projects}}
+            <div class="projects__project hide_project--desc projects__project--{{project.id}}">
+                <p>{{project.date}}</p>
+                <h2>{{project.name}}</h2>
+                <h3>{{project.agency}}</h3>
+                <h3>{{project.role}}</h3>
+                <p>{{project.desc}}</p>
+                <p>{{project.techs}}</p>
+                {{#if project.techs2}}
+                    <p>{{project.techs2}}</p>
+                {{/if}}
+            </div>
         {{/projects}}
         <div class="projects__project--left-bg--blue"></div>
         <div class="projects__project--left-bg--white"></div>
         <div class="projects__project--left-effect"></div>
     </div>
     <div class="projects__project--right">
-      <div class="projects__project--right-bg--white"></div>
-      {{#projects}}
-      <div class="projects__project--img projects__project--{{project.id}}">
-        <a href="{{project.link}}" target="_blank"><img src="img/{{project.img}}" alt="{{project.alt}}"></a>
-        {{#if project.webgl}}
-          <p>Link to the webgl version : <a href="https://www.jeanpaulgaultier.com/fr-fr/bethedrop" target="_blank">jeanpaulgaultier.com/bethedrops</a></p>
-        {{/if}}
-        {{#if project.img_text}}
-          <img src="img/{{project.img_text}}" alt="{{project.alt}}"></a>
-        {{/if}}
-      </div>
-      {{/projects}}
+        <div class="projects__project--right-bg--white"></div>
+        {{#projects}}
+            <div class="projects__project--img projects__project--{{project.id}}">
+                <a class="first__link" href="{{project.link}}" target="_blank"><img src="img/{{project.img}}" alt="{{project.alt}}"></a>
+                {{#if project.webgl}}
+                    <p>Link to the webgl version : <a href="https://www.jeanpaulgaultier.com/fr-fr/bethedrop" target="_blank">jeanpaulgaultier.com/bethedrops</a></p>
+                {{/if}}
+                {{#if project.img_text}}
+                    <img src="img/{{project.img_text}}" alt="{{project.alt}}"></a>
+                {{/if}}
+            </div>
+        {{/projects}}
     </div>
 </div>

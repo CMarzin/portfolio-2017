@@ -406,6 +406,7 @@ arrows[0].addEventListener('click', () => {
             // Image project
             choose_img[0].classList.add('clip-rectangle--hide-left');
             choose_img[2].classList.remove('clip-rectangle--hide-left');
+            choose_img[3].classList.add('clip-rectangle--hide-right');
             // Title project
             container_title[2].classList.add('show_title');
             container_title[2].classList.remove('hide_title');
@@ -422,6 +423,7 @@ arrows[0].addEventListener('click', () => {
             // Image project
             choose_img[1].classList.add('clip-rectangle--hide-left');
             choose_img[3].classList.remove('clip-rectangle--hide-left');
+            choose_img[4].classList.add('clip-rectangle--hide-right');
             // Title project
             container_title[3].classList.add('show_title');
             container_title[3].classList.remove('hide_title');
@@ -436,7 +438,7 @@ arrows[0].addEventListener('click', () => {
             // Image project
             choose_img[2].classList.add('clip-rectangle--hide-left');
             choose_img[3].classList.remove('clip-rectangle--hide-left');
-            choose_img[4].classList.add('clip-rectangle--hide-right');
+            // choose_img[4].classList.add('clip-rectangle--hide-right');
             // Title project
             container_title[4].classList.remove('show_title');
             container_title[4].classList.add('hide_title');
@@ -496,7 +498,6 @@ arrows[1].addEventListener('click', () => {
             // Image project
             choose_img[1].classList.add('clip-rectangle--hide-left');
             choose_img[2].classList.remove('clip-rectangle--hide-right');
-            choose_img[3].classList.add('clip-rectangle--hide-right');
             // Title project
             container_title[1].classList.add('hide_title');
             container_title[1].classList.remove('show_title');

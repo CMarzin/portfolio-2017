@@ -1,5 +1,5 @@
 #project__desc {
-  transition: 0.5s ease;
+    transition: 0.5s ease;
 }
 
 .projects {
@@ -12,7 +12,7 @@
         max-width: 70%;
 
         &--left {
-            position:relative;
+            position: relative;
             display: flex;
             width: 50%;
             height: 100%;
@@ -30,78 +30,83 @@
                 padding: 0;
             }
 
-            &-effect {
-              position: absolute;
-              width: 100%;
-              height: 100%;
-              background: $lightblue;
-              transition: 0.5s ease;
-              transform-origin: 100% 0%;
-              left:0;
+            p:nth-of-type(3) {
+                font-family: "Futura";
+                margin-top: 20px;
+            }
 
-              &--hide {
-                transform: scale(0,1);
-              }
+            &-effect {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: $lightblue;
+                transition: 0.5s ease;
+                transform-origin: 100% 0;
+                left: 0;
+
+                &--hide {
+                    transform: scale(0,1);
+                }
             }
 
             &-bg--white {
-              z-index: 4;
-              position: absolute;
-              width: 100%;
-              height: 100%;
-              background: #ffffff;
-              left:0;
-              transition: 0.5s ease;
-              transform-origin: 0% 100%;
-
-              &--hide {
                 z-index: 4;
                 position: absolute;
                 width: 100%;
                 height: 100%;
                 background: #ffffff;
-                left:0;
+                left: 0;
                 transition: 0.5s ease;
-                transform-origin: 0% 100%;
-                transform: scale(0,1);
-              }
+                transform-origin: 0 100%;
+
+                &--hide {
+                    z-index: 4;
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background: #ffffff;
+                    left: 0;
+                    transition: 0.5s ease;
+                    transform-origin: 0 100%;
+                    transform: scale(0,1);
+                }
             }
 
             &-bg--blue {
-              z-index: 4;
-              position: absolute;
-              width: 100%;
-              height: 100%;
-              background: $lightblue;
-              left:0;
-              transition: 0.5s ease;
-              transform-origin: 0% 100%;
-
-              &--hide {
                 z-index: 4;
                 position: absolute;
                 width: 100%;
                 height: 100%;
                 background: $lightblue;
-                left:0;
+                left: 0;
                 transition: 0.5s ease;
-                transform-origin: 0% 100%;
-                transform: scale(0,1);
-              }
+                transform-origin: 0 100%;
+
+                &--hide {
+                    z-index: 4;
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background: $lightblue;
+                    left: 0;
+                    transition: 0.5s ease;
+                    transform-origin: 0 100%;
+                    transform: scale(0,1);
+                }
             }
 
             .hide_project--desc {
-              display: none;
+                display: none;
             }
         }
 
         &--img {
-          display: flex;
-          flex-flow: column;
-          justify-content: center;
-          align-items: center;
-          width: 100%;
-          height: 100%;
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
         }
 
         &--right {
@@ -115,29 +120,29 @@
             align-items: center;
 
             .hide_project--img {
-              display: none;
+                display: none;
             }
 
             &-bg--white {
-              z-index: 4;
-              position: absolute;
-              width: 100%;
-              height: 100%;
-              background: #ffffff;
-              left:0;
-              transition: 0.5s ease;
-              transform-origin: 0% 100%;
-
-              &--hide {
                 z-index: 4;
                 position: absolute;
                 width: 100%;
                 height: 100%;
-                left:0;
+                background: #ffffff;
+                left: 0;
                 transition: 0.5s ease;
-                transform-origin: 0% 100%;
-                transform: scale(0,1);
-              }
+                transform-origin: 0 100%;
+
+                &--hide {
+                    z-index: 4;
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    left: 0;
+                    transition: 0.5s ease;
+                    transform-origin: 0 100%;
+                    transform: scale(0,1);
+                }
             }
 
             a {
@@ -145,25 +150,24 @@
                 max-width: 70%;
                 color: $darkblue;
                 font-family: "Futura Md BT";
-                font-weight:500;
-                font-style:italic;
+                font-weight: 500;
+                font-style: italic;
+            }
 
-
-
+            .first__link {
                 &:hover {
-                  &:before {
-                    content: "VIEW WEBSITE";
-                    position: absolute;
-                    top:50%;
-                    left:50%;
-                    transform: translateX(-50%) translateY(-50%);
+                    &:before {
+                        content: "VIEW WEBSITE";
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translateX(-50%) translateY(-50%);
+                    }
 
-                  }
-                  img {
-                    opacity:0.15;
-                  }
+                    img {
+                        opacity: 0.15;
+                    }
                 }
-
             }
 
             img {
@@ -181,6 +185,5 @@
                 margin-top: 0;
             }
         }
-
     }
 }
