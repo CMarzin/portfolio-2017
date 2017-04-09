@@ -254,8 +254,6 @@ button_next.addEventListener('click', () => {
                 desc_project[3].classList.add('hide_project--desc');
                 break;
             case 3:
-                // hide button left
-                button_next.classList.add('container__box--none');
                 // Image project
                 desc_img[0].classList.add('hide_project--img');
                 desc_img[1].classList.add('hide_project--img');
@@ -268,6 +266,8 @@ button_next.addEventListener('click', () => {
                 desc_project[4].classList.add('hide_project--desc');
                 break;
             case 4:
+                // hide button left
+                button_next.classList.add('container__box--none');
                 // Image project
                 desc_img[0].classList.add('hide_project--img');
                 desc_img[1].classList.add('hide_project--img');
@@ -555,144 +555,152 @@ arrows[1].addEventListener('click', () => {
 });
 
 // menu_home.addEventListener('click', () => {
-//     console.log(situation);
-//
-//
-//     if (situation === 1) {
-//         bgwhite_left.classList.remove('projects__project--left-bg--white--hide');
-//         bgwhite_right.classList.remove('projects__project--right-bg--white--hide');
-//
-//         setTimeout(() => {
-//             container_svg.classList.remove('container--hide');
-//             project_choose.classList.remove('display--hide');
-//             container__arrows.classList.remove('display--hide');
-//             project_desc.classList.add('display--hide');
-//             container__button.classList.add('display--hide');
-//
-//             arrows[0].classList.remove('container__arrow--hide-prev');
-//             arrows[0].classList.add('container__arrow--prev');
-//             arrows[1].classList.remove('container__arrow--hide-next');
-//             arrows[1].classList.add('container__arrow--next');
-//             setTimeout(() => {
-//                 rect1.setAttribute("style", "transform: translateX(0px) translateY(0px);-webkit-transform: translateY(0px) translateX(0px);-moz-transform: translateY(0px) translateX(0px)");
-//                 rect2.setAttribute("style", "transform: translateX(0px) translateY(0px);-webkit-transform: translateY(0px) translateX(0px);-moz-transform: translateY(0px) translateX(0px)");
-//                 rect3.setAttribute("style", "transform: translateX(0px) translateY(0px);-webkit-transform: translateY(0px) translateX(0px);-moz-transform: translateY(0px) translateX(0px)");
-//                 container_title[count].classList.add('show_title');
-//                 container_title[count].classList.remove('hide_title');
-//                 setTimeout(() => {
-//                     rect1.classList.remove('transition');
-//                     rect2.classList.remove('transition');
-//                     rect3.classList.remove('transition');
-//                 }, 300);
-//             }, 200);
-//         }, 400);
-//         situation = 0;
-//         console.log("desc to choose");
-//     } else if (situation === 2) {
-//         about_bgwhite_left.classList.remove('about__left-bg--white--hide');
-//         about_bgwhite_right.classList.remove('about__right-bg--white--hide');
-//         about_bgblue_left.classList.remove('about__left-bg--blue--hide');
-//         setTimeout(() => {
-//             // display page about
-//             page_about.classList.add('display--hide');
-//             project_choose.classList.remove('display--hide');
-//             container__arrows.classList.remove('display--hide');
-//             container_svg.classList.remove('container--hide');
-//             arrows[0].classList.remove('container__arrow--hide-prev');
-//             arrows[0].classList.add('container__arrow--prev');
-//             arrows[1].classList.remove('container__arrow--hide-next');
-//             arrows[1].classList.add('container__arrow--next');
-//             rect1.setAttribute("style", "transform: translateX(0px) translateY(0px);-webkit-transform: translateY(0px) translateX(0px);-moz-transform: translateY(0px) translateX(0px)");
-//             rect2.setAttribute("style", "transform: translateX(0px) translateY(0px);-webkit-transform: translateY(0px) translateX(0px);-moz-transform: translateY(0px) translateX(0px)");
-//             rect3.setAttribute("style", "transform: translateX(300px) translateY(0px);-webkit-transform: translateY(0px) translateX(0px);-moz-transform: translateY(0px) translateX(0px)");
-//             // hide container title
-//             for (const title of container_title) {
-//                 title.classList.remove('container__title--flex-hide');
-//             }
-//         }, 500);
-//         situation = 0;
-//         console.log("about to choose");
-//     } else if (situation === 3) {
-//
-//       about_bgwhite_left.classList.remove('about__left-bg--white--hide');
-//       about_bgwhite_right.classList.remove('about__right-bg--white--hide');
-//       about_bgblue_left.classList.remove('about__left-bg--blue--hide');
-//
-//       setTimeout(() => {
-//
-//           // hide page about
-//           page_about.classList.remove('display--hide');
-//           container__button.classList.remove('display--hide');
-//           project_desc.classList.remove('display--hide');
-//
-//           setTimeout( () => {
-//             bgwhite_left.classList.add('projects__project--left-bg--white--hide');
-//             bgwhite_right.classList.add('projects__project--right-bg--white--hide');
-//             bgblue_left.classList.add('projects__project--left-bg--blue--hide');
-//           },200);
-//       }, 500);
-//
-//       situation = 1;
-//       console.log("about to desc");
-//     }
-//
-//
+//   console.log(situation);
 // });
 //
 // menu_about.addEventListener('click', () => {
-//     console.log(situation);
 //
-//     // if click on about when on project choose
-//     if (situation === 0) {
-//         // disable event on scroll
-//         document.body.onmousemove = null
-//
-//         rect1.classList.add('transition');
-//         rect2.classList.add('transition');
-//         rect3.classList.add('transition');
-//
-//         rect1.setAttribute("style", "transform: translateX(0px) translateY(-210px);-webkit-transform: translateY(-210px) translateX(0px);-moz-transform: translateY(-210px) translateX(0px)");
-//         rect2.setAttribute("style", "transform: translateX(0px) translateY(-200px);-webkit-transform: translateY(0px) translateX(-200px);-moz-transform: translateY(0px) translateX(-200px)");
-//         rect3.setAttribute("style", "transform: translateX(300px) translateY(0px);-webkit-transform: translateY(0px) translateX(300px);-moz-transform: translateY(0px) translateX(300px)");
-//         arrows[0].classList.add('container__arrow--hide-prev');
-//         arrows[0].classList.remove('container__arrow--prev');
-//         arrows[1].classList.add('container__arrow--hide-next');
-//         arrows[1].classList.remove('container__arrow--next');
-//         // hide container title
-//         for (const title of container_title) {
-//             title.classList.add('container__title--flex-hide');
-//         }
-//         setTimeout(() => {
-//             container_svg.classList.add('container--hide');
-//             project_choose.classList.add('display--hide');
-//             container__arrows.classList.add('display--hide');
-//             // display page about
-//             page_about.classList.remove('display--hide');
-//             setTimeout(() => {
-//                 about_bgwhite_left.classList.add('about__left-bg--white--hide');
-//                 about_bgwhite_right.classList.add('about__right-bg--white--hide');
-//                 about_bgblue_left.classList.add('about__left-bg--blue--hide');
-//                 situation = 2;
-//             }, 300);
-//         }, 500);
-//         console.log("choose to about");
-//     } else if (situation === 1) {
-//         bgwhite_left.classList.remove('projects__project--left-bg--white--hide');
-//         bgwhite_right.classList.remove('projects__project--right-bg--white--hide');
-//         setTimeout(() => {
-//             container__arrows.classList.add('display--hide');
-//             container__button.classList.add('display--hide');
-//             project_desc.classList.add('display--hide');
-//             // display page about
-//             page_about.classList.remove('display--hide');
-//             setTimeout(() => {
-//                 about_bgwhite_left.classList.add('about__left-bg--white--hide');
-//                 about_bgwhite_right.classList.add('about__right-bg--white--hide');
-//                 about_bgblue_left.classList.add('about__left-bg--blue--hide');
-//                 situation = 3;
-//             }, 200);
-//         }, 500);
-//         console.log("desc to about");
-//         situation = 1;
-//     }
 // });
+
+menu_home.addEventListener('click', () => {
+    console.log(situation);
+
+
+    if (situation === 1) {
+        bgwhite_left.classList.remove('projects__project--left-bg--white--hide');
+        bgwhite_right.classList.remove('projects__project--right-bg--white--hide');
+
+        setTimeout(() => {
+            container_svg.classList.remove('container--hide');
+            project_choose.classList.remove('display--hide');
+            container__arrows.classList.remove('display--hide');
+            project_desc.classList.add('display--hide');
+            container__button.classList.add('display--hide');
+
+            arrows[0].classList.remove('container__arrow--hide-prev');
+            arrows[0].classList.add('container__arrow--prev');
+            arrows[1].classList.remove('container__arrow--hide-next');
+            arrows[1].classList.add('container__arrow--next');
+            setTimeout(() => {
+                rect1.setAttribute("style", "transform: translateX(0px) translateY(0px);-webkit-transform: translateY(0px) translateX(0px);-moz-transform: translateY(0px) translateX(0px)");
+                rect2.setAttribute("style", "transform: translateX(0px) translateY(0px);-webkit-transform: translateY(0px) translateX(0px);-moz-transform: translateY(0px) translateX(0px)");
+                rect3.setAttribute("style", "transform: translateX(0px) translateY(0px);-webkit-transform: translateY(0px) translateX(0px);-moz-transform: translateY(0px) translateX(0px)");
+                container_title[count].classList.add('show_title');
+                container_title[count].classList.remove('hide_title');
+                setTimeout(() => {
+                    rect1.classList.remove('transition');
+                    rect2.classList.remove('transition');
+                    rect3.classList.remove('transition');
+                }, 300);
+            }, 200);
+        }, 400);
+        situation = 0;
+        console.log("desc to choose");
+    } else if (situation === 2) {
+        about_bgwhite_left.classList.remove('about__left-bg--white--hide');
+        about_bgwhite_right.classList.remove('about__right-bg--white--hide');
+        about_bgblue_left.classList.remove('about__left-bg--blue--hide');
+        setTimeout(() => {
+            // display page about
+            page_about.classList.add('display--hide');
+            project_choose.classList.remove('display--hide');
+            container__arrows.classList.remove('display--hide');
+            container_svg.classList.remove('container--hide');
+            arrows[0].classList.remove('container__arrow--hide-prev');
+            arrows[0].classList.add('container__arrow--prev');
+            arrows[1].classList.remove('container__arrow--hide-next');
+            arrows[1].classList.add('container__arrow--next');
+            rect1.setAttribute("style", "transform: translateX(0px) translateY(0px);-webkit-transform: translateY(0px) translateX(0px);-moz-transform: translateY(0px) translateX(0px)");
+            rect2.setAttribute("style", "transform: translateX(0px) translateY(0px);-webkit-transform: translateY(0px) translateX(0px);-moz-transform: translateY(0px) translateX(0px)");
+            rect3.setAttribute("style", "transform: translateX(300px) translateY(0px);-webkit-transform: translateY(0px) translateX(0px);-moz-transform: translateY(0px) translateX(0px)");
+            // hide container title
+            for (const title of container_title) {
+                title.classList.remove('container__title--flex-hide');
+            }
+        }, 500);
+        situation = 0;
+        console.log("about to choose");
+    } else if (situation === 3) {
+
+      about_bgwhite_left.classList.remove('about__left-bg--white--hide');
+      about_bgwhite_right.classList.remove('about__right-bg--white--hide');
+      about_bgblue_left.classList.remove('about__left-bg--blue--hide');
+
+      setTimeout(() => {
+
+          // hide page about
+          page_about.classList.remove('display--hide');
+          container__button.classList.remove('display--hide');
+          project_desc.classList.remove('display--hide');
+
+          setTimeout( () => {
+            bgwhite_left.classList.add('projects__project--left-bg--white--hide');
+            bgwhite_right.classList.add('projects__project--right-bg--white--hide');
+            bgblue_left.classList.add('projects__project--left-bg--blue--hide');
+          },200);
+      }, 500);
+
+      situation = 1;
+      console.log("about to desc");
+    }
+
+
+});
+
+menu_about.addEventListener('click', () => {
+    console.log(situation);
+
+    // if click on about when on project choose
+    if (situation === 0) {
+        // disable event on scroll
+        document.body.onmousemove = null
+
+        rect1.classList.add('transition');
+        rect2.classList.add('transition');
+        rect3.classList.add('transition');
+
+        rect1.setAttribute("style", "transform: translateX(0px) translateY(-210px);-webkit-transform: translateY(-210px) translateX(0px);-moz-transform: translateY(-210px) translateX(0px)");
+        rect2.setAttribute("style", "transform: translateX(0px) translateY(-200px);-webkit-transform: translateY(0px) translateX(-200px);-moz-transform: translateY(0px) translateX(-200px)");
+        rect3.setAttribute("style", "transform: translateX(300px) translateY(0px);-webkit-transform: translateY(0px) translateX(300px);-moz-transform: translateY(0px) translateX(300px)");
+        arrows[0].classList.add('container__arrow--hide-prev');
+        arrows[0].classList.remove('container__arrow--prev');
+        arrows[1].classList.add('container__arrow--hide-next');
+        arrows[1].classList.remove('container__arrow--next');
+        // hide container title
+        for (const title of container_title) {
+            title.classList.add('container__title--flex-hide');
+        }
+        setTimeout(() => {
+            container_svg.classList.add('container--hide');
+            project_choose.classList.add('display--hide');
+            container__arrows.classList.add('display--hide');
+            // display page about
+            page_about.classList.remove('display--hide');
+            setTimeout(() => {
+                about_bgwhite_left.classList.add('about__left-bg--white--hide');
+                about_bgwhite_right.classList.add('about__right-bg--white--hide');
+                about_bgblue_left.classList.add('about__left-bg--blue--hide');
+                situation = 2;
+            }, 300);
+        }, 500);
+        console.log("choose to about");
+    } else if (situation === 1) {
+        bgwhite_left.classList.remove('projects__project--left-bg--white--hide');
+        bgwhite_right.classList.remove('projects__project--right-bg--white--hide');
+        setTimeout(() => {
+            container__arrows.classList.add('display--hide');
+            container__button.classList.add('display--hide');
+            project_desc.classList.add('display--hide');
+            // display page about
+            page_about.classList.remove('display--hide');
+            setTimeout(() => {
+                about_bgwhite_left.classList.add('about__left-bg--white--hide');
+                about_bgwhite_right.classList.add('about__right-bg--white--hide');
+                about_bgblue_left.classList.add('about__left-bg--blue--hide');
+                situation = 3;
+            }, 200);
+        }, 500);
+        console.log("desc to about");
+        situation = 1;
+    }
+});

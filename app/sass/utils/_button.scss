@@ -7,6 +7,7 @@
         font-weight: bold;
         font-size: 21px;
         color: $darkblue;
+        transition:0.7s ease;
 
         &--open {
             position: absolute;
@@ -20,12 +21,10 @@
             transition: 0.5s ease;
 
             &:hover {
-              &:before {
-                content:'';
-                width: 10px;
-                height: 10px;
-                background-color:$lightblue;
-              }
+              box-shadow: 0px 0px 1px $darkblue;
+                p {
+                  color: $lightblue;
+                }
             }
         }
     }

@@ -6,7 +6,7 @@
             "name": "BE THE DROP",
             "agency": "Jean-Paul Gaultier",
             "role": "Developper front-end",
-            "desc": "This is the second project I made in my internship at Cher Ami (Lyon during 3 months). I made the fallback version of the site when the webgl version was not available. The site is entirely responsive.",
+            "desc": "This is the second project I made during my internship at Cher Ami (Lyon during 3 months). I made the fallback version of the website if the WEBGL version was not available. The site is entirely responsive.",
             "techs" : "JQUERY/CSS3/HTML5",
             "link": "https://www.jeanpaulgaultier.com/fr-fr/bethedrop/?fallback=true",
             "alt": "JEAN-PAUL GAULTIER parfum",
@@ -20,7 +20,7 @@
           "name": "HEAVEN",
           "agency": "Agency",
           "role": "Developper front-end",
-          "desc": "This is the third project I made in my internship at Cher Ami (Lyon during 3 months). I made the menu animation and participate to the integration of the site.",
+          "desc": "I worked on this during my internship at Cher Ami (Lyon during 3 months). I realized the menu animation and participate to the integration of the site.",
           "title_tech": "Tech used : ",
           "techs" : "GULP/SASS/ES5/HTML5",
           "link": "https://heaven.fr/",
@@ -34,7 +34,7 @@
         "name": "CHER AMI",
         "agency": "Company",
         "role": "Developper front-end",
-        "desc": "This is the first project i made in my internship at Cher Ami (Lyon during 3 months). I am in charge to make some change on the pages and made some animation like the loader and the open animation of the video.",
+        "desc": "During 3 months, I had my internship at Cher Ami in Lyon. My first project consisted of making some changes on several pages of their website (about/contact). I was in charge to integrate new animations like the loader ans the opening animation for the videos.",
         "techs" : "GULP/SASS/ES5/HTML5",
         "link": "http://cher-ami.tv",
         "alt": "Cher Ami logo",
@@ -47,7 +47,7 @@
         "name": "FIDGET CUBE",
         "agency": "School project",
         "role": "Developper front-end & 3D",
-        "desc": "The fidget cube was still a kickstarter campaign. On this project I made the cube on Cinema 4D, made the slider and some integration on the website. For the best experience open the website on an android phone with chrome or firefox because the vibration unfortunaly doesn’t work on IOS.",
+        "desc": "When we started the fidget cube project, there were an ongoing financing campaign on Kickstarter. For this project I created the cube on Cinema 4D, made the slider and integrated severals page and the menu. To enjoy the best experience, it is better to open the website on an android phone with Chrome or Firefox because the API vibrations unfortunaly didn't work on IOS at this time",
         "techs" : "Cinema 4D/Three.js/Gulp/Webpack",
         "techs2": "ES6/SASS/SVG/FLEXBOX",
         "link": "https://frostone.github.io/hetic-p2019-11/",
@@ -61,7 +61,7 @@
       "name": "STAR WARS",
       "agency": "School project",
       "role": "Developper front-end",
-      "desc": "This is the first project i made in my internship at Cher Ami (Lyon during 3 months). I am in charge to make some change on the pages and made some animation like the loader and the open animation of the video.",
+      "desc": "This project has been made during an intensive week. The theme was Star Wars. I develloped the blue visualizer, entirely in DOM which had to react to frequency of the sound.",
       "techs" : "GULP/Three.js/AnalyserNode/Chrome audio API",
       "techs2": "SASS/ES6/HTML5",
       "link": "http://corentinmarzin.fr/lab/star-wars/",
@@ -73,8 +73,9 @@
   "about": {
     "title": "Creative Developper",
     "location": "based at Paris, France",
-    "desc": "I am 21 student at HETIC, I developpe things since 4 years and I am freelance since 1 year. I like to experiment (especially with svg or scss) and love to discover new way for coding. I am currently working for BNP Paribas.",
-    "internship": "Actualy i am looking for an internship (3 months) between July and October.",
-    "thanks": "I designed with the help of Thaddé Meneur and Raphael Limoge this portefolio."
+    "desc": "I am a 21 student at HETIC. Since 4 years, I have been developpings website. I had the opportunity to work as a freelance during the last year and I am freelance since 1 year. I like to experiment (especially with svg or scss) and love to discover new way for coding. I am currently working for BNP Paribas.",
+    "internship": "Actualy i am looking for an internship (3 months) between July and October 2017.",
+    "title_contact": "If you need more information :",
+    "mail": "corentinmarzi@free.fr"
   }
 }
