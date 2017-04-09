@@ -16,10 +16,38 @@
     }
 
     &__logo {
-      padding-left:5%;
+      margin-left:5%;
+      cursor:pointer;
+      position: relative;
+
+        &:hover {
+          &:before {
+            content: '';
+            position: absolute;
+            height: 1px;
+            width: 100%;
+            bottom:0;
+            background: $darkblue;
+            transition: 0.3s ease;
+          }
+        }
     }
 
     &__about {
-      padding-right:5%;
+      margin-right:5%;
+      cursor:pointer;
+      position: relative;
+
+      &:hover {
+        &:before {
+          content: '';
+          position: absolute;
+          height: 1px;
+          width: 100%;
+          bottom:0;
+          background: $darkblue;
+          transition: 0.3s ease;
+        }
+      }
     }
 }

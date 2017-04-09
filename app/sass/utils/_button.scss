@@ -10,13 +10,23 @@
 
         &--open {
             position: absolute;
-            top: 40%;
-            right: 25%;
+            bottom: -5%;
+            left: 0;
             border: 1px solid $lightblue;
             cursor: pointer;
-            width: 30%;
+            width: 50%;
             text-align: center;
             z-index: 1;
+            transition: 0.5s ease;
+
+            &:hover {
+              &:before {
+                content:'';
+                width: 10px;
+                height: 10px;
+                background-color:$lightblue;
+              }
+            }
         }
     }
 
