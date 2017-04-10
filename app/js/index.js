@@ -1,4 +1,7 @@
 import data from "../data/data.json";
+import detector from './modules/detector';
+import button from './button.js';
+
 
 const d = data;
 const about = data.about;
@@ -54,6 +57,46 @@ let menu_home = document.querySelector('.menu__logo');
 let count = 0;
 let situation = 0;
 
+// Fallback bug safari
+let svg_fallback = document.querySelectorAll('.fallback');
+let svg_modern   = document.querySelectorAll('.modern');
+
+// Detect safari for svg bug
+if (detector.browsers.isSafari === true) {
+
+  for (const modern of svg_modern) {
+      modern.style.display = 'none';
+      modern.classList.remove('clip-rectangle');
+  }
+
+  for (const fallback of svg_fallback) {
+      fallback.style.display = 'block';
+      fallback.classList.add('clip-rectangle');
+  }
+
+  // svg_fallback.classList.add('clip-rectangle');
+  // svg_modern.classList.remove('clip-rectangle');
+  console.log(svg_fallback, svg_modern);
+
+  setTimeout( () => {
+choose_img = document.querySelectorAll('.clip-rectangle');
+    console.log(choose_img[0]);
+    console.log(choose_img[1]);
+    console.log(choose_img[2]);
+
+  },400);
+} else {
+
+  // svg_fallback.classList.remove('clip-rectangle');
+  for (const fallback of svg_fallback) {
+      fallback.style.display = 'none';
+  }
+}
+
+
+console.log(choose_img[0]);
+
+
 /*
  * Anim mask svg
  *
@@ -69,6 +112,7 @@ const move_mask = (e) => {
     rect1.setAttribute("style", "transform: translateX(" + axhard + "px) translateY(" + aylight + "px);-webkit-transform: translateY(" + aylight + "px) translateX(" + axhard + "px);-moz-transform: translateY(" + aylight + "px) translateX(" + axhard + "px)");
     rect2.setAttribute("style", "transform: translateX(" + axhard + "px) translateY(" + aylight + "px);-webkit-transform: translateY(" + aylight + "px) translateX(" + axhard + "px);-moz-transform: translateY(" + aylight + "px) translateX(" + axhard + "px)");
     rect3.setAttribute("style", "transform: translateX(" + axhard + "px) translateY(" + aylight + "px);-webkit-transform: translateY(" + aylight + "px) translateX(" + axhard + "px);-moz-transform: translateY(" + aylight + "px) translateX(" + axhard + "px)");
+    console.log('jnjkn');
 }
 
 document.body.onmousemove = move_mask;
@@ -199,6 +243,7 @@ for (const project of see_project) {
     });
 }
 
+
 button_next.addEventListener('click', () => {
 
     bgblue_left.classList.remove('projects__project--left-bg--blue--hide');
@@ -260,6 +305,11 @@ button_next.addEventListener('click', () => {
                 desc_project[2].classList.add('hide_project--desc');
                 break;
             case 2:
+                // Title project
+                container_title[1].classList.add('hide_title');
+                container_title[1].classList.remove('show_title');
+                container_title[2].classList.add('show_title');
+                container_title[2].classList.remove('hide_title');
                 // Image choose project
                 choose_img[1].classList.add('clip-rectangle--hide-left');
                 choose_img[2].classList.remove('clip-rectangle--hide-right');
@@ -275,6 +325,11 @@ button_next.addEventListener('click', () => {
                 desc_project[3].classList.add('hide_project--desc');
                 break;
             case 3:
+                // Title project
+                container_title[2].classList.add('hide_title');
+                container_title[2].classList.remove('show_title');
+                container_title[3].classList.add('show_title');
+                container_title[3].classList.remove('hide_title');
                 // Image choose project
                 choose_img[2].classList.add('clip-rectangle--hide-left');
                 choose_img[3].classList.remove('clip-rectangle--hide-right');
@@ -290,6 +345,11 @@ button_next.addEventListener('click', () => {
                 desc_project[4].classList.add('hide_project--desc');
                 break;
             case 4:
+                // Title project
+                container_title[3].classList.add('hide_title');
+                container_title[3].classList.remove('show_title');
+                container_title[4].classList.add('show_title');
+                container_title[4].classList.remove('hide_title');
                 //hide arrow right
                 arrow_right.classList.add('container__arrow--none');
                 // Image choose project

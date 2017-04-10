@@ -8,6 +8,7 @@
     }
 }
 
+
 .rectangle {
     position:relative;
     width: 400px;
@@ -17,11 +18,13 @@
 
     .clip-rectangle {
         &--hide-left {
+          opacity: 0;
             background-position-x: -800px;
             background-color: transparent;
         }
 
         &--hide-right {
+          opacity: 0;
             background-position-x: 400px;
             background-color: transparent;
         }
@@ -31,6 +34,8 @@
 svg {
     position: absolute;
     display: inline-block;
+    width: 400px;
+    height: 320px;
 }
 
 rect {
@@ -78,6 +83,10 @@ rect {
     &--starwars {
         background-size: cover;
     }
+
+    // &__fallback {
+    //   display:none;
+    // }
 }
 
 .transition {

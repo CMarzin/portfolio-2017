@@ -1,19 +1,20 @@
 <div class="container">
     <div class="rectangle">
-      {{#projects}}
-      <div class="clip-rectangle clip-rectangle--{{project.id}}" style="background-image: url('img/{{project.id}}.png'); clip-path: url('#svgPath');"></div>
-          <div class="container__title">
-              <div class="container__title__project container__title__project--{{project.id}}">
-                  <div class="container__title--flex container__title--{{project.id}}">
-                    <h2>{{project.name}}</h2>
-                    <h3>{{project.agency}}</h3>
-                    <div class="container__button--open container__button--{{project.id}}">
-                      <p>See the project</p>
+        {{#projects}}
+            <div class="clip-rectangle clip-rectangle--{{project.id}} modern" style="background-image: url('img/{{project.id}}.png'); clip-path: url('#svgPath');"></div>
+            <svg class="clip-rectangle--{{project.id}} fallback clip-rectangle__fallback" ><image style="clip-path: url('#svgPath')" width="400" height="400" xlink:href="img/{{project.id}}.png" /></svg>
+            <div class="container__title">
+                <div class="container__title__project container__title__project--{{project.id}}">
+                    <div class="container__title--flex container__title--{{project.id}}">
+                        <h2>{{project.name}}</h2>
+                        <h3>{{project.agency}}</h3>
+                        <div class="container__button--open container__button--{{project.id}}">
+                            <p>See the project</p>
+                        </div>
                     </div>
-                  </div>
-              </div>
-          </div>
-      {{/projects}}
+                </div>
+            </div>
+        {{/projects}}
     </div>
     <svg height="0" width="0" xmlns="https://www.w3.org/2000/svg">
     <defs>
