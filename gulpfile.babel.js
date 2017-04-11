@@ -11,6 +11,10 @@ import handlebars from 'gulp-handlebars';
 import concat from 'gulp-concat';
 import declare from 'gulp-declare';
 import wrap from 'gulp-wrap';
+import cssnano from 'gulp-cssnano';
+import uglify from 'gulp-uglify';
+import pump from 'pump';
+import imagemin from 'gulp-imagemin';
 
 gulp.task("html", () => {
     return gulp.src("./app/*.html")
@@ -68,6 +72,28 @@ gulp.task("scripts", () => {
         .pipe(browserSync.stream());
 });
 
+gulp.task('compressjs', (cb) => {
+  pump([
+        gulp.src('build/js/*.js'),
+        uglify(),
+        gulp.dest('build/js')
+    ],
+    cb
+  );
+});
+
+gulp.task('compressimg', () =>
+    gulp.src('./app/img/**.*')
+        .pipe(imagemin())
+        .pipe(gulp.dest('build/img'))
+);
+
+gulp.task('compresscss', () =>
+    gulp.src('./build/css')
+        .pipe(cssnano())
+        .pipe(gulp.dest('./build/css'))
+);
+
 gulp.task("startServer", () => {
     browserSync.init({
         server: "./build"
@@ -83,3 +109,4 @@ gulp.task('watch', () => {
 
 gulp.task("build", ["html", "handlebars", "templates", "scripts", "styles", "img", "font"]);
 gulp.task("dev", ["startServer", "watch"]);
+gulp.task("prod", ["compressjs", "compresscss", "compressimg"]);

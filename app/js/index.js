@@ -1,7 +1,5 @@
 import data from "../data/data.json";
 import detector from './modules/detector';
-import button from './button.js';
-
 
 const d = data;
 const about = data.about;
@@ -59,42 +57,31 @@ let situation = 0;
 
 // Fallback bug safari
 let svg_fallback = document.querySelectorAll('.fallback');
-let svg_modern   = document.querySelectorAll('.modern');
+let svg_modern = document.querySelectorAll('.modern');
 
 // Detect safari for svg bug
-if (detector.browsers.isSafari === true) {
+if (detector.browsers.isSafari === true || detector.isMobile != null) {
 
-  for (const modern of svg_modern) {
-      modern.style.display = 'none';
-      modern.classList.remove('clip-rectangle');
-  }
+    for (const modern of svg_modern) {
+        modern.style.display = 'none';
+        modern.classList.remove('clip-rectangle');
+    }
 
-  for (const fallback of svg_fallback) {
-      fallback.style.display = 'block';
-      fallback.classList.add('clip-rectangle');
-  }
+    for (const fallback of svg_fallback) {
+        fallback.style.display = 'block';
+        fallback.style.background = 'transparent'
+        fallback.classList.add('clip-rectangle');
+    }
 
-  // svg_fallback.classList.add('clip-rectangle');
-  // svg_modern.classList.remove('clip-rectangle');
-  console.log(svg_fallback, svg_modern);
-
-  setTimeout( () => {
-choose_img = document.querySelectorAll('.clip-rectangle');
-    console.log(choose_img[0]);
-    console.log(choose_img[1]);
-    console.log(choose_img[2]);
-
-  },400);
+    setTimeout(() => {
+        choose_img = document.querySelectorAll('.clip-rectangle');
+    }, 400);
 } else {
 
-  // svg_fallback.classList.remove('clip-rectangle');
-  for (const fallback of svg_fallback) {
-      fallback.style.display = 'none';
-  }
+    for (const fallback of svg_fallback) {
+        fallback.style.display = 'none';
+    }
 }
-
-
-console.log(choose_img[0]);
 
 
 /*
@@ -752,26 +739,26 @@ menu_home.addEventListener('click', () => {
         console.log("about to choose");
     } else if (situation === 3) {
 
-      about_bgwhite_left.classList.remove('about__left-bg--white--hide');
-      about_bgwhite_right.classList.remove('about__right-bg--white--hide');
-      about_bgblue_left.classList.remove('about__left-bg--blue--hide');
+        about_bgwhite_left.classList.remove('about__left-bg--white--hide');
+        about_bgwhite_right.classList.remove('about__right-bg--white--hide');
+        about_bgblue_left.classList.remove('about__left-bg--blue--hide');
 
-      setTimeout(() => {
+        setTimeout(() => {
 
-          // hide page about
-          page_about.classList.remove('display--hide');
-          container__button.classList.remove('display--hide');
-          project_desc.classList.remove('display--hide');
+            // hide page about
+            page_about.classList.remove('display--hide');
+            container__button.classList.remove('display--hide');
+            project_desc.classList.remove('display--hide');
 
-          setTimeout( () => {
-            bgwhite_left.classList.add('projects__project--left-bg--white--hide');
-            bgwhite_right.classList.add('projects__project--right-bg--white--hide');
-            bgblue_left.classList.add('projects__project--left-bg--blue--hide');
-          },200);
-      }, 500);
+            setTimeout(() => {
+                bgwhite_left.classList.add('projects__project--left-bg--white--hide');
+                bgwhite_right.classList.add('projects__project--right-bg--white--hide');
+                bgblue_left.classList.add('projects__project--left-bg--blue--hide');
+            }, 200);
+        }, 500);
 
-      situation = 1;
-      console.log("about to desc");
+        situation = 1;
+        console.log("about to desc");
     }
 
 
