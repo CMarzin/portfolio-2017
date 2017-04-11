@@ -1,5 +1,9 @@
 import data from "../data/data.json";
 import detector from './modules/detector';
+import swipe from "./modules/swipe-it.min";
+
+// plugin for swipe
+let mySwipeIt = new SwipeIt('body');
 
 const d = data;
 const about = data.about;
@@ -708,6 +712,28 @@ document.onkeydown = function(e) {
             break;
     }
 };
+
+// swipe navigation
+mySwipeIt.on('swipeLeft',function(e){
+    if(count < 4 && situation === 0) {
+      // choose project navigation
+      choose_next();
+    } else if(count < 4 && situation === 1){
+      // desc project navigation
+      desc_next();
+    }
+});
+
+// swipe navigation
+mySwipeIt.on('swipeRight',function(e){
+    if(count != 0 && situation === 0) {
+      // choose project navigation
+      choose_previous();
+    } else if(count != 0 && situation === 1) {
+      // desc project navigation
+      desc_previous();
+    }
+});
 
 menu_home.addEventListener('click', () => {
     if (situation === 1) {
