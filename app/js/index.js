@@ -2,6 +2,8 @@ import data from "../data/data.json";
 import detector from './modules/detector';
 import swipe from "./modules/swipe-it.min";
 
+console.log(detector);
+
 // plugin for swipe
 let mySwipeIt = new SwipeIt('body');
 

@@ -15,8 +15,27 @@ browsers.isChrome = !!window.chrome && !!window.chrome.webstore;
 // Blink engine detection
 browsers.isBlink = (browsers.isChrome || browsers.isOpera) && !!window.CSS;
 
+const mobile = {};
+
+// Android
+mobile.isAndroid = navigator.userAgent.match(/Android/i);
+// Iphone
+mobile.isIphone = navigator.userAgent.match(/iPhone/i);
+// Ipod
+mobile.isIpod = navigator.userAgent.match(/iPod/i);
+// Ipad
+mobile.isIpad = navigator.userAgent.match(/iPad/i);
+// BlackBerry
+mobile.isBlackberry = navigator.userAgent.match(/RIM/i) || navigator.userAgent.match(/BB/i);
+// Webos
+mobile.isWebos = navigator.userAgent.match(/webOS/i);
+// Windows Phone
+mobile.isWindowsphone = navigator.userAgent.match(/Windows Phone/i);
+// SymbianOS
+mobile.isSymbian = navigator.userAgent.match(/SymbianOS/i);
+
 const detector = {
-  isMobile: navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/),
+  mobile,
   browsers,
 };
 
