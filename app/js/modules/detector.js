@@ -35,6 +35,7 @@ mobile.isWindowsphone = navigator.userAgent.match(/Windows Phone/i);
 mobile.isSymbian = navigator.userAgent.match(/SymbianOS/i);
 
 const detector = {
+  isMobile: navigator.userAgent.match(/(iPhone|iPod|iPad|Android|RIM)/),
   mobile,
   browsers,
 };

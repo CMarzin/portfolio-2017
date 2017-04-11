@@ -37,6 +37,11 @@ gulp.task("handlebars", () => {
         .pipe(gulp.dest("./build/vendor"))
 });
 
+gulp.task("polyfill", () => {
+    return gulp.src("node_modules/viewport-units-buggyfill/viewport-units-buggyfill.js")
+        .pipe(gulp.dest("./build/vendor"))
+});
+
 gulp.task('templates', function () {
   gulp.src('./app/templates/*.hbs')
     .pipe(handlebars({
@@ -107,6 +112,6 @@ gulp.task('watch', () => {
     gulp.watch('app/templates/*.hbs', ['templates', 'scripts']);
 });
 
-gulp.task("build", ["html", "handlebars", "templates", "scripts", "styles", "img", "font"]);
+gulp.task("build", ["html", "handlebars", "polyfill", "templates", "scripts", "styles", "img", "font"]);
 gulp.task("dev", ["startServer", "watch"]);
 gulp.task("prod", ["compressjs", "compresscss", "compressimg"]);

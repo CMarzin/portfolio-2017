@@ -2,8 +2,6 @@ import data from "../data/data.json";
 import detector from './modules/detector';
 import swipe from "./modules/swipe-it.min";
 
-console.log(detector);
-
 // plugin for swipe
 let mySwipeIt = new SwipeIt('body');
 
@@ -64,9 +62,11 @@ let situation = 0;
 // Fallback bug safari
 let svg_fallback = document.querySelectorAll('.fallback');
 let svg_modern = document.querySelectorAll('.modern');
+// console.log(detector);
 
 // Detect safari for svg bug
 if (detector.browsers.isSafari === true || detector.isMobile != null) {
+  console.log(detector);
 
     for (const modern of svg_modern) {
         modern.style.display = 'none';
@@ -82,12 +82,14 @@ if (detector.browsers.isSafari === true || detector.isMobile != null) {
     setTimeout(() => {
         choose_img = document.querySelectorAll('.clip-rectangle');
     }, 400);
+
 } else {
 
     for (const fallback of svg_fallback) {
         fallback.style.display = 'none';
     }
 }
+
 
 
 /*
@@ -105,7 +107,6 @@ const move_mask = (e) => {
     rect1.setAttribute("style", "transform: translateX(" + axhard + "px) translateY(" + aylight + "px);-webkit-transform: translateY(" + aylight + "px) translateX(" + axhard + "px);-moz-transform: translateY(" + aylight + "px) translateX(" + axhard + "px)");
     rect2.setAttribute("style", "transform: translateX(" + axhard + "px) translateY(" + aylight + "px);-webkit-transform: translateY(" + aylight + "px) translateX(" + axhard + "px);-moz-transform: translateY(" + aylight + "px) translateX(" + axhard + "px)");
     rect3.setAttribute("style", "transform: translateX(" + axhard + "px) translateY(" + aylight + "px);-webkit-transform: translateY(" + aylight + "px) translateX(" + axhard + "px);-moz-transform: translateY(" + aylight + "px) translateX(" + axhard + "px)");
-    console.log('jnjkn');
 }
 
 document.body.onmousemove = move_mask;
@@ -695,45 +696,45 @@ arrow_right.addEventListener('click', () => {
 document.onkeydown = function(e) {
     switch (e.keyCode) {
         case 37:
-            if(count != 0 && situation === 0) {
-              // choose project navigation
-              choose_previous();
-            } else if(count != 0 && situation === 1) {
-              // desc project navigation
-              desc_previous();
+            if (count != 0 && situation === 0) {
+                // choose project navigation
+                choose_previous();
+            } else if (count != 0 && situation === 1) {
+                // desc project navigation
+                desc_previous();
             }
             break;
         case 39:
-            if(count < 4 && situation === 0) {
-              // choose project navigation
-              choose_next();
-            } else if(count < 4 && situation === 1){
-              // desc project navigation
-              desc_next();
+            if (count < 4 && situation === 0) {
+                // choose project navigation
+                choose_next();
+            } else if (count < 4 && situation === 1) {
+                // desc project navigation
+                desc_next();
             }
             break;
     }
 };
 
 // swipe navigation
-mySwipeIt.on('swipeLeft',function(e){
-    if(count < 4 && situation === 0) {
-      // choose project navigation
-      choose_next();
-    } else if(count < 4 && situation === 1){
-      // desc project navigation
-      desc_next();
+mySwipeIt.on('swipeLeft', function(e) {
+    if (count < 4 && situation === 0) {
+        // choose project navigation
+        choose_next();
+    } else if (count < 4 && situation === 1) {
+        // desc project navigation
+        desc_next();
     }
 });
 
 // swipe navigation
-mySwipeIt.on('swipeRight',function(e){
-    if(count != 0 && situation === 0) {
-      // choose project navigation
-      choose_previous();
-    } else if(count != 0 && situation === 1) {
-      // desc project navigation
-      desc_previous();
+mySwipeIt.on('swipeRight', function(e) {
+    if (count != 0 && situation === 0) {
+        // choose project navigation
+        choose_previous();
+    } else if (count != 0 && situation === 1) {
+        // desc project navigation
+        desc_previous();
     }
 });
 
