@@ -230,8 +230,7 @@ for (const project of see_project) {
     });
 }
 
-
-button_next.addEventListener('click', () => {
+function desc_next() {
 
     bgblue_left.classList.remove('projects__project--left-bg--blue--hide');
     bgwhite_right.classList.remove('projects__project--right-bg--white--hide');
@@ -359,11 +358,9 @@ button_next.addEventListener('click', () => {
     }, 500);
 
     event.stopImmediatePropagation();
-    console.log(situation, "button +");
+}
 
-});
-
-button_prev.addEventListener('click', () => {
+function desc_previous() {
 
     bgblue_left.classList.remove('projects__project--left-bg--blue--hide');
     bgwhite_right.classList.remove('projects__project--right-bg--white--hide');
@@ -488,11 +485,9 @@ button_prev.addEventListener('click', () => {
         }
     }, 500);
     event.stopImmediatePropagation();
-    console.log(situation, "button -");
-});
+}
 
-// Arrow Left
-arrows[0].addEventListener('click', () => {
+function choose_previous() {
 
     count--;
 
@@ -580,12 +575,9 @@ arrows[0].addEventListener('click', () => {
     }
 
     event.stopImmediatePropagation();
-    console.log(situation, "arrow -");
+}
 
-});
-
-// Arrow Right
-arrows[1].addEventListener('click', () => {
+function choose_next() {
 
     count++;
 
@@ -671,16 +663,55 @@ arrows[1].addEventListener('click', () => {
             break;
     }
     event.stopImmediatePropagation();
+}
 
-    console.log(situation, "arrow +");
-
+// button right
+button_next.addEventListener('click', () => {
+    desc_next();
 });
 
+// button left
+button_prev.addEventListener('click', () => {
+    desc_previous();
+});
+
+// Arrow Left
+arrow_left.addEventListener('click', () => {
+    choose_previous();
+});
+
+// Arrow Right
+arrow_right.addEventListener('click', () => {
+    choose_next();
+});
+
+// keyboard navigation
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+        case 37:
+            if(count != 0 && situation === 0) {
+              // choose project navigation
+              choose_previous();
+            } else if(count != 0 && situation === 1) {
+              // desc project navigation
+              desc_previous();
+            }
+            break;
+        case 39:
+            if(count < 4 && situation === 0) {
+              // choose project navigation
+              choose_next();
+            } else if(count < 4 && situation === 1){
+              // desc project navigation
+              desc_next();
+            }
+            break;
+    }
+};
+
 menu_home.addEventListener('click', () => {
-    console.log(situation);
-
-
     if (situation === 1) {
+        // desc to choose
         bgwhite_left.classList.remove('projects__project--left-bg--white--hide');
         bgwhite_right.classList.remove('projects__project--right-bg--white--hide');
 
@@ -709,8 +740,8 @@ menu_home.addEventListener('click', () => {
             }, 200);
         }, 400);
         situation = 0;
-        console.log("desc to choose");
     } else if (situation === 2) {
+        // about to choose
         rect1.classList.remove('transition');
         rect2.classList.remove('transition');
         rect3.classList.remove('transition');
@@ -736,15 +767,13 @@ menu_home.addEventListener('click', () => {
             }
         }, 500);
         situation = 0;
-        console.log("about to choose");
     } else if (situation === 3) {
-
+        // about to desc
         about_bgwhite_left.classList.remove('about__left-bg--white--hide');
         about_bgwhite_right.classList.remove('about__right-bg--white--hide');
         about_bgblue_left.classList.remove('about__left-bg--blue--hide');
 
         setTimeout(() => {
-
             // hide page about
             page_about.classList.remove('display--hide');
             container__button.classList.remove('display--hide');
@@ -758,17 +787,15 @@ menu_home.addEventListener('click', () => {
         }, 500);
 
         situation = 1;
-        console.log("about to desc");
     }
 
 
 });
 
 menu_about.addEventListener('click', () => {
-    console.log(situation);
-
     // if click on about when on project choose
     if (situation === 0) {
+        // choose to about
         // disable event on scroll
         document.body.onmousemove = null
 
@@ -783,10 +810,6 @@ menu_about.addEventListener('click', () => {
         arrows[0].classList.remove('container__arrow--prev');
         arrows[1].classList.add('container__arrow--hide-next');
         arrows[1].classList.remove('container__arrow--next');
-        // // hide container title
-        // for (const title of container_title) {
-        //     title.classList.add('container__title--flex-hide');
-        // }
         setTimeout(() => {
             container_svg.classList.add('container--hide');
             project_choose.classList.add('display--hide');
@@ -800,8 +823,8 @@ menu_about.addEventListener('click', () => {
                 situation = 2;
             }, 300);
         }, 500);
-        console.log("choose to about");
     } else if (situation === 1) {
+        // desc to about
         bgwhite_left.classList.remove('projects__project--left-bg--white--hide');
         bgwhite_right.classList.remove('projects__project--right-bg--white--hide');
         setTimeout(() => {
@@ -817,7 +840,6 @@ menu_about.addEventListener('click', () => {
                 situation = 3;
             }, 200);
         }, 500);
-        console.log("desc to about");
         situation = 1;
     }
 });
