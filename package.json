@@ -1,31 +1,30 @@
 {
-  "name": "gulp-es6",
+  "name": "portefolio",
   "version": "1.0.0",
-  "description": "gulp compile es6/sass",
-  "main": "gulpfile.babel.js",
+  "description": "portefolio end of 2017",
+  "author": "Corentin Marzin <corentinmarzin@gmail.com>",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "npm run lint"
   },
-  "author": "corentinmarzin@free.fr",
-  "license": "ISC",
+  "dependencies": {
+    "nuxt": "^1.0.0-rc3"
+  },
   "devDependencies": {
-    "babel-preset-es2015": "^6.22.0",
-    "babelify": "^7.3.0",
-    "browser-sync": "^2.18.8",
-    "browserify": "^14.1.0",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.1",
-    "gulp-concat": "^2.6.1",
-    "gulp-connect": "^5.0.0",
-    "gulp-cssnano": "^2.1.2",
-    "gulp-declare": "^0.3.0",
-    "gulp-handlebars": "^3.0.0",
-    "gulp-imagemin": "^3.2.0",
-    "gulp-sass": "^3.1.0",
-    "gulp-uglify": "^2.1.2",
-    "gulp-wrap": "^0.13.0",
-    "pump": "^1.0.2",
-    "viewport-units-buggyfill": "^0.6.1",
-    "vinyl-source-stream": "^1.1.0"
+    "eslint": "^4.3.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-html": "^3.1.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "node-sass": "^4.5.3",
+    "sass-loader": "^6.0.6"
   }
 }
