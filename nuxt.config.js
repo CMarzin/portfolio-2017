@@ -1,6 +1,9 @@
 module.exports = {
-   css: [
-    'assets/main.css'
+  css: [
+    // CSS file in the project
+    '@/assets/css/main.css',
+    // SCSS file in the project
+    '@/assets/css/main.scss'
   ],
   /*
   ** Headers of the page
@@ -19,7 +22,7 @@ module.exports = {
   /*
   ** Customize the progress-bar color
   */
-  loading: {},
+  loading: false,
   /*
   ** Build configuration
   */
