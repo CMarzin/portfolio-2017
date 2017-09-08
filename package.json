@@ -5,7 +5,7 @@
   "author": "Corentin Marzin <corentinmarzin@gmail.com>",
   "private": true,
   "config": {
-  "nuxt": {
+    "nuxt": {
       "host": "0.0.0.0",
       "port": "3333"
     }
@@ -19,6 +19,7 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "contentful": "^4.6.1",
     "nuxt": "^1.0.0-rc3"
   },
   "devDependencies": {
