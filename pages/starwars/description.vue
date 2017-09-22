@@ -8,6 +8,9 @@
 <script>
 export default {
   name: '',
+  created () {
+    console.log('routet', this.$router)
+  },
   data () {
     return {}
   }

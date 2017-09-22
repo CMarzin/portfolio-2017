@@ -8,7 +8,7 @@ const store = () => new Vuex.Store({
   mutations: {
     saveData (state, data) {
       // state.description = []
-      console.log('data', data)
+      // console.log('data', data)
       state.description.push(data)
     }
   }

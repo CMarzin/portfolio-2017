@@ -1,19 +1,19 @@
 <template>
   <div class="name">
     hello this is star wrs
-    <p><nuxt-link to="/">Index</nuxt-link></p>
-    <p><nuxt-link to="/bethedrop">Be the drop</nuxt-link></p>
-    <p><nuxt-link to="/heaven">Heaven</nuxt-link></p>
-    <p><nuxt-link to="/cherami">Cher Ami</nuxt-link></p>
-    <p><nuxt-link to="/fidgetcube">Fidget Cube</nuxt-link></p>
-    <p><nuxt-link to="/about">About</nuxt-link></p>
-    <p><nuxt-link to="/starwars/description">descriptions</nuxt-link></p>
+    <Navigation></Navigation>
+    <nuxt-child/>
   </div>
 </template>
 
 <script>
+import Navigation from '@/components/NavigationComponent'
+
 export default {
   name: '',
+  components: {
+    'Navigation': Navigation
+  },
   data () {
     return {}
   }
