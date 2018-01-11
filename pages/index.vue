@@ -23,6 +23,7 @@ export default {
       accessToken: process.env.token
     })
     client.getEntry('3y89bmQZbGm66EWGsGOcsS').then((data) => {
+      console.log('test')
       this.$store.commit('saveData', data.fields)
     })
   }
