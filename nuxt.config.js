@@ -1,3 +1,4 @@
+var path = require('path')
 module.exports = {
   /*
   ** Headers of the page
@@ -20,6 +21,12 @@ module.exports = {
   /*
   ** Build configuration
   */
+  plugins: [
+    {
+      src: '~/plugins/pixi',
+      ssr: false
+    }
+  ],
   build: {
     /*
     ** Run ESLint on save

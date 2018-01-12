@@ -1,13 +1,17 @@
 <template>
-<section>
-<h1>qdlfkndslkf,n</h1>
-</section>
+  <section>
+    <playground></playground>
+  </section>
 </template>
 
 <script>
 import { think } from 'cowsay'
+import Playground from '~/components/playgroundComponent'
 
 export default {
+  components: {
+    'playground': Playground
+  },
   data () {},
   mounted () {
     console.log(think({

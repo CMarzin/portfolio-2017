@@ -16,6 +16,7 @@
     "cowsay": "^1.2.1",
     "node-sass": "^4.7.2",
     "nuxt": "^1.0.0",
+    "pixi.js": "^4.6.2",
     "sass-loader": "^6.0.6"
   },
   "devDependencies": {
