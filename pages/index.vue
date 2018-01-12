@@ -12,7 +12,6 @@ export default {
   components: {
     'playground': Playground
   },
-  data () {},
   mounted () {
     console.log(think({
       text: 'Hello there',

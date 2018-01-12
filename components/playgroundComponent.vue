@@ -3,26 +3,12 @@
 </template>
 
 <script>
-// import Playground from '~/assets/playground.js'
+import Playground from '~/assets/pixi/playground.js'
 
 export default {
   name: 'Playground',
   mounted () {
-    /* global PIXI */
-    const renderer = PIXI.autoDetectRenderer(400, 400)
-
-    // 2. Append canvas element to the body
-    document.body.appendChild(renderer.view)
-
-    // 3. Create a container that will hold your scene
-    const stage = new PIXI.Container()
-
-    // add stage to the canvas
-    render()
-
-    function render () {
-      renderer.render(stage)
-    }
+    Playground()
   },
   methods: {}
 }
