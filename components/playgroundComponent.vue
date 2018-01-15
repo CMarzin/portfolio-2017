@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import Playground from '~/assets/pixi/playground.js'
+import Playground from '~/assets/pixi/bunnyPlayground.js'
 
 export default {
   name: 'Playground',

@@ -13,6 +13,7 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "bump.js": "^1.0.3",
     "cowsay": "^1.2.1",
     "node-sass": "^4.7.2",
     "nuxt": "^1.0.0",

@@ -1049,6 +1049,14 @@ builtin-status-codes@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/builtin-status-codes/-/builtin-status-codes-3.0.0.tgz#85982878e21b98e1c66425e03d0174788f569ee8"
 
+bump.js@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/bump.js/-/bump.js-1.0.3.tgz#e0bd953d1ac46d60ab24610d7c632f92295cf8d4"
+
+bump@^0.2.5:
+  version "0.2.5"
+  resolved "https://registry.yarnpkg.com/bump/-/bump-0.2.5.tgz#16d5567b75e77ea6597a805c10294c578495b47b"
+
 bytes@3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/bytes/-/bytes-3.0.0.tgz#d32815404d689699f85a4ea4fa8755dd13a96048"
@@ -5084,7 +5092,7 @@ preserve@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/preserve/-/preserve-0.2.0.tgz#815ed1f6ebc65926f865b310c0713bcb3315ce4b"
 
-prettier@^1.10.2, prettier@^1.7.0:
+prettier@^1.7.0:
   version "1.10.2"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.10.2.tgz#1af8356d1842276a99a5b5529c82dd9e9ad3cc93"
 
