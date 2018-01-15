@@ -15,6 +15,7 @@
   "dependencies": {
     "bump.js": "^1.0.3",
     "cowsay": "^1.2.1",
+    "matter-js": "^0.14.1",
     "node-sass": "^4.7.2",
     "nuxt": "^1.0.0",
     "pixi.js": "^4.6.2",
