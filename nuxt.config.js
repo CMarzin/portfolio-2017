@@ -1,4 +1,4 @@
-var path = require('path')
+// import { resolve } from 'path'
 module.exports = {
   /*
   ** Headers of the page
@@ -26,6 +26,10 @@ module.exports = {
       src: '~/plugins/pixi',
       ssr: false
     }
+  ],
+  css: [
+    // SCSS file in the project
+    '@/assets/styles/main.scss'
   ],
   build: {
     /*

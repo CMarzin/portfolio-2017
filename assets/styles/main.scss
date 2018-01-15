@@ -1,0 +1,18 @@
+// Basics //
+@import 'basics/reset';
+@import 'basics/colors';
+@import 'basics/fonts';
+
+// // Variables //
+@import 'vars/functions';
+@import 'vars/breakpoints';
+@import 'vars/layout';
+@import 'vars/typography';
+@import 'vars/mixin';
+
+// // Layout //
+@import 'layout/default';
+
+* {
+  box-sizing: border-box;
+}

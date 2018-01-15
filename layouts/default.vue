@@ -1,17 +1,9 @@
 <template>
-  <div class="container_all">
+  <div class="container__all">
     <nuxt/>
-    <div class="footer">
-      <div class="trololo">sdfjn skjfnsd</div>
-    </div>
+    <div class="container__about"></div>
+    <div class="horizontal__nav"></div>
+    <div class="footer__nav"></div>
+    <div class="footer__description"></div>
   </div>
 </template>
-
-<script>
-export default {
-  name: ''
-}
-</script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss"></style>
