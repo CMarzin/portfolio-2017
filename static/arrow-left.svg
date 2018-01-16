@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="124px" height="56px" viewBox="0 0 124 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48 (47235) - http://www.bohemiancoding.com/sketch -->
+    <title>Left arrow</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Test-5-volet" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-38.000000, -878.000000)" stroke-linecap="square">
+        <g id="Arrow" transform="translate(0.000000, 854.000000)" stroke="#373737" stroke-width="5">
+            <g id="Left-arrow" transform="translate(100.408163, 52.000000) scale(-1, 1) translate(-100.408163, -52.000000) translate(40.408163, 27.000000)">
+                <path d="M1.46086957,25 L116.28007,25" id="Line"></path>
+                <path d="M118.565217,24.5535714 L98.2743271,1.40424228" id="Line"></path>
+                <path d="M118.565217,48.3630952 L98.2743271,25.2137661" id="Line" transform="translate(108.521739, 36.904762) scale(1, -1) translate(-108.521739, -36.904762) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

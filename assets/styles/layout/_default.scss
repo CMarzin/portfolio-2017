@@ -20,6 +20,25 @@
     border: solid 5px black;
     z-index: 1;
   }
+
+  &__arrow {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-content: space-between;
+  }
+}
+
+.title {
+  &__project {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 64px;
+  }
 }
 
 .horizontal {
@@ -30,6 +49,9 @@
     background: #F5C316;
     right: calc((100% / 12) - 5px);
     border: solid 5px black;
+    display: flex;
+    justify-content: center;
+
   }
 }
 
@@ -41,6 +63,7 @@
     background:#CB0804;
     bottom: 0;
     border: solid 5px black;
+    z-index: 10;
   }
 
   &__description {
