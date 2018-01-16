@@ -5,7 +5,11 @@
       {{ currentTitle }}
     </div>
     <div class="container__about"></div>
-    <div class="horizontal__nav"></div>
+    <div class="horizontal__nav">
+      <div class="container__nav">
+        <h3 v-for="title in projectTitle" :key="title.id" >{{ title }}</h3>
+      </div>
+    </div>
     <div class="footer__nav">
      <div class="container__arrow">
       <img src="~/static/arrow-left.svg" v-on:click="navigationLeft()" alt="">
@@ -35,7 +39,7 @@ export default {
     }
   },
   methods: {
-    navigationRight: function (direction) {
+    navigationRight: function () {
       this.counter++
       if (this.counter === this.projectTitle.length) {
         this.counter = 0
