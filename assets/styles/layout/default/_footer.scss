@@ -7,7 +7,7 @@
     width: 100%;
 
     background: $red;
-    border: solid 5px $black;
+    @include border(5px);
   }
 
   &-footer-nav {

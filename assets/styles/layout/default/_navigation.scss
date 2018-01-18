@@ -7,7 +7,7 @@
     width: width('by_twelve');
 
     background: $yellow;
-    border: solid 5px $black;
+    @include border(5px);
     text-align: center;
 
     display: flex;
