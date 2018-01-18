@@ -1,7 +1,7 @@
 <template>
-  <section>
+  <!-- <section>
     <playground></playground>
-  </section>
+  </section> -->
 </template>
 
 <script>
@@ -9,7 +9,7 @@ import { think } from 'cowsay'
 import Playground from '~/components/playgroundComponent'
 
 export default {
-  // layout: 'default',
+  layout: 'default',
   components: {
     'playground': Playground
   },

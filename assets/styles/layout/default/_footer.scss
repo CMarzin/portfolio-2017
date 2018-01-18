@@ -1,0 +1,47 @@
+@mixin footer {
+  &-footer {
+    position: absolute;
+    bottom: 0;
+
+    height: height('by_six-border');
+    width: 100%;
+
+    background: $red;
+    border: solid 5px $black;
+  }
+
+  &-footer-nav {
+    width: width('by_six');
+    height: 100%;
+
+    background: $red;
+    border-right: solid 5px $black;
+
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  &-footer_arrow {
+    width: width('by_two');
+    height: height('by_four');
+
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  &-footer_arrow-left {
+    &:hover {
+      transition: 0.5s ease;
+      transform: translateX(-20px);
+    }
+  }
+
+  &-footer_arrow-right {
+    &:hover {
+      transition: 0.5s ease;
+      transform: translateX(20px);
+    }
+  }
+}

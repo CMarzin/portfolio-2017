@@ -1,19 +1,17 @@
 <template>
-  <div class="container__all">
+  <div class="container__main">
     <nuxt/>
-    <div class="title__project">
+    <div class="container__main-title">
       {{ currentTitle }}
     </div>
-    <div class="container__about"></div>
-    <div class="horizontal__nav">
-      <div class="container__nav">
-        <h3 v-for="title in projectTitle" :key="title.id" >{{ title }}</h3>
-      </div>
+    <div class="container__main-about"></div>
+    <div class="container__main-nav_horizontal">
+      <h3 class="container__main-nav_horizontal--title" v-for="title in projectTitle" :key="title.id" >{{ title }}</h3>
     </div>
-    <div class="footer__nav">
-     <div class="container__arrow">
-      <img src="~/static/arrow-left.svg" v-on:click="navigationLeft()" alt="">
-      <img src="~/static/arrow-right.svg" v-on:click="navigationRight()" alt="">
+    <div class="container__main-footer">
+     <div class="container__main-footer-nav">
+      <img class="container__main-footer_arrow container__main-footer_arrow-left" src="~/static/arrow-left.svg" v-on:click="navigationLeft()" alt="">
+      <img class="container__main-footer_arrow container__main-footer_arrow-right" src="~/static/arrow-right.svg" v-on:click="navigationRight()" alt="">
      </div>
     </div>
     <div class="footer__description"></div>

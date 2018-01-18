@@ -1,0 +1,22 @@
+@mixin navigation {
+  &-nav_horizontal {
+    position: absolute;
+    right: spacing('by_twentyFour-border');
+
+    height: height('playground');
+    width: width('by_twelve');
+
+    background: $yellow;
+    border: solid 5px $black;
+    text-align: center;
+
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-content: center;
+  }
+
+  &-nav_horizontal h3 {
+    padding: 10px 0 10px 0;
+  }
+}

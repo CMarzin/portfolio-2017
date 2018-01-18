@@ -5,13 +5,13 @@
 
 <script>
 // import Playground from '~/assets/pixi/bunnyPlayground.js'
-import PlaygroundMatter from '~/assets/matter/matterPlayground.js'
+// import PlaygroundMatter from '~/assets/matter/matterPlayground.js'
 // import PlaygroundGood from '~/assets/playground/test.js'
 export default {
   name: 'Playground',
   mounted () {
     // Playground()
-    PlaygroundMatter()
+    // PlaygroundMatter()
     // PlaygroundGood()
   },
   methods: {}

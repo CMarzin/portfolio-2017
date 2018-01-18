@@ -7,12 +7,11 @@
 /// @prop {Map} value - Width value
 ///
 $widths: (
-  'container': 1180px,
-  'img_intro': 590px,
-  'half': 50%,
-  'full': 100%,
-  'fifty': 50%,
-  'max': 100%
+  'playground': calc(100% - (100% / 12)),
+  'by_twentyFour': calc(100% / 24),
+  'by_twelve': calc(100% / 12),
+  'by_six': calc(100% / 6),
+  'by_two': calc(100% / 2)
 ) !default;
 
 
@@ -24,11 +23,15 @@ $widths: (
 /// @prop {String} key - Type of the height
 /// @prop {Map} value - Height value
 ///
+/// 5px = height of the border
 $heights: (
-  'full': 100%,
-  'img_intro': 450px,
-  'temporary': 450px,
-  'toggle-bar': 50px
+  'playground': calc(100% - (100% / 6)),
+  'by_twelve': calc(100% / 12),
+  'by_twelve-border': calc((100% / 12) + 5px),
+  'by_eight-border': calc((100% / 8) + 5px),
+  'by_six': calc(100% / 6),
+  'by_six-border': calc((100% / 6) + 5px),
+  'by_four': calc(100% / 4)
 ) !default;
 
 ///
@@ -52,5 +55,6 @@ $spacing: (
   'largex': 50px,
   'xlarge': 60px,
   'xxlarge': 80px,
-  'xxxlarge': 100px
+  'xxxlarge': 100px,
+  'by_twentyFour-border': calc((100% / 24) - 5px)  
 ) !default;
