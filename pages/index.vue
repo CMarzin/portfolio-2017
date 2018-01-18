@@ -9,7 +9,7 @@ import { think } from 'cowsay'
 import Playground from '~/components/playgroundComponent'
 
 export default {
-  layout: 'default',
+  // layout: 'default',
   components: {
     'playground': Playground
   },
