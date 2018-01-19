@@ -6,13 +6,13 @@
     height: height('by_six-border');
     width: 100%;
 
-    background: $red;
+    background: $white;
     @include border(5px);
   }
 
   &-footer-nav {
     width: width('by_six');
-    height: 100%;
+    height: 100%; 
 
     background: $red;
     border-right: solid 5px $black;
