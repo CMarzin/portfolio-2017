@@ -1,10 +1,12 @@
 @mixin title {
   &-title {
     position: absolute;
+    margin-left: spacing('by_twentyFour');
     
     top: 50%;
     transform: translateY(-50%);
 
     font-size: font-size('title');
+    font-family: 'Montserrat-black';
   }
 }

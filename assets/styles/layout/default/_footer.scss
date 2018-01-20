@@ -1,3 +1,4 @@
+$border-height: 2px;
 @mixin footer {
   &-footer {
     position: absolute;
@@ -7,15 +8,33 @@
     width: 100%;
 
     background: $white;
-    @include border(5px);
+    @include border($border-height);
+  }
+
+  &-footer-projects {
+    position: absolute;
+    
+    height: 100%;
+    width: width('by_twentyFour');
+
+   font-size: 32px;
+   font-family: 'Montserrat-black';
+
+   display: flex;
+   flex-flow: column;
+   justify-content: center;
+   align-items: center;
+
   }
 
   &-footer-nav {
     width: width('by_six');
-    height: 100%; 
+    height: 100%;
+    margin-left: spacing('by_twentyFour');
 
     background: $red;
-    border-right: solid 5px $black;
+    border-right: solid $border-height $black;
+    border-left: solid $border-height $black;
 
     display: flex;
     flex-flow: column;

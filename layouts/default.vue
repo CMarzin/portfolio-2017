@@ -9,12 +9,17 @@
       <h3 class="container__main-nav_horizontal--title" v-for="title in projectTitle" :key="title.id" >{{ title }}</h3>
     </div>
     <div class="container__main-footer">
+      <div class="container__main-footer-projects">
+        <p>{{ this.counter }}</p>
+        <p> / </p>
+        <p>{{ this.projectTitle.length }}</p>
+      </div>
      <div class="container__main-footer-nav">
       <img class="container__main-footer_arrow container__main-footer_arrow-left" src="~/static/arrow-left.svg" v-on:click="navigationLeft()" alt="">
       <img class="container__main-footer_arrow container__main-footer_arrow-right" src="~/static/arrow-right.svg" v-on:click="navigationRight()" alt="">
      </div>
+     <div class="container__main-footer-description"></div>
     </div>
-    <div class="footer__description"></div>
   </div>
 </template>
 
@@ -39,9 +44,9 @@ export default {
   methods: {
     navigationRight: function () {
       this.counter++
+      console.log('right', this.counter, this.projectTitle[this.counter])
       if (this.counter === this.projectTitle.length) {
-        this.counter = 0
-        this.currentTitle = this.projectTitle[this.counter]
+        this.counter = 1
         return this.currentTitle
       } else {
         this.currentTitle = this.projectTitle[this.counter]
@@ -50,14 +55,16 @@ export default {
     },
     navigationLeft: function () {
       this.counter--
-      if (this.counter <= 0) {
-        this.counter = this.projectTitle.length - 1
-        this.currentTitle = this.projectTitle[this.counter]
-        return this.currentTitle
-      } else {
-        this.currentTitle = this.projectTitle[this.counter]
-        return this.currentTitle
-      }
+      console.log('left', this.counter, this.projectTitle)
+      // if (this.counter <= 0) {
+      //   this.counter = this.projectTitle.length - 1
+      //   this.currentTitle = this.projectTitle[this.counter]
+      //   console.log('slkdnfsd', this.counter)
+      //   return this.currentTitle
+      // } else {
+      //   this.currentTitle = this.projectTitle[this.counter]
+      //   return this.currentTitle
+      // }
     }
   }
 }

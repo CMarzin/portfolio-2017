@@ -6,7 +6,7 @@
     width: width('by_twentyFour');
     height: 100%;
   
-    @include border(5px);
+    @include border(2px);
     background: $blue;
   
     z-index: 10;
