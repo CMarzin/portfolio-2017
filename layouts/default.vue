@@ -12,7 +12,7 @@
       <div class="container__main-footer-projects">
         <p>{{ this.counter }}</p>
         <p> / </p>
-        <p>{{ this.projectTitle.length }}</p>
+        <p>{{ this.projectTitle.length - 1  }}</p>
       </div>
      <div class="container__main-footer-nav">
       <img class="container__main-footer_arrow container__main-footer_arrow-left" src="~/static/arrow-left.svg" v-on:click="navigationLeft()" alt="">
@@ -38,15 +38,15 @@ export default {
         'JOCHEN GERZ'
       ],
       currentTitle: 'BE THE DROP',
-      counter: 0
+      counter: 1
     }
   },
   methods: {
     navigationRight: function () {
       this.counter++
-      console.log('right', this.counter, this.projectTitle[this.counter])
       if (this.counter === this.projectTitle.length) {
         this.counter = 1
+        this.currentTitle = this.projectTitle[0]
         return this.currentTitle
       } else {
         this.currentTitle = this.projectTitle[this.counter]
@@ -55,16 +55,14 @@ export default {
     },
     navigationLeft: function () {
       this.counter--
-      console.log('left', this.counter, this.projectTitle)
-      // if (this.counter <= 0) {
-      //   this.counter = this.projectTitle.length - 1
-      //   this.currentTitle = this.projectTitle[this.counter]
-      //   console.log('slkdnfsd', this.counter)
-      //   return this.currentTitle
-      // } else {
-      //   this.currentTitle = this.projectTitle[this.counter]
-      //   return this.currentTitle
-      // }
+      if (this.counter <= 1) {
+        this.counter = this.projectTitle.length - 1
+        this.currentTitle = this.projectTitle[this.projectTitle.length - 1]
+        return this.currentTitle
+      } else {
+        this.currentTitle = this.projectTitle[this.counter]
+        return this.currentTitle
+      }
     }
   }
 }
