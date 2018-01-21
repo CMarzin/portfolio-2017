@@ -1,3 +1,4 @@
+@import 'default/logo';
 @import 'default/title';
 @import 'default/footer';
 @import 'default/about';
@@ -9,6 +10,7 @@
   width: 100%;
   height: 100vh;
 
+  @include logo;
   @include title;
   @include about;
   @include navigation;

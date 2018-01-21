@@ -1,30 +1,24 @@
 @font-face {
-  font-family: 'Montserrat-black';
+  font-family: 'Avenir-black';
   src: url('~/assets/fonts/avenir_black.ttf') format('truetype');
     font-weight: 900;
     font-style: normal;
 }
 
-// @font-face {
-//   font-family: 'Museo';
-//   src: url('../font/MuseoSans500.otf') format('otf'),
-//        url('../font/MuseoSans-500.ttf') format('truetype');
-//   font-weight: 500;
-//   font-style: normal;
-// }
+@font-face {
+  font-family: 'Avenir-heavy';
+  src: url('~/assets/fonts/avenir_heavy.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
 
-// @font-face {
-//   font-family: 'Museo';
-//   src: url('../font/MuseoSans_900.otf') format('otf'),
-//        url('../font/MuseoSans-900.ttf') format('truetype');
-//   font-weight: 900;
-//   font-style: normal;
-// }
+@font-face {
+  font-family: 'Avenir-medium';
+  src: url('~/assets/fonts/avenir_medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
 
-// @font-face {
-//   font-family: 'Museo';
-//   src: url('../font/MuseoSans_300.otf') format('otf'),
-//        url('../font/MuseoSans-300.ttf') format('truetype');
-//   font-weight: 300;
-//   font-style: normal;
-// }
+$avenir_b: 'Avenir-black';
+$avenir_h: 'Avenir-heavy';
+$avenir_m: 'Avenir-medium';

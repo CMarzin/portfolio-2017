@@ -4,19 +4,25 @@
     right: spacing('by_twentyFour-border');
 
     height: height('playground');
-    width: width('by_twelve');
+    width: width('by_ten');
 
     background: $yellow;
     @include border(2px);
     text-align: center;
+    font-size: font-size('subtitle');
+    font-family: 'Avenir-medium';
 
     display: flex;
     flex-flow: column;
     justify-content: center;
-    align-content: center;
+    align-items: center;
   }
 
   &-nav_horizontal h3 {
-    padding: 10px 0 10px 0;
+    padding: 10px 10px 10px 10px;
+    width: 80%;
+    line-height: 1.1;
+    text-decoration: underline;
+    cursor: pointer;
   }
 }

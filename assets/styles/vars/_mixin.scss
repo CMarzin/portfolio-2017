@@ -1,3 +1,10 @@
+@mixin title($color) {
+  font-family: $avenir_b;
+  font-size: font-size('subtitle');
+  font-weight: font-weight('title');
+  color: $color;
+}
+
 @mixin subtitle($color) {
   font-family: $museo;
   font-size: font-size('subtitle');

@@ -1,4 +1,3 @@
-// import { resolve } from 'path'
 module.exports = {
   /*
   ** Headers of the page

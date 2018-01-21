@@ -2,6 +2,7 @@
   &-about {
     position: absolute;
     right: 0;
+    padding-top: spacing('by_twentyFour');    
   
     width: width('by_twentyFour');
     height: 100%;
@@ -10,5 +11,19 @@
     background: $blue;
   
     z-index: 10;
+
+    display: flex;
+    justify-content: center;
+}
+
+  &-about h3 {
+    font-size: font-size('subtitle');
+    font-family: 'Avenir-heavy';
+    overflow-wrap: break-word;
+    text-align: center;
+
+    max-width: 40%;
+
+    opacity: 0.35;
   }
 }

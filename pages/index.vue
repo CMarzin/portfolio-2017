@@ -14,6 +14,7 @@ export default {
     'playground': Playground
   },
   mounted () {
+    console.log('routes', this.$router.options.routes)
     console.log(think({
       text: 'Hello there',
       eyes: 'oo',

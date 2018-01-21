@@ -5,7 +5,7 @@
   "author": "CMarzin <corentinmarzin@Gmail.com>",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
+    "dev": "cross-env HOST=0.0.0.0 PORT=3333 nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
@@ -15,6 +15,7 @@
   "dependencies": {
     "bump.js": "^1.0.3",
     "cowsay": "^1.2.1",
+    "cross-env": "^5.1.3",
     "matter-js": "^0.14.1",
     "node-sass": "^4.7.2",
     "nuxt": "^1.0.0",

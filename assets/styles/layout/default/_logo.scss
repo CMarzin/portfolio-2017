@@ -1,0 +1,11 @@
+@mixin logo{
+  &-logo {
+    position: absolute;
+    margin-left: spacing('by_twentyFour');
+    margin-top: spacing('by_twentyFour');
+
+    max-width: 50%;
+
+    font-family: 'Avenir-heavy';
+  }
+}

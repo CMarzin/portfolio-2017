@@ -1,10 +1,12 @@
 <template>
   <div class="container__main">
     <nuxt/>
+    <h1 class="container__main-logo">Corentin Marzin</h1>
     <div class="container__main-title">
       {{ currentTitle }}
     </div>
-    <div class="container__main-about"></div>
+    <div class="container__main-about">
+      <h3>ABOUT</h3></div>
     <div class="container__main-nav_horizontal">
       <h3 class="container__main-nav_horizontal--title" v-for="title in projectTitle" :key="title.id" >{{ title }}</h3>
     </div>
@@ -29,15 +31,24 @@ export default {
   data () {
     return {
       projectTitle: [
-        'BE THE DROP',
+        'JOCHEN GERZ',
         'MYWINGS',
-        'HEAVEN',
-        'CHER AMI',
+        'PORTFOLIO',
         'FIDGET CUBE',
+        'MAITRE-RENARD',
         'STAR WARS',
-        'JOCHEN GERZ'
+        'HEAVEN',
+        'BE THE DROP',
+        'CHER AMI',
+        'ARCHIVES'
       ],
-      currentTitle: 'BE THE DROP',
+      archiveLink: [
+        'http://corentinmarzin.fr/lab/recall',
+        'http://corentinmarzin.fr/lab/cowspiracy',
+        'http://corentinmarzin.fr/lab/easter',
+        'http://cocoweb.fr/dumbledor/'
+      ],
+      currentTitle: 'JOCHEN GERZ',
       counter: 1
     }
   },
