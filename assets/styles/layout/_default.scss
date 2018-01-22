@@ -1,5 +1,6 @@
 @import 'default/logo';
 @import 'default/title';
+@import 'default/cowsay';
 @import 'default/footer';
 @import 'default/about';
 @import 'default/navigation';
@@ -12,6 +13,7 @@
 
   @include logo;
   @include title;
+  @include cowsay;
   @include about;
   @include navigation;
   @include footer;

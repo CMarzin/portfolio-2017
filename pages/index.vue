@@ -2,6 +2,9 @@
   <!-- <section>
     <playground></playground>
   </section> -->
+  <div class="container__main-title">
+    JOCHEN GERZ
+  </div>
 </template>
 
 <script>

@@ -1,5 +1,7 @@
 <template>
-<h3>trololo my wings</h3>
+  <div class="container__main-title">
+    MYWINGS
+  </div>
 </template>
 
 <script>

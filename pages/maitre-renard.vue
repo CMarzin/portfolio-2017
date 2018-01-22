@@ -1,6 +1,6 @@
 <template>
   <div class="container__main-title">
-    BE THE DROP
+    MAITRE RENARD
   </div>
 </template>
 

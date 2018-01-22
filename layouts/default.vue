@@ -2,9 +2,9 @@
   <div class="container__main">
     <nuxt/>
     <h1 class="container__main-logo">Corentin Marzin</h1>
-    <div class="container__main-title">
+    <!-- <div class="container__main-title">
       {{ currentTitle }}
-    </div>
+    </div> -->
     <div class="container__main-about">
       <h3>ABOUT</h3></div>
     <div class="container__main-nav_horizontal">

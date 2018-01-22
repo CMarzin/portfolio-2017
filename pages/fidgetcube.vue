@@ -1,6 +1,6 @@
 <template>
   <div class="container__main-title">
-    BE THE DROP
+    FIDGET CUBE
   </div>
 </template>
 
