@@ -1,9 +1,9 @@
 <template>
   <div class="container__main-footer">
     <div class="container__main-footer-projects">
-      <p>{{ this.counter }}</p>
+      <p>{{ this.counter + 1 }}</p>
       <p> / </p>
-      <p>{{ this.projectTitle.length - 1  }}</p>
+      <p>{{ this.projectTitle.length + 1}}</p>
     </div>
     <div class="container__main-footer-nav">
       <nuxt-link :to="this.previousProject">
@@ -25,9 +25,8 @@ export default {
   data () {
     return {
       projectTitle: ProjectTitle,
-      items: [],
-      nextProject: '',
-      previousProject: '',
+      nextProject: ProjectTitle[1].toLowerCase().replace(/\s+/g, ''),
+      previousProject: ProjectTitle[ProjectTitle.length - 1].toLowerCase().replace(/\s+/g, ''),
       archiveLink: [
         'http://corentinmarzin.fr/lab/recall',
         'http://corentinmarzin.fr/lab/cowspiracy',
@@ -39,46 +38,62 @@ export default {
     }
   },
   mounted () {
-    const currentPath = this.$router.history.current.path
-    this.$router.options.routes.forEach(route => {
-      if (currentPath !== route.path) {
-        this.items.push({
-          name: route.name,
-          path: route.path
-        })
-      }
-    })
-    console.log('routes', this.items)
-    console.log('jn', this.projectTitle.length - 1)
+    let currentPathName = this.$router.history.current
+    let indexOfPreviousProject = ProjectTitle.indexOf(currentPathName.name)
+    let indexOfCurrentProject = ProjectTitle.indexOf(currentPathName.name)
+    let indexOfNextProject = ProjectTitle.indexOf(currentPathName.name)
+
+    if (currentPathName.name === 'index') {
+      indexOfPreviousProject = ProjectTitle.length - 1
+      indexOfCurrentProject = 0
+      indexOfNextProject = indexOfCurrentProject + 1
+    } else if (indexOfCurrentProject === ProjectTitle.length - 1) {
+      indexOfPreviousProject = indexOfCurrentProject - 1
+      indexOfNextProject = 0
+    } else {
+      indexOfPreviousProject = indexOfCurrentProject - 1
+      indexOfNextProject = indexOfCurrentProject + 1
+      console.log('trest', indexOfNextProject)
+    }
+
+    console.log('indexOfPreviousproject', ProjectTitle[indexOfPreviousProject])
+    console.log('indexOfCurrentproject', ProjectTitle[indexOfCurrentProject])
+    console.log('indexOfNextProject', ProjectTitle[indexOfNextProject])
   },
   methods: {
     navigationRight: function () {
-      this.counter++
-      // if (this.counter === this.projectTitle.length) {
-      //   this.counter = 0
-      //   this.currentTitle = this.projectTitle[0]
-      //   console.log('this.currentTitle RIGHT', this.currentTitle.toLowerCase().replace(/\s+/g, ''))
-      //   this.nextProject = this.currentTitle.toLowerCase().replace(/\s+/g, '')
-      //   return this.nextProject
-      // } else {
-      //   this.currentTitle = this.projectTitle[this.counter]
-      //   console.log('this.currentTitle RIGHT', this.currentTitle.toLowerCase().replace(/\s+/g, ''))
-      //   this.nextProject = this.currentTitle.toLowerCase().replace(/\s+/g, '')
-      //   return this.nextProject
-      // }
+      let currentPathName = this.$router.history.current
+      let indexOfPreviousProject = ProjectTitle.indexOf(currentPathName.name)
+      let indexOfCurrentProject = ProjectTitle.indexOf(currentPathName.name)
+      let indexOfNextProject = ProjectTitle.indexOf(currentPathName.name)
+
+      if (currentPathName.name === 'index') {
+        indexOfPreviousProject = ProjectTitle.length - 1
+        indexOfCurrentProject = 0
+        indexOfNextProject = indexOfCurrentProject + 1
+      } else if (indexOfCurrentProject === ProjectTitle.length - 1) {
+        indexOfNextProject = 0
+      } else {
+        indexOfPreviousProject = indexOfCurrentProject - 1
+        indexOfNextProject = indexOfCurrentProject + 1
+        console.log('trest', indexOfNextProject)
+      }
+
+      console.log('indexOfPreviousproject', ProjectTitle[indexOfPreviousProject])
+      console.log('indexOfCurrentproject', ProjectTitle[indexOfCurrentProject])
+      console.log('indexOfNextProject', ProjectTitle[indexOfNextProject])
+      // this.
     },
     navigationLeft: function () {
-      this.counter--
       if (this.counter <= 0) {
-        this.counter = this.projectTitle.length - 1
+        this.counter = ProjectTitle.length
         this.currentTitle = this.projectTitle[this.projectTitle.length - 1]
         this.previousProject = this.currentTitle.toLowerCase().replace(/\s+/g, '')
-        console.log('this.currentTitle LEFT', this.previousProject)
         return this.previousProject
       } else {
+        this.counter--
         this.currentTitle = this.projectTitle[this.counter]
         this.previousProject = this.currentTitle.toLowerCase().replace(/\s+/g, '')
-        console.log('this.currentTitle LEFT', this.previousProject)
         return this.previousProject
       }
     }

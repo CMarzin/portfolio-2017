@@ -1,6 +1,6 @@
 <template>
   <div class="container__main-title">
-    ARCHIVES
+    LAB
   </div>
 </template>
 
