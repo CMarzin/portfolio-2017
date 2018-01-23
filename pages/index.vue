@@ -10,6 +10,11 @@
 <script>
 import { think } from 'cowsay'
 import Playground from '~/components/playgroundComponent'
+import { EventBus } from '~/components/Bus/event-bus.js'
+
+EventBus.$on('i-got-clicked', clickCount => {
+  console.log(`Oh, that's nice. It's gotten ${clickCount} clicks! :)`)
+})
 
 export default {
   layout: 'default',
