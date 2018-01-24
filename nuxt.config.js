@@ -1,4 +1,7 @@
 module.exports = {
+  router: {
+    middleware: 'routing-project'
+  },
   /*
   ** Headers of the page
   */

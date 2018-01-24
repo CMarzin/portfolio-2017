@@ -1,19 +1,17 @@
 <template>
   <div class="container__main-nav_horizontal">
     <!-- <button @click="emitGlobalClickEvent()"> CLICK ME</button> -->
-    <h3 class="container__main-nav_horizontal--title" v-for="title in projectTitle" :key="title.id" >{{ title }}</h3>
+    <h3 class="container__main-nav_horizontal--title" v-for="title in this.$store.state.projectTitle" :key="title.id" >{{ title.toUpperCase() }}</h3>
   </div>
 </template>
 
 <script>
 import { EventBus } from '~/components/Bus/event-bus.js'
-import ProjectTitle from '~/components/Bus/data-bus.js'
 
 export default {
   name: '',
   data () {
     return {
-      projectTitle: ProjectTitle,
       clickCount: 0
     }
   },
