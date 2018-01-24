@@ -1,7 +1,9 @@
 <template>
   <div class="container__main-nav_horizontal">
     <!-- <button @click="emitGlobalClickEvent()"> CLICK ME</button> -->
-    <h3 class="container__main-nav_horizontal--title" v-for="title in this.$store.state.projectTitle" :key="title.id" >{{ title.toUpperCase() }}</h3>
+    <nuxt-link v-for="title in this.$store.state.projectTitle" :key="title.id" :to="title.replace(/\s+/g, '') === 'jochengerz' ? '/' : title.replace(/\s+/g, '')">
+      <h3 class="container__main-nav_horizontal--title" >{{ title.toUpperCase() }}</h3>      
+    </nuxt-link>
   </div>
 </template>
 

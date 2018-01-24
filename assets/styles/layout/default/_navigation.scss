@@ -18,11 +18,12 @@
     align-items: center;
   }
 
-  &-nav_horizontal h3 {
+  &-nav_horizontal a {
     padding: 10px 10px 10px 10px;
     width: 80%;
     line-height: 1.1;
-    text-decoration: underline;
+    text-decoration: none;
+    color: $black;
     cursor: pointer;
   }
 }
