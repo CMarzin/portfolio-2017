@@ -13,6 +13,7 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "animejs": "^2.2.0",
     "bump.js": "^1.0.3",
     "cowsay": "^1.2.1",
     "cross-env": "^5.1.3",
@@ -20,9 +21,7 @@
     "node-sass": "^4.7.2",
     "nuxt": "^1.0.0",
     "pixi.js": "^4.6.2",
-    "sass-loader": "^6.0.6",
-    "velocity": "^0.7.2",
-    "velocity-animate": "^1.5.1"
+    "sass-loader": "^6.0.6"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
