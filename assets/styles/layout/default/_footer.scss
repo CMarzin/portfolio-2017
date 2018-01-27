@@ -4,20 +4,22 @@ $border-height: 2px;
     position: absolute;
     bottom: 0;
 
+    display: flex;
+
     height: height('by_six-border');
-    width: 100%;
+    width: width('footer');
 
     background: $white;
     @include border($border-height);
   }
 
   &-footer-projects {
-    position: absolute;
+    position: relative;
     
     height: 100%;
     width: width('by_twentyFour');
 
-   font-size: 32px;
+   font-size: 26px;
    font-family: 'Avenir-black';
 
    display: flex;
@@ -30,7 +32,6 @@ $border-height: 2px;
   &-footer-nav {
     width: width('by_six');
     height: 100%;
-    margin-left: spacing('by_twentyFour');
 
     background: $red;
     border-right: solid $border-height $black;
@@ -48,6 +49,10 @@ $border-height: 2px;
 
     cursor: pointer;
     transition: 0.5s ease;
+  }
+
+  &-footer-description {
+    padding: 20px;
   }
 
   &-footer_arrow-left {

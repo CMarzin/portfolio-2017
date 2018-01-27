@@ -13,7 +13,9 @@
         <img class="container__main-footer_arrow container__main-footer_arrow-right" src="~/static/arrow-right.svg" alt="">
       </nuxt-link>
     </div>
-      <div class="container__main-footer-description"></div>
+      <div class="container__main-footer-description">
+        {{ this.$store.state.projects[this.$store.state.pathToCurrentProject].description }}
+      </div>
   </div>
 </template>
 
@@ -21,6 +23,9 @@
 export default {
   name: '',
   middleware: 'routing-projects',
+  mounted () {
+    // console.log('test', this.$store.state.projects[this.$store.state.pathToCurrentProject])
+  },
   data () {
     return {
       archiveLink: [

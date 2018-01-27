@@ -12,6 +12,7 @@ export default function ({ route, store }) {
   let indexOfNextProject
   let indexOfPreviousProject
   let pathToNextProject
+  let pathToCurrentProject
   let pathToPreviousProject
   /* eslint-enable */
 
@@ -20,21 +21,25 @@ export default function ({ route, store }) {
     indexOfCurrentProject = 0
     indexOfNextProject = indexOfCurrentProject + 1
     pathToPreviousProject = formatTitle[indexOfPreviousProject]
+    pathToCurrentProject = formatTitle[indexOfCurrentProject]
     pathToNextProject = formatTitle[indexOfNextProject]
   } else if (indexOfCurrentProject === formatTitle.length - 1) {
     indexOfPreviousProject = indexOfCurrentProject - 1
     indexOfNextProject = 0
     // first project === path to home
     pathToNextProject = '/'
+    pathToCurrentProject = formatTitle[indexOfCurrentProject]
     pathToPreviousProject = formatTitle[indexOfPreviousProject]
   } else if (indexOfCurrentProject === 1) {
     indexOfNextProject = indexOfCurrentProject + 1
     pathToPreviousProject = '/'
+    pathToCurrentProject = formatTitle[indexOfCurrentProject]
     pathToNextProject = formatTitle[indexOfNextProject]
   } else {
     indexOfNextProject = indexOfCurrentProject + 1
     indexOfPreviousProject = indexOfCurrentProject - 1
     pathToPreviousProject = formatTitle[indexOfPreviousProject]
+    pathToCurrentProject = formatTitle[indexOfCurrentProject]
     pathToNextProject = formatTitle[indexOfNextProject]
   }
 
@@ -45,6 +50,7 @@ export default function ({ route, store }) {
   */
 
   store.state.pathToPreviousProject = pathToPreviousProject
+  store.state.pathToCurrentProject = pathToCurrentProject
   store.state.pathToNextProject = pathToNextProject
   store.state.counterProject = indexOfCurrentProject
 }

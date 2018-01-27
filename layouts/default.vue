@@ -20,7 +20,6 @@
 <script>
 import footerNav from '~/components/Footer/footerNavComponent'
 import horizontalNav from '~/components/Horizontal-Navigation/horizontalNavComponent'
-import anime from 'animejs'
 
 export default {
   name: '',
@@ -29,18 +28,6 @@ export default {
     'horizontalNav': horizontalNav
   },
   mounted () {
-    console.log('anime', anime)
-    // anime({
-    //   targets: 'h3',
-    //   translateX: [
-    //     { value: 100, duration: 1200 },
-    //     { value: 0, duration: 800 }
-    //   ],
-    //   rotate: '1turn',
-    //   backgroundColor: '#FFF',
-    //   duration: 2000,
-    //   loop: true
-    // })
   }
 }
 </script>
