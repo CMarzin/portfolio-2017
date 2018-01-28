@@ -3,6 +3,11 @@ import Vuex from 'vuex'
 const store = () => new Vuex.Store({
 
   state: {
+    pathToPreviousProject: '',
+    pathToCurrentProject: '',
+    pathToNextProject: '',
+    counterProject: 0,
+    currentProjectTitle: '',
     projectTitle: [
       'jochen gerz',
       'mywings',
@@ -17,40 +22,36 @@ const store = () => new Vuex.Store({
     ],
     projects: {
       jochengerz: {
-        description: 'This is the second project I made during my internship at Cher Ami (Lyon during 3 months). I made the fallback version of the website in the case of the WEBGL version was not available.'
+        description: 'Made in berlin lol'
       },
       mywings: {
-        description: 'This is the second project I made during my internship at Cher Ami (Lyon during 3 months). I made the fallback version of the website in the case of the WEBGL version was not available.'
+        description: 'Red bull give you wings'
       },
       portfolio: {
-        description: 'This is the second project I made during my internship at Cher Ami (Lyon during 3 months). I made the fallback version of the website in the case of the WEBGL version was not available.'
+        description: 'My previous portfolio x)'
       },
       cherami: {
-        description: 'This is the second project I made during my internship at Cher Ami (Lyon during 3 months). I made the fallback version of the website in the case of the WEBGL version was not available.'
+        description: 'During 3 months, I had my internship at Cher Ami in Lyon. My first project consisted of making some changes on several pages of their website (about/contact). I was in charge to integrate new animations like the loader and the opening animation for the videos.'
       },
       fidgetcube: {
         description: 'This is the second project I made during my internship at Cher Ami (Lyon during 3 months). I made the fallback version of the website in the case of the WEBGL version was not available.'
       },
       maitrerenard: {
-        description: 'This is the second project I made during my internship at Cher Ami (Lyon during 3 months). I made the fallback version of the website in the case of the WEBGL version was not available.'
+        description: 'Poem editor made in 2 weeks'
       },
       starwars: {
-        description: 'This is the second project I made during my internship at Cher Ami (Lyon during 3 months). I made the fallback version of the website in the case of the WEBGL version was not available.'
+        description: 'This project has been made during an intensive week. The theme was Star Wars. I developped the blue visualizer, entirely in DOM which had to react to frequency of the sound.'
       },
       heaven: {
-        description: 'This is the second project I made during my internship at Cher Ami (Lyon during 3 months). I made the fallback version of the website in the case of the WEBGL version was not available.'
+        description: 'I worked on this during my internship at Cher Ami (Lyon during 3 months). I realized the menu animation and participated to the integration of the site.'
       },
       bethedrop: {
-        description: 'This is the second project I made during my internship at Cher Ami (Lyon during 3 months). I made the fallback version of the website in the case of the WEBGL version was not available.'
+        description: 'When we started the fidget cube project, there were an ongoing financing campaign on Kickstarter. For this project I created the cube on Cinema 4D, made the slider and integrated several pages and the menu. To enjoy the best experience, it is better to open the website on an android phone with Chrome or Firefox because the API vibrations unfortunaly didn\'t work on IOS by now'
       },
       lab: {
-        description: 'This is the second project I made during my internship at Cher Ami (Lyon during 3 months). I made the fallback version of the website in the case of the WEBGL version was not available.'
+        description: 'Some projects made for fun'
       }
-    },
-    pathToPreviousProject: '',
-    pathToCurrentProject: '',
-    pathToNextProject: '',
-    counterProject: 0
+    }
   }
 })
 

@@ -1,8 +1,4 @@
 <template>
-  <div class="container__main-title">
-    CHER AMI
-  </div>
-  <!-- <div class="container__main-footer-description"></div> -->
 </template>
 
 <script>

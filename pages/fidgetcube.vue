@@ -1,7 +1,4 @@
 <template>
-  <div class="container__main-title">
-    FIDGET CUBE
-  </div>
 </template>
 
 <script>

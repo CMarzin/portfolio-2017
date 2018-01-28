@@ -1,7 +1,4 @@
 <template>
-  <div class="container__main-title">
-    HEAVEN
-  </div>
 </template>
 
 <script>

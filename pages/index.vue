@@ -1,11 +1,4 @@
 <template>
-  <div class="container__main-title">
-    JOCHEN GERZ
-    <div class="box-test"></div>
-    <!-- <playground></playground> -->
-    
-  </div>
-  
 </template>
 
 <script>

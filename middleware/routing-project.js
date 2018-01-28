@@ -53,4 +53,5 @@ export default function ({ route, store }) {
   store.state.pathToCurrentProject = pathToCurrentProject
   store.state.pathToNextProject = pathToNextProject
   store.state.counterProject = indexOfCurrentProject
+  store.state.currentProjectTitle = pathToCurrentProject.toUpperCase()
 }

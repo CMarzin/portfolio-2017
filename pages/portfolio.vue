@@ -1,7 +1,4 @@
 <template>
-  <div class="container__main-title">
-    PORTFOLIO
-  </div>
 </template>
 
 <script>

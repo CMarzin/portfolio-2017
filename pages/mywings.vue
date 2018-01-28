@@ -1,7 +1,4 @@
 <template>
-  <div class="container__main-title">
-    MYWINGS
-  </div>
 </template>
 
 <script>

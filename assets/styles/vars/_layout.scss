@@ -6,9 +6,13 @@
 /// @prop {String} key - Type of the width
 /// @prop {Map} value - Width value
 ///
+///
+/// 2px = width of the border
+// playground + 4px = to fix the width of the border
 $widths: (
-  'playground': calc(100% - (100% / 12)),
+  'playground': calc(100% - ( (100% / 10) + (100% / 24)) + 4px),
   'footer': calc(100% - (100% / 24) + 4px),
+  'description': calc(100% - ((100% / 6) + (100% / 24))),
   'by_twentyFour': calc(100% / 24),
   'by_twelve': calc(100% / 12),
   'by_ten': calc(100% / 10),
@@ -25,7 +29,9 @@ $widths: (
 /// @prop {String} key - Type of the height
 /// @prop {Map} value - Height value
 ///
-/// 5px = height of the border
+///
+///
+/// 2px = height of the border
 $heights: (
   'playground': calc(100% - (100% / 6)),
   'by_twelve': calc(100% / 12),
@@ -45,6 +51,8 @@ $heights: (
 /// @prop {String} key - Identifier of the spacing
 /// @prop {Map} value - Spacing value
 ///
+///
+/// 2px = width of the border
 $spacing: (
   'xsmall': 5px,
   'small': 10px,

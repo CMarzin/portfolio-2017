@@ -1,7 +1,13 @@
 <template>
   <div class="container__main">
     <nuxt/>
-    <h1 class="container__main-logo">Corentin Marzin</h1>
+    <div class="container__main-playground">
+        <h1 class="container__main-logo">Corentin Marzin</h1>
+        <div class="container__main-title">
+           {{ this.$store.state.currentProjectTitle }}
+        </div>
+    </div>
+
     <div class="container__main-about">
       <h3>ABOUT</h3>
     </div>
@@ -28,6 +34,7 @@ export default {
     'horizontalNav': horizontalNav
   },
   mounted () {
+    // console.log(this.$store.state.currentProjectTitle)
   }
 }
 </script>
