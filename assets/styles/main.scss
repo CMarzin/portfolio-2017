@@ -10,9 +10,26 @@
 @import 'vars/colors';
 @import 'vars/mixin';
 
+@import 'basics/global';
+
 // Layout //
 @import 'layout/default';
 
 * {
   box-sizing: border-box;
+}
+
+.trololo-red {
+  transition: 0.5s ease;
+  background: $red;
+}
+
+.bg-yellow {
+  transition: 0.5s ease;
+  background: $yellow;
+}
+
+.bg-blue {
+  transition: 0.5s ease;
+  background: $blue;
 }

@@ -5,7 +5,7 @@
       <p> / </p>
       <p>{{ this.$store.state.projectTitle.length }}</p>
     </div>
-    <div class="container__main-footer-nav">
+    <div :class="['container__main-footer-nav', customClassBg]">
       <nuxt-link :to="this.$store.state.pathToPreviousProject">
         <img class="container__main-footer_arrow container__main-footer_arrow-left" src="~/static/arrow-left.svg" alt="">
       </nuxt-link>
@@ -22,12 +22,21 @@
 <script>
 export default {
   name: '',
-  middleware: 'routing-projects',
-  mounted () {
-    // console.log('test', this.$store.state.projects[this.$store.state.pathToCurrentProject])
+  middleware: 'routing',
+  computed: {
+    customClassText: function () {
+      let customClass = 'txt-' + this.$store.state.projects[this.$store.state.pathToCurrentProject].color
+      return customClass
+    },
+    customClassBg: function () {
+      let customClass = 'bonjour-' + this.$store.state.projects[this.$store.state.pathToCurrentProject].color
+      return customClass
+    }
   },
   data () {
     return {
+      defaultClassFooterProjects: 'container__main-footer-projects',
+      customClassFooterProjects: '',
       archiveLink: [
         'http://corentinmarzin.fr/lab/recall',
         'http://corentinmarzin.fr/lab/cowspiracy',

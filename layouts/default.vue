@@ -3,12 +3,15 @@
     <nuxt/>
     <div class="container__main-playground">
         <h1 class="container__main-logo">Corentin Marzin</h1>
-        <div class="container__main-title">
+        <div :class="['container__main-title', customClassText]">
            {{ this.$store.state.currentProjectTitle }}
+        </div>
+        <div class="container__main-photos">
+           <img class="container__main-photo" src="~/static/gerz.jpg" alt="">
         </div>
     </div>
 
-    <div class="container__main-about">
+    <div :class="['container__main-about', customClassBg]">
       <h3>ABOUT</h3>
     </div>
 
@@ -33,8 +36,15 @@ export default {
     'footerNav': footerNav,
     'horizontalNav': horizontalNav
   },
-  mounted () {
-    // console.log(this.$store.state.currentProjectTitle)
+  computed: {
+    customClassText: function () {
+      let customClass = 'txt-' + this.$store.state.projects[this.$store.state.pathToCurrentProject].color
+      return customClass
+    },
+    customClassBg: function () {
+      let customClass = 'bonjour-' + this.$store.state.projects[this.$store.state.pathToCurrentProject].color
+      return customClass
+    }
   }
 }
 </script>

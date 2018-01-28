@@ -1,46 +1,64 @@
 export default function ({ route, store }) {
   const ProjectTitle = store.state.projectTitle
-  let currentPathName = route.name
+  const currentPathName = route.name
 
   let formatTitle = []
+
   for (let i = 0; i < ProjectTitle.length; i++) {
     formatTitle.push(ProjectTitle[i].replace(/\s+/g, ''))
   }
 
   let indexOfCurrentProject = formatTitle.indexOf(currentPathName)
-  /* eslint-disable */
   let indexOfNextProject
   let indexOfPreviousProject
+
   let pathToNextProject
   let pathToCurrentProject
   let pathToPreviousProject
-  /* eslint-enable */
 
-  if (currentPathName === 'index') {
+  let currentProjectTitle
+
+  const ifPageIndex = currentPathName === 'index'
+  const ifLastProject = indexOfCurrentProject === formatTitle.length - 1
+  const ifSecondProject = indexOfCurrentProject === 1
+
+  if (ifPageIndex) {
     indexOfPreviousProject = formatTitle.length - 1
     indexOfCurrentProject = 0
     indexOfNextProject = indexOfCurrentProject + 1
+
     pathToPreviousProject = formatTitle[indexOfPreviousProject]
     pathToCurrentProject = formatTitle[indexOfCurrentProject]
     pathToNextProject = formatTitle[indexOfNextProject]
-  } else if (indexOfCurrentProject === formatTitle.length - 1) {
+
+    currentProjectTitle = ProjectTitle[indexOfCurrentProject]
+  } else if (ifLastProject) {
     indexOfPreviousProject = indexOfCurrentProject - 1
     indexOfNextProject = 0
+
     // first project === path to home
     pathToNextProject = '/'
     pathToCurrentProject = formatTitle[indexOfCurrentProject]
     pathToPreviousProject = formatTitle[indexOfPreviousProject]
-  } else if (indexOfCurrentProject === 1) {
+
+    currentProjectTitle = ProjectTitle[indexOfCurrentProject]
+  } else if (ifSecondProject) {
     indexOfNextProject = indexOfCurrentProject + 1
+
     pathToPreviousProject = '/'
     pathToCurrentProject = formatTitle[indexOfCurrentProject]
     pathToNextProject = formatTitle[indexOfNextProject]
+
+    currentProjectTitle = ProjectTitle[indexOfCurrentProject]
   } else {
     indexOfNextProject = indexOfCurrentProject + 1
     indexOfPreviousProject = indexOfCurrentProject - 1
+
     pathToPreviousProject = formatTitle[indexOfPreviousProject]
     pathToCurrentProject = formatTitle[indexOfCurrentProject]
     pathToNextProject = formatTitle[indexOfNextProject]
+
+    currentProjectTitle = ProjectTitle[indexOfCurrentProject]
   }
 
   /*
@@ -52,6 +70,8 @@ export default function ({ route, store }) {
   store.state.pathToPreviousProject = pathToPreviousProject
   store.state.pathToCurrentProject = pathToCurrentProject
   store.state.pathToNextProject = pathToNextProject
+
   store.state.counterProject = indexOfCurrentProject
-  store.state.currentProjectTitle = pathToCurrentProject.toUpperCase()
+
+  store.state.currentProjectTitle = currentProjectTitle.toUpperCase()
 }

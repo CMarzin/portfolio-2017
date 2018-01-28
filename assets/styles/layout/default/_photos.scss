@@ -1,0 +1,19 @@
+@mixin photos {
+  &-photos {
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    margin-right: spacing('by_twentyFour');
+
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+  }
+
+  &-photo {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: solid 2px $black;
+  }
+}

@@ -1,6 +1,7 @@
 @import 'default/playground';
 @import 'default/logo';
 @import 'default/title';
+@import 'default/photos';
 @import 'default/cowsay';
 @import 'default/footer';
 @import 'default/about';
@@ -16,6 +17,7 @@
   @include playground;
   @include logo;
   @include title;
+  @include photos;
   @include cowsay;
   @include about;
   @include navigation;

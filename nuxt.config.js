@@ -1,6 +1,6 @@
 module.exports = {
   router: {
-    middleware: 'routing-project'
+    middleware: 'routing'
   },
   /*
   ** Headers of the page
