@@ -6,6 +6,7 @@ const store = () => new Vuex.Store({
     pathToPreviousProject: '',
     pathToCurrentProject: '',
     pathToNextProject: '',
+    pathToSecondNextProject: '',
     counterProject: 0,
     currentProjectTitle: '',
     projectTitle: [

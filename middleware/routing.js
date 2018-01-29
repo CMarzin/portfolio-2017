@@ -12,6 +12,9 @@ export default function ({ route, store }) {
   let indexOfNextProject
   let indexOfPreviousProject
 
+  let indexOfSecondNextProject
+  let pathToSecondNextProject
+
   let pathToNextProject
   let pathToCurrentProject
   let pathToPreviousProject
@@ -27,19 +30,25 @@ export default function ({ route, store }) {
     indexOfCurrentProject = 0
     indexOfNextProject = indexOfCurrentProject + 1
 
+    indexOfSecondNextProject = indexOfCurrentProject + 2
+
     pathToPreviousProject = formatTitle[indexOfPreviousProject]
     pathToCurrentProject = formatTitle[indexOfCurrentProject]
     pathToNextProject = formatTitle[indexOfNextProject]
+
+    pathToSecondNextProject = formatTitle[indexOfSecondNextProject]
 
     currentProjectTitle = ProjectTitle[indexOfCurrentProject]
   } else if (ifLastProject) {
     indexOfPreviousProject = indexOfCurrentProject - 1
     indexOfNextProject = 0
+    indexOfSecondNextProject = 1
 
     // first project === path to home
     pathToNextProject = '/'
     pathToCurrentProject = formatTitle[indexOfCurrentProject]
     pathToPreviousProject = formatTitle[indexOfPreviousProject]
+    pathToSecondNextProject = formatTitle[indexOfSecondNextProject]
 
     currentProjectTitle = ProjectTitle[indexOfCurrentProject]
   } else if (ifSecondProject) {
@@ -49,14 +58,18 @@ export default function ({ route, store }) {
     pathToCurrentProject = formatTitle[indexOfCurrentProject]
     pathToNextProject = formatTitle[indexOfNextProject]
 
+    pathToSecondNextProject = formatTitle[indexOfSecondNextProject]
+
     currentProjectTitle = ProjectTitle[indexOfCurrentProject]
   } else {
     indexOfNextProject = indexOfCurrentProject + 1
+    indexOfSecondNextProject = indexOfCurrentProject + 2
     indexOfPreviousProject = indexOfCurrentProject - 1
 
     pathToPreviousProject = formatTitle[indexOfPreviousProject]
     pathToCurrentProject = formatTitle[indexOfCurrentProject]
     pathToNextProject = formatTitle[indexOfNextProject]
+    pathToSecondNextProject = formatTitle[indexOfSecondNextProject]
 
     currentProjectTitle = ProjectTitle[indexOfCurrentProject]
   }
@@ -70,6 +83,7 @@ export default function ({ route, store }) {
   store.state.pathToPreviousProject = pathToPreviousProject
   store.state.pathToCurrentProject = pathToCurrentProject
   store.state.pathToNextProject = pathToNextProject
+  store.state.pathToSecondNextProject = pathToSecondNextProject
 
   store.state.counterProject = indexOfCurrentProject
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="container__main-nav_horizontal">
+  <div :class="['container__main-nav_horizontal']">
     <!-- <button @click="emitGlobalClickEvent()"> CLICK ME</button> -->
     <nuxt-link v-for="title in this.$store.state.projectTitle" :key="title.id" :to="title.replace(/\s+/g, '') === 'jochengerz' ? '/' : title.replace(/\s+/g, '')">
       <h3 class="container__main-nav_horizontal--title" >{{ title.toUpperCase() }}</h3>      
@@ -12,6 +12,12 @@ import { EventBus } from '~/components/Bus/event-bus.js'
 
 export default {
   name: '',
+  computed: {
+    customClassBgNext: function () {
+      let customClass = 'bonjour-' + this.$store.state.projects[this.$store.state.pathToSecondNextProject].color
+      return customClass
+    }
+  },
   data () {
     return {
       clickCount: 0

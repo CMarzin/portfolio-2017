@@ -11,7 +11,7 @@
         </div>
     </div>
 
-    <div :class="['container__main-about', customClassBg]">
+    <div :class="['container__main-about', customClassBgNext]">
       <h3>ABOUT</h3>
     </div>
 
@@ -43,6 +43,10 @@ export default {
     },
     customClassBg: function () {
       let customClass = 'bonjour-' + this.$store.state.projects[this.$store.state.pathToCurrentProject].color
+      return customClass
+    },
+    customClassBgNext: function () {
+      let customClass = 'bonjour-' + this.$store.state.projects[this.$store.state.pathToNextProject].color
       return customClass
     }
   }
