@@ -46,7 +46,7 @@ export default {
       return customClass
     },
     customClassBgNext: function () {
-      let customClass = 'bonjour-' + this.$store.state.projects[this.$store.state.pathToNextProject].color
+      let customClass = 'bonjour-' + this.$store.state.projects[this.$store.state.pathToSecondNextProject].color
       return customClass
     }
   }

@@ -1,6 +1,5 @@
 export default function ({ route, store }) {
   const ProjectTitle = store.state.projectTitle
-  const currentPathName = route.name
 
   let formatTitle = []
 
@@ -8,70 +7,23 @@ export default function ({ route, store }) {
     formatTitle.push(ProjectTitle[i].replace(/\s+/g, ''))
   }
 
+  const currentPathName = route.name ? route.name : formatTitle[0]
+
   let indexOfCurrentProject = formatTitle.indexOf(currentPathName)
-  let indexOfNextProject
-  let indexOfPreviousProject
 
-  let indexOfSecondNextProject
   let pathToSecondNextProject
-
   let pathToNextProject
   let pathToCurrentProject
   let pathToPreviousProject
 
   let currentProjectTitle
 
-  const ifPageIndex = currentPathName === 'index'
-  const ifLastProject = indexOfCurrentProject === formatTitle.length - 1
-  const ifSecondProject = indexOfCurrentProject === 1
+  pathToPreviousProject = formatTitle[indexOfCurrentProject - 1] || formatTitle[formatTitle.length - 1]
+  pathToCurrentProject = formatTitle[indexOfCurrentProject]
+  pathToNextProject = formatTitle[indexOfCurrentProject + 1] || formatTitle[0]
+  pathToSecondNextProject = formatTitle[indexOfCurrentProject + 2] || formatTitle[0]
 
-  if (ifPageIndex) {
-    indexOfPreviousProject = formatTitle.length - 1
-    indexOfCurrentProject = 0
-    indexOfNextProject = indexOfCurrentProject + 1
-
-    indexOfSecondNextProject = indexOfCurrentProject + 2
-
-    pathToPreviousProject = formatTitle[indexOfPreviousProject]
-    pathToCurrentProject = formatTitle[indexOfCurrentProject]
-    pathToNextProject = formatTitle[indexOfNextProject]
-
-    pathToSecondNextProject = formatTitle[indexOfNextProject + 1]
-
-    currentProjectTitle = ProjectTitle[indexOfCurrentProject]
-  } else if (ifLastProject) {
-    indexOfPreviousProject = indexOfCurrentProject - 1
-    indexOfNextProject = 0
-
-    // first project === path to home
-    pathToNextProject = '/'
-    pathToCurrentProject = formatTitle[indexOfCurrentProject]
-    pathToPreviousProject = formatTitle[indexOfPreviousProject]
-    pathToSecondNextProject = formatTitle[indexOfNextProject + 1]
-
-    currentProjectTitle = ProjectTitle[indexOfCurrentProject]
-  } else if (ifSecondProject) {
-    indexOfNextProject = indexOfCurrentProject + 1
-
-    pathToPreviousProject = '/'
-    pathToCurrentProject = formatTitle[indexOfCurrentProject]
-    pathToNextProject = formatTitle[indexOfNextProject]
-
-    pathToSecondNextProject = formatTitle[indexOfNextProject + 1]
-
-    currentProjectTitle = ProjectTitle[indexOfCurrentProject]
-  } else {
-    indexOfNextProject = indexOfCurrentProject + 1
-    indexOfSecondNextProject = indexOfCurrentProject + 2
-    indexOfPreviousProject = indexOfCurrentProject - 1
-
-    pathToPreviousProject = formatTitle[indexOfPreviousProject]
-    pathToCurrentProject = formatTitle[indexOfCurrentProject]
-    pathToNextProject = formatTitle[indexOfNextProject]
-    pathToSecondNextProject = formatTitle[indexOfNextProject + 1]
-
-    currentProjectTitle = ProjectTitle[indexOfCurrentProject]
-  }
+  currentProjectTitle = ProjectTitle[indexOfCurrentProject]
 
   /*
   **********

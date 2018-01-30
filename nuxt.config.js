@@ -1,6 +1,13 @@
 module.exports = {
   router: {
-    middleware: 'routing'
+    middleware: 'routing',
+    extendRoutes (routes, resolve) {
+      routes.push({
+        name: 'jochengerz',
+        path: '/',
+        component: resolve(__dirname, 'pages/jochengerz.vue')
+      })
+    }
   },
   /*
   ** Headers of the page
