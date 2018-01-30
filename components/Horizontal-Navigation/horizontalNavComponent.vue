@@ -1,5 +1,5 @@
 <template>
-  <div :class="['container__main-nav_horizontal']">
+  <div :class="['container__main-nav_horizontal', customClassBgNext]">
     <!-- <button @click="emitGlobalClickEvent()"> CLICK ME</button> -->
     <nuxt-link v-for="title in this.$store.state.projectTitle" :key="title.id" :to="title.replace(/\s+/g, '') === 'jochengerz' ? '/' : title.replace(/\s+/g, '')">
       <h3 class="container__main-nav_horizontal--title" >{{ title.toUpperCase() }}</h3>      

@@ -6,7 +6,7 @@
     height: height('playground');
     width: width('by_ten');
 
-    background: $yellow;
+    // background: $yellow;
     @include border(2px);
     text-align: center;
     font-size: font-size('subtitle');

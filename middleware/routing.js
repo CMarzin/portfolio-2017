@@ -36,19 +36,18 @@ export default function ({ route, store }) {
     pathToCurrentProject = formatTitle[indexOfCurrentProject]
     pathToNextProject = formatTitle[indexOfNextProject]
 
-    pathToSecondNextProject = formatTitle[indexOfSecondNextProject]
+    pathToSecondNextProject = formatTitle[indexOfNextProject + 1]
 
     currentProjectTitle = ProjectTitle[indexOfCurrentProject]
   } else if (ifLastProject) {
     indexOfPreviousProject = indexOfCurrentProject - 1
     indexOfNextProject = 0
-    indexOfSecondNextProject = 1
 
     // first project === path to home
     pathToNextProject = '/'
     pathToCurrentProject = formatTitle[indexOfCurrentProject]
     pathToPreviousProject = formatTitle[indexOfPreviousProject]
-    pathToSecondNextProject = formatTitle[indexOfSecondNextProject]
+    pathToSecondNextProject = formatTitle[indexOfNextProject + 1]
 
     currentProjectTitle = ProjectTitle[indexOfCurrentProject]
   } else if (ifSecondProject) {
@@ -58,7 +57,7 @@ export default function ({ route, store }) {
     pathToCurrentProject = formatTitle[indexOfCurrentProject]
     pathToNextProject = formatTitle[indexOfNextProject]
 
-    pathToSecondNextProject = formatTitle[indexOfSecondNextProject]
+    pathToSecondNextProject = formatTitle[indexOfNextProject + 1]
 
     currentProjectTitle = ProjectTitle[indexOfCurrentProject]
   } else {
@@ -69,7 +68,7 @@ export default function ({ route, store }) {
     pathToPreviousProject = formatTitle[indexOfPreviousProject]
     pathToCurrentProject = formatTitle[indexOfCurrentProject]
     pathToNextProject = formatTitle[indexOfNextProject]
-    pathToSecondNextProject = formatTitle[indexOfSecondNextProject]
+    pathToSecondNextProject = formatTitle[indexOfNextProject + 1]
 
     currentProjectTitle = ProjectTitle[indexOfCurrentProject]
   }
@@ -87,5 +86,7 @@ export default function ({ route, store }) {
 
   store.state.counterProject = indexOfCurrentProject
 
-  store.state.currentProjectTitle = currentProjectTitle.toUpperCase()
+  currentProjectTitle = currentProjectTitle.toUpperCase()
+
+  store.state.currentProjectTitle = currentProjectTitle
 }
