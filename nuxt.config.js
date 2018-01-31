@@ -3,9 +3,9 @@ module.exports = {
     middleware: 'routing',
     extendRoutes (routes, resolve) {
       routes.push({
-        name: 'jochengerz',
         path: '/',
-        component: resolve(__dirname, 'pages/jochengerz.vue')
+        component: resolve(__dirname, 'pages/jochengerz.vue'),
+        alias: '/jochengerz'
       })
     }
   },
