@@ -13,6 +13,10 @@ $border-height: 2px;
     @include border($border-height);
   }
 
+  /*******************************
+  * PROJECTS
+  ********************************/
+
   &-footer-projects {
     position: relative;
     
@@ -20,7 +24,7 @@ $border-height: 2px;
     width: width('by_twentyFour');
 
    font-size: 26px;
-   font-family: 'Avenir-black';
+   font-family: $maison_mono;
 
    display: flex;
    flex-flow: column;
@@ -28,6 +32,10 @@ $border-height: 2px;
    align-items: center;
 
   }
+
+  /*******************************
+  * NAV
+  ********************************/
 
   &-footer-nav {
     width: width('by_six');
@@ -50,9 +58,15 @@ $border-height: 2px;
     transition: 0.5s ease;
   }
 
+  /*******************************
+  * DESCRIPTION
+  ********************************/
+
   &-footer-description {
     width: width('description');
     padding: 20px;
+
+    font-family: $maison_book;
   }
 
   &-footer_arrow-left {

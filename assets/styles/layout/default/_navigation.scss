@@ -4,13 +4,12 @@
     right: spacing('by_twentyFour-border');
 
     height: height('playground');
-    width: width('by_ten');
+    width: width('by_height');
 
-    // background: $yellow;
     @include border(2px);
     text-align: center;
     font-size: font-size('subtitle');
-    font-family: 'Avenir-medium';
+    font-family: $maison_mono;
 
     display: flex;
     flex-flow: column;

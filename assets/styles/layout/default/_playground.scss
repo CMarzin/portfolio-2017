@@ -2,7 +2,6 @@ $border-height: 2px;
 @mixin playground {
   &-playground {
     position: relative;
-    // background: red;
 
     width: width('playground');
     height: height('playground');

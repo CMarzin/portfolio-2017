@@ -1,24 +1,51 @@
 @font-face {
-  font-family: 'Avenir-black';
-  src: url('~/assets/fonts/avenir_black.ttf') format('truetype');
-    font-weight: 900;
-    font-style: normal;
+  font-family: 'Eksell Display Large';
+  src: url('~/assets/fonts/EksellDisplay-Large.eot'); /* IE9 Compat Modes */
+  src: url('~/assets/fonts/EksellDisplay-Large.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('~/assets/fonts/EksellDisplay-Large.woff') format('woff'), /* Modern Browsers */
+       url('~/assets/fonts/EksellDisplay-Large.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('~/assets/fonts/EksellDisplay-Large.svg#c7cf8896a6e72b7f3b94d04548a9d8b7') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  400;
 }
 
 @font-face {
-  font-family: 'Avenir-heavy';
-  src: url('~/assets/fonts/avenir_heavy.ttf') format('truetype');
-    font-weight: 900;
-    font-style: normal;
+  font-family: 'Maison Neue Book';
+  src: url('~/assets/fonts/MaisonNeue-Book.eot'); /* IE9 Compat Modes */
+  src: url('~/assets/fonts/MaisonNeue-Book.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('~/assets/fonts/MaisonNeue-Book.woff') format('woff'), /* Modern Browsers */
+       url('~/assets/fonts/MaisonNeue-Book.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('~/assets/fonts/MaisonNeue-Book.svg#cfe9c4d435b13936a17ea5090528f1ab') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  400;
 }
 
 @font-face {
-  font-family: 'Avenir-medium';
-  src: url('~/assets/fonts/avenir_medium.ttf') format('truetype');
-    font-weight: 500;
-    font-style: normal;
+  font-family: 'Maison Neue Book Italic';
+  src: url('~/assets/fonts/MaisonNeue-BookItalic.eot'); /* IE9 Compat Modes */
+  src: url('~/assets/fonts/MaisonNeue-BookItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('~/assets/fonts/MaisonNeue-BookItalic.woff') format('woff'), /* Modern Browsers */
+       url('~/assets/fonts/MaisonNeue-BookItalic.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('~/assets/fonts/MaisonNeue-BookItalic.svg#bbed207300b15245656f8e98a9d8ff7e') format('svg'); /* Legacy iOS */
+       
+  font-style:   italic;
+  font-weight:  400;
 }
 
-$avenir_b: 'Avenir-black';
-$avenir_h: 'Avenir-heavy';
-$avenir_m: 'Avenir-medium';
+@font-face {
+  font-family: 'Maison Neue Mono';
+  src: url('~/assets/fonts/MaisonNeue-Mono.eot'); /* IE9 Compat Modes */
+  src: url('~/assets/fonts/MaisonNeue-Mono.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('~/assets/fonts/MaisonNeue-Mono.woff') format('woff'), /* Modern Browsers */
+       url('~/assets/fonts/MaisonNeue-Mono.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('~/assets/fonts/MaisonNeue-Mono.svg#af2fa94b953e46dc77e59983b9e9c303') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  400;
+}
+
+$maison_mono: 'Maison Neue Mono';
+$eksell: 'Eksell Display Large';
+$maison_book: 'Maison Neue Book';
