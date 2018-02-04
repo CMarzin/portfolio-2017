@@ -64,12 +64,12 @@ $border-height: 2px;
 
   &-footer_arrow-left {
     position: relative;
-    margin-right: 52px;
+    margin-right: 32px;
 
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 24px 48px 24px 0;
+    border-width: 19px 36px 19px 0;
     border-color: transparent #000000 transparent transparent;
 
     display: block;
@@ -80,11 +80,11 @@ $border-height: 2px;
       position: absolute;
       width: 0;
       height: 0;
-      left: 58px;
+      left: 48px;
       top: 50%;
       transform: translateY(-50%);
       border-style: solid;
-      border-width: 12px 24px 12px 0;
+      border-width: 6px 12px 6px 0;
       border-color: transparent #000000 transparent transparent;
       display: block;
     }
@@ -94,7 +94,7 @@ $border-height: 2px;
       position: absolute;
       width: 0;
       height: 0;
-      left: 88px;
+      left: 68px;
       top: 50%;
       transform: translateY(-50%);
       border-style: solid;
@@ -110,10 +110,10 @@ $border-height: 2px;
 
   &-footer_arrow-right {
     position: relative;
-    margin-left: 52px;
+    margin-left: 32px;
     height: 0;
     border-style: solid;
-    border-width: 24px 0 24px 48px;    
+    border-width: 19px 0 19px 36px;    
     border-color: transparent transparent transparent #000000;
     display: block;
     transition: 0.5s ease;
@@ -123,11 +123,11 @@ $border-height: 2px;
       position: absolute;
       width: 0;
       height: 0;
-      right: 58px;
+      right: 48px;
       top: 50%;
       transform: translateY(-50%);
       border-style: solid;
-      border-width: 12px 0 12px 24px;    
+      border-width: 6px 0 6px 12px;    
       border-color: transparent transparent transparent #000000;
       display: block;
     }
@@ -137,7 +137,7 @@ $border-height: 2px;
       position: absolute;
       width: 0;
       height: 0;
-      right: 88px;
+      right: 68px;
       top: 50%;
       transform: translateY(-50%);
       border-style: solid;
