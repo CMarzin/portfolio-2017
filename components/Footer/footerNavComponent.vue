@@ -6,11 +6,13 @@
       <p>{{ this.$store.state.projectTitle.length }}</p>
     </div>
     <div :class="['container__main-footer-nav', customClassBg]">
-      <nuxt-link :to="this.$store.state.pathToPreviousProject">
-        <img class="container__main-footer_arrow container__main-footer_arrow-left" src="~/static/arrow-left.svg" alt="">
+      <nuxt-link class="container__main-footer_arrow" :to="this.$store.state.pathToPreviousProject">
+        <span class="container__main-footer_arrow-left"></span>
+        <!-- <img class="container__main-footer_arrow container__main-footer_arrow-left" src="~/static/arrow-left.svg" alt=""> -->
       </nuxt-link>
-      <nuxt-link :to="this.$store.state.pathToNextProject">
-        <img class="container__main-footer_arrow container__main-footer_arrow-right" src="~/static/arrow-right.svg" alt="">
+      <nuxt-link class="container__main-footer_arrow" :to="this.$store.state.pathToNextProject">
+        <span class="container__main-footer_arrow-right"></span>
+        <!-- <img class="container__main-footer_arrow container__main-footer_arrow-right" src="~/static/arrow-right.svg" alt=""> -->
       </nuxt-link>
     </div>
       <div class="container__main-footer-description">

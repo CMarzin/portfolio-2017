@@ -38,6 +38,7 @@ $border-height: 2px;
   ********************************/
 
   &-footer-nav {
+    position: relative;
     width: width('by_six');
     height: 100%;
 
@@ -51,11 +52,104 @@ $border-height: 2px;
   }
 
   &-footer_arrow {
-    width: width('by_two');
-    height: height('by_four');
+    width: 100%;
+    height: height('by_two');
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     cursor: pointer;
     transition: 0.5s ease;
+  }
+
+  &-footer_arrow-left {
+    position: relative;
+    margin-right: 52px;
+
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 24px 48px 24px 0;
+    border-color: transparent #000000 transparent transparent;
+
+    display: block;
+    transition: 0.5s ease;
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      left: 58px;
+      top: 50%;
+      transform: translateY(-50%);
+      border-style: solid;
+      border-width: 12px 24px 12px 0;
+      border-color: transparent #000000 transparent transparent;
+      display: block;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      left: 88px;
+      top: 50%;
+      transform: translateY(-50%);
+      border-style: solid;
+      border-width: 6px 12px 6px 0;
+      border-color: transparent #000000 transparent transparent;
+      display: block;
+    }
+
+    &:hover {
+      transform: translateX(-20px);
+    }
+  }
+
+  &-footer_arrow-right {
+    position: relative;
+    margin-left: 52px;
+    height: 0;
+    border-style: solid;
+    border-width: 24px 0 24px 48px;    
+    border-color: transparent transparent transparent #000000;
+    display: block;
+    transition: 0.5s ease;
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      right: 58px;
+      top: 50%;
+      transform: translateY(-50%);
+      border-style: solid;
+      border-width: 12px 0 12px 24px;    
+      border-color: transparent transparent transparent #000000;
+      display: block;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      right: 88px;
+      top: 50%;
+      transform: translateY(-50%);
+      border-style: solid;
+      border-width: 6px 0 6px 12px;    
+      border-color: transparent transparent transparent #000000;
+      display: block;
+    }
+
+    &:hover {
+      transition: 0.5s ease;
+      transform: translateX(20px);
+    }
   }
 
   /*******************************
@@ -67,19 +161,5 @@ $border-height: 2px;
     padding: 20px;
 
     font-family: $maison_book;
-  }
-
-  &-footer_arrow-left {
-    &:hover {
-      transition: 0.5s ease;
-      transform: translateX(-20px);
-    }
-  }
-
-  &-footer_arrow-right {
-    &:hover {
-      transition: 0.5s ease;
-      transform: translateX(20px);
-    }
   }
 }
