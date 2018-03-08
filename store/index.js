@@ -59,7 +59,7 @@ const store = () => new Vuex.Store({
         description: 'During 3 months, I had my internship at Cher Ami in Lyon. My first project consisted of making some changes on several pages of their website (about/contact). I was in charge to integrate new animations like the loader and the opening animation for the videos.'
       },
       lab: {
-        color: 'red',
+        color: 'yellow',
         description: 'Some projects made for fun'
       }
     }
