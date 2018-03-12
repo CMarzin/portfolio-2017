@@ -1,0 +1,19 @@
+@mixin middle {
+  &__middle {
+    width: 50%;
+    height: 100%;
+
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+
+    &-photo {
+      position: relative;
+      max-width: 600px;
+      max-height: 400px;
+      border: 2px solid black;
+    }
+
+  }
+}

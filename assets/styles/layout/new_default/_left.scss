@@ -1,0 +1,83 @@
+@mixin left {
+  &__left {
+    position: relative;
+    width: 30%;
+    height: 100%;
+
+    padding-left: spacing('large');
+
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-content: center;
+
+/*******************************
+* COUNTER
+********************************/
+
+    &-counter {
+      border: 2px solid black;
+      width: fit-content;
+      padding: spacing('small');
+    }
+
+    &-counter p {
+      font-size: 26px;
+      font-family: $maison_mono;
+      text-align: center;
+    }
+
+/*******************************
+* NAVIGATION ARROW
+********************************/
+
+    &-nav {
+      display: flex;
+    }
+
+    &-arrow {
+      width: 25%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  
+      cursor: pointer;
+      transition: 0.5s ease;
+    }
+
+    &-arrow:first-child {
+      margin-right: spacing('xxmedium');
+    }
+
+/*******************************
+* DESCRIPTION
+********************************/
+
+    &-desc {
+      font-size: font-size('subtitle');
+      padding-top: spacing('large');
+      font-family: $maison_mono;
+      line-height: 1.5;
+    }
+
+/*******************************
+* BUTTON SEE WEBSITE
+********************************/
+
+    &-website {
+      position: absolute;
+      bottom: spacing('large');
+      width: 50%;
+      height: 10vh;
+      font-family: $maison_mono;
+      color: $white;
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      border: 2px solid black;
+    }
+
+  }
+}

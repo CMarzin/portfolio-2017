@@ -1,0 +1,62 @@
+@mixin right {
+  &__right {
+    width: 20%;
+    height: 100%;
+
+    display: flex;
+
+/*******************************
+* REFACTOR WITH CSS VAR FOR ANIMATING
+********************************/
+    &-nav {
+      width: calc(80% + 2px);
+      height: 100%;
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      align-items: center;
+
+      font-size: font-size('subtitle');
+      font-family: $maison_mono;
+      text-align: center;
+      // @include colorful-list;
+
+      border-left: 2px solid black;
+      border-bottom: 2px solid black;
+      border-top: 2px solid black;
+    }
+
+    &-nav a {
+      padding: 10px 10px 10px 10px;
+      width: 80%;
+      line-height: 1.1;
+      text-decoration: none;
+      color: $black;
+      cursor: pointer;
+
+      &:hover {
+        color: $white;
+        transition: 0.5s ease;
+      }
+    }
+
+    &-about {
+      width: 20%;
+      height: 100%;
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      align-items: center;
+
+      border: 2px solid black;
+    }
+
+    &-about h3 {
+      writing-mode: vertical-lr;
+      text-orientation: upright;
+      font-size: font-size('subtitle');
+      font-family: $maison_mono;
+      letter-spacing: .5rem;
+    }
+  }
+}

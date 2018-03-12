@@ -24,3 +24,23 @@
   transition: 0.5s ease;
   color: $blue;
 }
+
+.title {
+  font-size: font-size('title');
+  font-family: $eksell;
+  white-space: nowrap;
+
+  margin-top: spacing('large');
+  margin-bottom: spacing('large');
+}
+
+.logo {
+    position: absolute;
+    left: spacing('large');
+    top: spacing('large');
+
+    max-width: 50%;
+
+    font-family: $maison_mono;
+    font-size: font-size('subtitle');
+}

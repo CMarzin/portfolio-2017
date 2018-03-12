@@ -1,0 +1,17 @@
+@import 'new_default/left';
+@import 'new_default/middle';
+@import 'new_default/right';
+
+.container {
+  &__main {
+    position: relative;
+    display: flex;
+  
+    width: 100%;
+    height: 100vh;
+  }
+
+  @include left;
+  @include middle;
+  @include right;
+}
