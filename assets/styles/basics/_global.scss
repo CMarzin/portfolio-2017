@@ -36,11 +36,20 @@
 
 .logo {
     position: absolute;
-    left: spacing('large');
-    top: spacing('large');
+    left: 5%;
+    height: 10%;
 
-    max-width: 50%;
+    padding-left: spacing('medium');
 
     font-family: $maison_mono;
     font-size: font-size('subtitle');
+
+    display:flex;
+    align-items: center;
+}
+
+.logo a {
+  text-decoration: none;
+  z-index: 10;
+  color: $black;
 }

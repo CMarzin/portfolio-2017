@@ -1,15 +1,16 @@
 @mixin right {
   &__right {
-    width: 20%;
+    width: 10%;
     height: 100%;
 
     display: flex;
+    flex-flow: column;
 
 /*******************************
 * REFACTOR WITH CSS VAR FOR ANIMATING
 ********************************/
     &-nav {
-      width: calc(80% + 2px);
+      width: 50%;
       height: 100%;
       display: flex;
       flex-flow: column;
@@ -23,7 +24,6 @@
 
       border-left: 2px solid black;
       border-bottom: 2px solid black;
-      border-top: 2px solid black;
     }
 
     &-nav a {
@@ -40,8 +40,37 @@
       }
     }
 
+    &-nav h3 {
+      writing-mode: vertical-lr;
+      text-orientation: upright;
+      font-size: font-size('subtitle');
+      font-family: $maison_mono;
+      letter-spacing: .5rem;
+    }
+
     &-about {
-      width: 20%;
+      height: 10%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid $black;
+    }
+
+    &-about h3 {
+      font-size: font-size('subtitle');
+      font-family: $maison_mono;
+      cursor: pointer;
+    }
+
+    &-menu {
+      display: flex;
+      width: 100%;
+      height: 90%;
+    }
+
+    &-next-project {
+      width: 50%;
       height: 100%;
       display: flex;
       flex-flow: column;
@@ -49,14 +78,7 @@
       align-items: center;
 
       border: 2px solid black;
-    }
-
-    &-about h3 {
-      writing-mode: vertical-lr;
-      text-orientation: upright;
-      font-size: font-size('subtitle');
-      font-family: $maison_mono;
-      letter-spacing: .5rem;
+      border-top: none;
     }
   }
 }
