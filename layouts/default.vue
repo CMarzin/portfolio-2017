@@ -1,7 +1,8 @@
 <template>
   <div class="container__main">
     <nuxt/>
-     <div class="logo"><a href="/">Corentin Marzin</a></div>
+    <!-- <div class="transition-page" style="transform: scaleX(0)"></div> -->
+    <div class="logo"><a href="/">Corentin Marzin</a></div>
     <div class="container__left">
       <nuxt-link :class="['container__left-prev-project', customClassBgPrevious]" :to="this.$store.state.pathToPreviousProject">
        <div class="container__left-prev-icon">
@@ -64,8 +65,26 @@
 </template>
 
 <script>
+// import anime from 'animejs'
+
 export default {
   name: '',
+  transition: {
+    mode: 'out-in',
+    css: false,
+    enter (el, done) {
+      console.log('enterClass', el)
+      // anime(el, {
+      //   targets: '.transition',
+      //   duration: 500,
+      //   easing: 'easeOutExpo',
+      //   backgroundColor: [{ value: '#F5C316' }],
+      //   transformOrigin: ['100% 0% 0', '100% 0% 0'],
+      //   scaleX: 1
+      // })
+      done()
+    }
+  },
   computed: {
     customClassText: function () {
       let customClass = 'txt-' + this.$store.state.projects[this.$store.state.pathToCurrentProject].color

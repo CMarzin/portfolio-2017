@@ -52,3 +52,11 @@
   z-index: 10;
   color: $black;
 }
+
+.transition-page {
+  width: 90%;
+  height: 100%;
+  position: absolute;
+  right: 10%;
+  z-index: 100;
+}
