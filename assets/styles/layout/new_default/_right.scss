@@ -79,6 +79,39 @@
 
       border: 2px solid black;
       border-top: none;
+
+      text-decoration: none;
+      color: black;
+
+      &:hover div{
+        opacity: 1;
+      }
+    }
+
+    &-next-icon {
+      position: relative;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      opacity: 0;
+      transition: .5s ease;
+    }
+
+    &-next-arrow {
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 15px 0 15px 20px;
+      border-color: transparent transparent transparent $black;
+    }
+
+    &-next-text {
+      writing-mode: vertical-lr;
+      text-orientation: upright;
+      font-size: font-size('subtitle');
+      font-family: $maison_mono;
+      letter-spacing: .5rem;
     }
   }
 }

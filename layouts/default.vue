@@ -3,7 +3,12 @@
     <nuxt/>
      <div class="logo"><a href="/">Corentin Marzin</a></div>
     <div class="container__left">
-      <nuxt-link :class="['container__left-prev-project', customClassBgPrevious]" :to="this.$store.state.pathToPreviousProject"></nuxt-link>
+      <nuxt-link :class="['container__left-prev-project', customClassBgPrevious]" :to="this.$store.state.pathToPreviousProject">
+       <div class="container__left-prev-icon">
+        <span class="container__left-prev-arrow"></span>
+        <span class="container__left-prev-text">PREVIOUS</span>
+       </div>
+      </nuxt-link>
       <div class="container__left-elements">
         <div class="container__left-elements-content">
           <div class="container__left-counter">
@@ -47,7 +52,12 @@
             <h3 class="container__main-nav_horizontal--title" >{{ title.toUpperCase() }}</h3>      
           </nuxt-link> -->
         </div>
-        <nuxt-link :class="['container__right-next-project', customClassBgNext]" :to="this.$store.state.pathToNextProject"></nuxt-link>
+        <nuxt-link :class="['container__right-next-project', customClassBgNext]" :to="this.$store.state.pathToNextProject">
+          <div class="container__right-next-icon">
+            <span class="container__right-next-text">NEXT</span>
+            <span class="container__right-next-arrow"></span>
+          </div>
+        </nuxt-link>
       </div>
     </div>
   </div>
