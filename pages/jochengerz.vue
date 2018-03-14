@@ -1,5 +1,10 @@
 <template>
-  <div class="transition-page" style="transform: scaleX(0)"></div>
+  <div class="container__main">
+    <div class="transition-page" style="transform: scaleX(0)"></div>    
+    <Title></Title>
+    <Middle></Middle>
+    <Right></Right>
+  </div> 
 </template>
 
 <script>
@@ -7,8 +12,12 @@ import { think } from 'cowsay'
 import Playground from '~/components/playgroundComponent'
 import { EventBus } from '~/components/Bus/event-bus.js'
 
-import anime from 'animejs'
+// import anime from 'animejs'
 import UTILS from '~/assets/helpers/function.js'
+
+import Title from '~/components/Title/title'
+import Middle from '~/components/Middle/middle'
+import Right from '~/components/Right/right'
 
 EventBus.$on('i-got-clicked', clickCount => {
   console.log(`Oh, that's nice. It's gotten ${clickCount} clicks! :)`)
@@ -21,26 +30,29 @@ export default {
     css: false,
     enter (el, done) {
       console.log('enterClass', el)
-      anime({
-        targets: el,
-        duration: 500,
-        easing: 'easeOutExpo',
-        backgroundColor: [{ value: '#F5C316' }],
-        transformOrigin: ['100% 0% 0', '100% 0% 0'],
-        scaleX: [
-          {
-            value: 1, delay: 250
-          },
-          {
-            value: 0, delay: 250
-          }
-        ]
-      })
+      // anime({
+      //   targets: el,
+      //   duration: 500,
+      //   easing: 'easeOutExpo',
+      //   backgroundColor: [{ value: '#F5C316' }],
+      //   transformOrigin: ['100% 0% 0', '100% 0% 0'],
+      //   scaleX: [
+      //     {
+      //       value: 1, delay: 250
+      //     },
+      //     {
+      //       value: 0, delay: 250
+      //     }
+      //   ]
+      // })
       done()
     }
   },
   components: {
-    'playground': Playground
+    'playground': Playground,
+    'Title': Title,
+    'Middle': Middle,
+    'Right': Right
   },
   mounted () {
     console.log('UTILS', UTILS)

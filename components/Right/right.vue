@@ -1,35 +1,46 @@
 <template>
-  <div class="container__main">
-    <nuxt/>
-    <div class="logo"><a href="/">Corentin Marzin</a></div>
-    <!-- <Title></Title>
-    <Middle></Middle>
-    <Right></Right> -->
+  <div class="container__right">
+    <div class="container__right-about">
+      <div @click="openAbout()" class="container__right-title">
+        <h3 v-if="this.toggle">CLOSE</h3>
+        <h3 v-else>ABOUT</h3>
+        
+      </div>
+      <div class="container__right-about-content" style="transform: scale(0)">
+        <div class="container__right-about-description">
+          <p>Hi, My name is Corentin Marzin</p>
+          <p>I am a Creative developer blablabl</p>
+        </div>
+        <div class="container__right-about-social"></div>
+      </div>
+    </div>
+    <div class="container__right-menu">
+      <div class="container__right-nav">
+        <h3>MENU</h3>
+        <!-- SHOW MENU WHEN CLICK -->
+        <!-- <nuxt-link v-for="title in this.$store.state.projectTitle" :key="title.id" :to="title.replace(/\s+/g, '') === 'jochengerz' ? '/' : title.replace(/\s+/g, '')">
+          <h3 class="container__main-nav_horizontal--title" >{{ title.toUpperCase() }}</h3>      
+        </nuxt-link> -->
+      </div>
+      <nuxt-link :class="['container__right-next-project', customClassBgNext]" :to="this.$store.state.pathToNextProject">
+        <div class="container__right-next-icon">
+          <span class="container__right-next-text">NEXT</span>
+          <span class="container__right-next-arrow"></span>
+        </div>
+      </nuxt-link>
+    </div>
   </div>
 </template>
 
 <script>
 import anime from 'animejs'
-import Title from '~/components/Title/title'
-import Middle from '~/components/Middle/middle'
-import Right from '~/components/Right/right'
 
 export default {
-  name: '',
-  components: {
-    'Title': Title,
-    'Middle': Middle,
-    'Right': Right
-  },
+  name: 'Right',
   data () {
     return {
       toggle: false
     }
-  },
-  transition (to, from) {
-    // Access component properties here
-    console.log(to.matched[0].components.default.options)
-    return 'fade'
   },
   computed: {
     customClassText: function () {
@@ -77,3 +88,6 @@ export default {
   }
 }
 </script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped lang="scss"></style>
