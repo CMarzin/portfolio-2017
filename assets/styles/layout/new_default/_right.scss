@@ -72,7 +72,7 @@
       z-index: 10;
       cursor: pointer;
       transition: .5s ease;
-      
+
       border: 2px solid $black;
 
       display: flex;
@@ -81,7 +81,7 @@
 
       &:hover {
         transition: .5s ease;
-        background: $black;   
+        background: $black;
         color: $white;
       }
     }
@@ -109,7 +109,7 @@
 }
 
 /*******************************
-* MENU 
+* MENU
 ********************************/
 
     &-menu {

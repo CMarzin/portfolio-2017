@@ -2,7 +2,7 @@
   <div class="container__main">
     <nuxt/>
     <div class="logo"><a href="/">Corentin Marzin</a></div>
-    <!-- <Title></Title>
+    <!-- <Left></Left>
     <Middle></Middle>
     <Right></Right> -->
   </div>
@@ -10,14 +10,14 @@
 
 <script>
 import anime from 'animejs'
-import Title from '~/components/Title/title'
+import Left from '~/components/Left/left'
 import Middle from '~/components/Middle/middle'
 import Right from '~/components/Right/right'
 
 export default {
   name: '',
   components: {
-    'Title': Title,
+    'Left': Left,
     'Middle': Middle,
     'Right': Right
   },

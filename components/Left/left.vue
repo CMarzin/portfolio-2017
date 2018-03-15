@@ -1,9 +1,10 @@
 <template>
   <div class="container__left">
-    <nuxt-link :class="['container__left-prev-project', customClassBgPrevious]" :to="this.$store.state.pathToPreviousProject">
+    <nuxt-link class="container__left-prev-project" :to="this.$store.state.pathToPreviousProject">
+      <div style="transform: scaleY(0)" class="container__left-prev-volet"></div>
       <div class="container__left-prev-icon">
-      <span class="container__left-prev-arrow"></span>
-      <span class="container__left-prev-text">PREVIOUS</span>
+        <span class="container__left-prev-arrow"></span>
+        <span class="container__left-prev-text">PREVIOUS</span>
       </div>
     </nuxt-link>
     <div class="container__left-elements">
@@ -35,7 +36,7 @@
 
 <script>
 export default {
-  name: 'Title',
+  name: 'Left',
   data () {
     return {}
   },

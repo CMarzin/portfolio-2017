@@ -1,13 +1,13 @@
 <template>
-<div class="container__main">
-    <Title></Title>
-    <Middle></Middle>
-    <Right></Right>
-</div>
+  <div class="container__main">
+      <Left></Left>
+      <Middle></Middle>
+      <Right></Right>
+  </div>
 </template>
 
 <script>
-import Title from '~/components/Title/title'
+import Left from '~/components/Left/left'
 import Middle from '~/components/Middle/middle'
 import Right from '~/components/Right/right'
 export default {
@@ -17,7 +17,7 @@ export default {
     return {}
   },
   components: {
-    'Title': Title,
+    'Left': Left,
     'Middle': Middle,
     'Right': Right
   }
