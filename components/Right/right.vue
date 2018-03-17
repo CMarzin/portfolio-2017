@@ -4,7 +4,7 @@
       <div @click="openAbout()" class="container__right-title">
         <h3 v-if="this.toggle">CLOSE</h3>
         <h3 v-else>ABOUT</h3>
-        
+
       </div>
       <div class="container__right-about-content" style="transform: scale(0)">
         <div class="container__right-about-description">
@@ -19,10 +19,11 @@
         <h3>MENU</h3>
         <!-- SHOW MENU WHEN CLICK -->
         <!-- <nuxt-link v-for="title in this.$store.state.projectTitle" :key="title.id" :to="title.replace(/\s+/g, '') === 'jochengerz' ? '/' : title.replace(/\s+/g, '')">
-          <h3 class="container__main-nav_horizontal--title" >{{ title.toUpperCase() }}</h3>      
+          <h3 class="container__main-nav_horizontal--title" >{{ title.toUpperCase() }}</h3>
         </nuxt-link> -->
       </div>
-      <nuxt-link :class="['container__right-next-project', customClassBgNext]" :to="this.$store.state.pathToNextProject">
+      <nuxt-link class="container__right-next-project" :to="this.$store.state.pathToNextProject">
+        <div class="container__right-next-volet"></div>
         <div class="container__right-next-icon">
           <span class="container__right-next-text">NEXT</span>
           <span class="container__right-next-arrow"></span>

@@ -30,12 +30,6 @@ export default {
       color: this.$store.state.projects[this.$store.state.pathToPreviousProject].color
     }
   },
-  watch: {
-    color: function () {
-      console.log('kjdsnfdskjnfkjfnsknf')
-      this.color = this.$store.state.projects[this.$store.state.pathToPreviousProject].color
-    }
-  },
   computed: {
     customClassText: function () {
       let customClass = 'txt-' + this.$store.state.projects[this.$store.state.pathToCurrentProject].color
@@ -54,37 +48,64 @@ export default {
     }
   },
   transition: {
-    mode: 'out-in',
     css: false,
+    beforeEnter (el) {
+      const leftVolet = el.querySelector('.container__left-prev-volet')
+      const rightVolet = el.querySelector('.container__right-next-volet')
+      leftVolet.setAttribute('style', 'transform: scaleY(0)')
+      rightVolet.setAttribute('style', 'transform: scaleY(0)')
+      console.log('test beforeEnter', rightVolet)
+    },
     enter (el, done) {
-      let currentColor = this.$store.state.projects[this.$store.state.pathToPreviousProject].color
-      let currentHexa = ''
-      switch (currentColor) {
+      let previousColor = this.$store.state.projects[this.$store.state.pathToPreviousProject].color
+      let nextColor = this.$store.state.projects[this.$store.state.pathToNextProject].color
+      let hexa = ''
+      switch (previousColor) {
         case 'blue':
-          currentHexa = '#A1BDD2'
+          hexa = '#A1BDD2'
           break
         case 'yellow':
-          currentHexa = '#F5C316'
+          hexa = '#F5C316'
           break
         case 'red':
-          currentHexa = '#CB0804'
+          hexa = '#CB0804'
           break
-
-        default:
+      }
+      let nextHexa = ''
+      switch (nextColor) {
+        case 'blue':
+          nextHexa = '#A1BDD2'
+          break
+        case 'yellow':
+          nextHexa = '#F5C316'
+          break
+        case 'red':
+          nextHexa = '#CB0804'
           break
       }
       anime({
         targets: '.container__left-prev-volet',
         duration: 1500,
         easing: 'easeOutExpo',
-        backgroundColor: [{ value: currentHexa }],
+        backgroundColor: [{ value: hexa }],
         transformOrigin: ['100% 0% 0', '100% 0% 0'],
+        scaleY: 1
+      })
+      anime({
+        targets: '.container__right-next-volet',
+        duration: 1500,
+        easing: 'easeOutExpo',
+        backgroundColor: [{ value: nextHexa }],
+        transformOrigin: ['50% 100% 0', '50% 100% 0'],
         scaleY: 1
       })
       done()
     },
-    leave (el, done) {
-      console.log('leave', el)
+    beforeLeave (el) {
+      // const test = el.querySelector('.container__left-prev-volet')
+      // test.setAttribute('style', 'transform: scaleY(0)')
+      // console.log('test beforeLeave', test)
+      // console.log('leave', el)
       // let currentColor = this.$store.state.projects[this.$store.state.pathToPreviousProject].color
       // let currentHexa = ''
       // switch (currentColor) {
@@ -101,15 +122,14 @@ export default {
       //   default:
       //     break
       // }
-      anime({
-        targets: '.container__left-prev-volet',
-        duration: 1500,
-        easing: 'easeOutExpo',
-        backgroundColor: [{ value: 'white' }],
-        transformOrigin: ['100% 0% 0', '100% 0% 0'],
-        scaleY: 0
-      })
-      done()
+      // anime({
+      //   targets: '.container__left-prev-volet',
+      //   duration: 0,
+      //   easing: 'easeOutExpo',
+      //   backgroundColor: [{ value: 'white' }],
+      //   transformOrigin: ['0% 0% 0', '0% 0% 0'],
+      //   scaleY: 0
+      // })
     }
   },
   components: {

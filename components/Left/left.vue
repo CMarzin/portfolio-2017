@@ -1,7 +1,7 @@
 <template>
   <div class="container__left">
     <nuxt-link class="container__left-prev-project" :to="this.$store.state.pathToPreviousProject">
-      <div style="transform: scaleY(0)" class="container__left-prev-volet"></div>
+      <div class="container__left-prev-volet"></div>
       <div class="container__left-prev-icon">
         <span class="container__left-prev-arrow"></span>
         <span class="container__left-prev-text">PREVIOUS</span>
