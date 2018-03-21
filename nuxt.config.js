@@ -1,11 +1,11 @@
-const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
-  router: {
-    base: '/Portfolio/'
-  }
-} : {}
+// const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
+//   router: {
+//     base: '/Portfolio/'
+//   }
+// } : {}
 
 module.exports = {
-  ...routerBase,
+  // ...routerBase,
   router: {
     middleware: 'routing',
     extendRoutes (routes, resolve) {
