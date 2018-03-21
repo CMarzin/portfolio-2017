@@ -4,7 +4,7 @@ const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
     middleware: 'routing',
     extendRoutes (routes, resolve) {
       routes.push({
-        path: '/',
+        path: '/Portfolio/',
         component: resolve(__dirname, 'pages/jochengerz.vue'),
         alias: '/jochengerz'
       })
