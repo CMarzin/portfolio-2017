@@ -1,4 +1,4 @@
-const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
+module.exports = {
   router: {
     base: '/Portfolio/',
     middleware: 'routing',
@@ -9,22 +9,7 @@ const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
         alias: '/jochengerz'
       })
     }
-  }
-} : {
-  router: {
-    middleware: 'routing',
-    extendRoutes (routes, resolve) {
-      routes.push({
-        path: '/',
-        component: resolve(__dirname, 'pages/jochengerz.vue'),
-        alias: '/jochengerz'
-      })
-    }
-  }
-}
-
-module.exports = {
-  ...routerBase,
+  },
   /*
   ** Headers of the page
   */
