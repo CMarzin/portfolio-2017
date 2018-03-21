@@ -11,7 +11,11 @@ import Left from '~/components/Left/left'
 import Middle from '~/components/Middle/middle'
 import Right from '~/components/Right/right'
 
-import anime from 'animejs'
+import beforeEnterTransition from '~/assets/transition/beforeEnterTransition'
+import enterTransition from '~/assets/transition/enterTransition'
+import leaveTransition from '~/assets/transition/leaveTransition'
+import beforeRouteLeaveTransition from '~/assets/transition/beforeRouteLeaveTransition'
+
 export default {
   name: '',
   layout: 'default',
@@ -23,58 +27,26 @@ export default {
     'Middle': Middle,
     'Right': Right
   },
+  beforeRouteLeave (to, from, next) {
+    beforeRouteLeaveTransition(this.$el, this.$store, next)
+  },
   transition: {
     css: false,
+    mode: 'out-in',
+    duration: 10000,
+    type: 'transition',
     beforeEnter (el) {
-      const leftVolet = el.querySelector('.container__left-prev-volet')
-      const rightVolet = el.querySelector('.container__right-next-volet')
-      leftVolet.setAttribute('style', 'transform: scaleY(0)')
-      rightVolet.setAttribute('style', 'transform: scaleY(0)')
-      console.log('test beforeEnter', rightVolet)
+      beforeEnterTransition(el, this.$store)
     },
     enter (el, done) {
-      let previousColor = this.$store.state.projects[this.$store.state.pathToPreviousProject].color
-      let nextColor = this.$store.state.projects[this.$store.state.pathToNextProject].color
-      let hexa = ''
-      switch (previousColor) {
-        case 'blue':
-          hexa = '#A1BDD2'
-          break
-        case 'yellow':
-          hexa = '#F5C316'
-          break
-        case 'red':
-          hexa = '#CB0804'
-          break
-      }
-      let nextHexa = ''
-      switch (nextColor) {
-        case 'blue':
-          nextHexa = '#A1BDD2'
-          break
-        case 'yellow':
-          nextHexa = '#F5C316'
-          break
-        case 'red':
-          nextHexa = '#CB0804'
-          break
-      }
-      anime({
-        targets: '.container__left-prev-volet',
-        duration: 1500,
-        easing: 'easeOutExpo',
-        backgroundColor: [{ value: hexa }],
-        transformOrigin: ['100% 0% 0', '100% 0% 0'],
-        scaleY: 1
-      })
-      anime({
-        targets: '.container__right-next-volet',
-        duration: 1500,
-        easing: 'easeOutExpo',
-        backgroundColor: [{ value: nextHexa }],
-        transformOrigin: ['50% 100% 0', '50% 100% 0'],
-        scaleY: 1
-      })
+      enterTransition(el, this.$store)
+      done()
+    },
+    beforeLeave (el) {
+
+    },
+    leave (el, done) {
+      leaveTransition(el, this.$store)
       done()
     }
   }

@@ -1,7 +1,7 @@
 <template>
   <div class="container__left">
     <nuxt-link class="container__left-prev-project" :to="this.$store.state.pathToPreviousProject">
-      <div class="container__left-prev-volet"></div>
+      <div :class="['container__left-prev-volet', customClassBgPrevious]"></div>
       <div class="container__left-prev-icon">
         <span class="container__left-prev-arrow"></span>
         <span class="container__left-prev-text">PREVIOUS</span>
@@ -14,8 +14,11 @@
           <p> - </p>
           <p>{{ this.$store.state.projectTitle.length }}</p>
         </div>
-        <div :class="['title', 'container__left-title',customClassText]">
-          <h1>{{ this.$store.state.currentProjectTitle }}</h1>
+        <div :class="['title', 'container__left-title', customClassText]">
+         <div class="container__left-title-content">
+            <span :class="['container__left-title-volet', customClassBg]"></span>
+            <h1 class="container__left-title-scale" >{{ this.$store.state.currentProjectTitle }}</h1>
+         </div>
         </div>
         <!-- SHOW ARROW ON MOBILE -->
         <!-- <div class="container__left-nav">
@@ -28,7 +31,8 @@
         </div> -->
       </div>
         <div class="container__left-desc">
-          {{ this.$store.state.projects[this.$store.state.pathToCurrentProject].description }}
+          <p>{{ this.$store.state.projects[this.$store.state.pathToCurrentProject].description }}</p>
+          <a v-if="this.$store.state.projects[this.$store.state.pathToCurrentProject].links.moreInformation" :href="this.$store.state.projects[this.$store.state.pathToCurrentProject].links.moreInformation">{{this.$store.state.projects[this.$store.state.pathToCurrentProject].links.moreInformation}}</a>
         </div>
     </div>
   </div>

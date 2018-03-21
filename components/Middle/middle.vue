@@ -1,27 +1,20 @@
 <template>
   <div class="container__middle">
-    <img class="container__middle-photo" src="~/static/gerz.jpg" alt="">
-    <div :class="['container__left-website', customClassBg]">
-      SEE WEBSITE
+    <div class="container__middle-photo">
+      <span :class="['container__middle-photo-volet', customClassBgNext]"></span>
+      <img :src="this.$store.state.projects[this.$store.state.pathToCurrentProject].img" alt="">
     </div>
+    <a class="container__middle-website" :href="this.$store.state.projects[this.$store.state.pathToCurrentProject].links.seeWebsite" target="_blank">
+      <p class="container__middle-website-text">SEE WEBSITE</p>
+      <span :class="['container__middle-website-volet', customClassBg]"></span>
+    </a>
   </div>
 </template>
 
 <script>
 export default {
   name: 'Middle',
-  data () {
-    return {}
-  },
   computed: {
-    customClassText: function () {
-      let customClass = 'txt-' + this.$store.state.projects[this.$store.state.pathToCurrentProject].color
-      return customClass
-    },
-    customClassBgPrevious: function () {
-      let customClass = 'bonjour-' + this.$store.state.projects[this.$store.state.pathToPreviousProject].color
-      return customClass
-    },
     customClassBg: function () {
       let customClass = 'bonjour-' + this.$store.state.projects[this.$store.state.pathToCurrentProject].color
       return customClass

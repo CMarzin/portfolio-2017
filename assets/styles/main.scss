@@ -13,16 +13,10 @@
 @import 'basics/global';
 
 // Layout //
-@import 'layout/default';
 @import 'layout/new_default';
 
 * {
   box-sizing: border-box;
-}
-
-.trololo-red {
-  transition: 0.5s ease;
-  background: $red;
 }
 
 .bg-yellow {
