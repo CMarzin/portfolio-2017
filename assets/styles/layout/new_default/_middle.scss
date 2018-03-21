@@ -19,9 +19,6 @@
       position: relative;
       max-width: 600px;
       max-height: 400px;
-      border: 2px solid black;
-      // fix bug with flex-end
-      padding: 2px;
     }
 
     &-photo-volet {
@@ -35,8 +32,8 @@
 
     &-photo img {
       width: 100%;
-      // fix bug with flex-end
-      padding: 2px;
+      height: 100%;
+      border: 2px solid black;
     }
 
 /*******************************
