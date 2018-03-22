@@ -14,8 +14,8 @@ module.exports = {
     ]
   },
   env: {
-    token: '5629700ff8f1892f03ca2c4d0ff1a0c60dd6ba17705661f8ff68986bf2b62616',
-    spaceID: 'tw1iov2cs9xm'
+    token: '',
+    spaceID: ''
   },
   css: [
     // CSS file in the project
